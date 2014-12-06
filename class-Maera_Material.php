@@ -25,6 +25,7 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			require_once( __DIR__ . '/includes/class-Maera_MD_Layout.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Typo.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Nav.php');
+			require_once( __DIR__ . '/includes/class-Maera_MD_Styles.php');
 
 			// Enqueue the scripts
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
