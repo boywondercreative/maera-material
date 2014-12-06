@@ -21,6 +21,9 @@ class Maera_MD_Layout {
 
 	}
 
+	/**
+	 * alter the class of the container element.
+	 */
 	function container_class( $classes ) {
 
 		if ( 'off' == $this->container ) {
@@ -31,19 +34,29 @@ class Maera_MD_Layout {
 
 	}
 
+	/**
+	 * Filter the classes of the wrapper
+	 */
 	function wrapper_class( $class ) {
 
 		return $class . ' row';
 
 	}
 
+	/**
+	 * Filter the classes of the main content area
+	 */
 	function content_class( $class ) {
 
 		$width = 12 - $this->sidebar_width;
-		return $class . ' col s12 m' . $width;
+		$alignment = ( 2 == $this->layout ) ? ' right-align' : '';
+		return $class . ' col s12 m' . $width . $alignment;
 
 	}
 
+	/**
+	 * Filter the classes of the sidebar
+	 */
 	function sidebar_class( $class ) {
 
 		return $class . ' col s12 m' . $this->sidebar_width;
@@ -51,4 +64,5 @@ class Maera_MD_Layout {
 	}
 
 }
+// Instantianate the class
 $layout = new Maera_MD_Layout();
