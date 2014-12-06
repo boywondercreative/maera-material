@@ -112,7 +112,7 @@ class Maera_MD_Customizer {
 			'section'  => 'nav',
 			'default'  => '',
 			'priority' => 20,
-			'choices'  => Maera_MD_Colors::widget_colors(),
+			'choices'  => maera_md_colors(),
 		);
 
 		return $controls;

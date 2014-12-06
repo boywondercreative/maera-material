@@ -7,21 +7,8 @@ class Maera_MD_Widgets {
 
 	function __construct() {
 
-		$widget_colors = new Maera_MD_Widget_Dropdown(
-			'material_color',
-			'Color',
-			Maera_MD_Colors::widget_colors()
-		);
-		$widget_shades = new Maera_MD_Widget_Dropdown(
-			'material_shades',
-			'Shade',
-			Maera_MD_Colors::widget_shades()
-		);
-		$widget_depths = new Maera_MD_Widget_Dropdown(
-			'material_depth',
-			'Depth',
-			Maera_MD_Colors::widget_depths()
-		);
+		$widget_colors = new Maera_MD_Widget_Dropdown( 'maera_md_color', 'Color', maera_md_colors() );
+		$widget_depths = new Maera_MD_Widget_Dropdown( 'material_depth', 'Depth', maera_md_depths() );
 
 		add_filter( 'maera/widgets/class', array( $this, 'widget_class' ) );
 		add_filter( 'maera/widgets/title/before', array( $this, 'widget_title_before' ) );

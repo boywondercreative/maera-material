@@ -29,13 +29,16 @@ class Maera_MD_Widget_Dropdown {
 		$widget_opt = get_option( $widget_obj['callback'][0]->option_name );
 		$widget_num = $widget_obj['params'][0]['number'];
 
+		$option = $widget_opt[$widget_num][$this->id];
+		$value  = $this->options[$option];
+
 		preg_match( '/(\<[a-zA-Z]+)(.*?)(\>)/', $params[0]['before_widget'], $mat );
 
-		if ( isset( $widget_opt[$widget_num][$this->id] ) && ! empty( $widget_opt[$widget_num][$this->id] ) && $widget_opt[$widget_num][$this->id] != -1 ) {
+		if ( isset( $value ) && ! empty( $value ) && $value != -1 ) {
 			if ( preg_match( '/class="/', $params[0]['before_widget'] ) ) {
-				$params[0]['before_widget'] =  preg_replace( '/class="/', "class=\"{$widget_opt[$widget_num][$this->id]} ", $params[0]['before_widget'], 1 );
+				$params[0]['before_widget'] =  preg_replace( '/class="/', "class=\"{$value} ", $params[0]['before_widget'], 1 );
 			}else{
-				$params[0]['before_widget'] = preg_replace( '/(\<[a-zA-Z]+)(.*?)(\>)/', "$1 $2  class=\"{$widget_opt[$widget_num][$this->id]}\" $3", $params[0]['before_widget'], 1 );
+				$params[0]['before_widget'] = preg_replace( '/(\<[a-zA-Z]+)(.*?)(\>)/', "$1 $2  class=\"{$value}\" $3", $params[0]['before_widget'], 1 );
 			}
 		}
 

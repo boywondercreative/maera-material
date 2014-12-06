@@ -18,7 +18,7 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 				define( 'MAERA_SHELL_PATH', dirname( __FILE__ ) );
 			}
 
-			require_once( __DIR__ . '/includes/class-Maera_MD_Colors.php');
+			require_once( __DIR__ . '/includes/variables.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Widget_Dropdown.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Widgets.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Customizer.php');
