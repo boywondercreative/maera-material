@@ -7,7 +7,7 @@ class Maera_MD_Styles {
 		add_filter( 'maera/styles', array( $this, 'color_mods' ) );
 	}
 
-	function color_mods() {
+	function color_mods( $styles ) {
 
 		$colors = maera_md_colors();
 
@@ -19,10 +19,16 @@ class Maera_MD_Styles {
 			$bg    = '#' . str_replace( '#', '', $bg_obj->toHex() );
 			$color = $bg_obj->getReadableContrastingColor( $bg_obj, 2 )->toHex();
 
-			return $classes . '{background:' . $bg . ';color:' . $color . ';}';
+			$link_color = ( '000000' == $color ) ? 'rgba(0,0,0,.75)' : 'rgba(255,255,255,.75)';
+
+			$styles .= $classes . '{background:#' . $bg . ';color:#' . $color . ';}';
+			$styles .= $classes . ' a{color:' . $link_color . ';}';
 
 		}
+
+		return $styles;
 
 	}
 
 }
+$styles = new Maera_MD_Styles();
