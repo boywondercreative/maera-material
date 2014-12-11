@@ -6839,3 +6839,66 @@ ul.table-of-contents a {
 @media (min-height: 40.125em) {
   .picker--time .picker__box {
     margin-bottom: 5em; } }
+/***************
+  HTML Styles
+***************/
+body {
+  background-color: #fcfcfc; }
+
+body.parallax-demo {
+  height: 100%; }
+
+p.box {
+  padding: 20px; }
+
+p {
+  padding: 0;
+  -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3, h4, h5, h6 {
+  -webkit-font-smoothing: antialiased; }
+
+nav a {
+  -webkit-font-smoothing: antialiased; }
+nav ul li:hover, nav ul li.active {
+  background-color: #ea454b; }
+
+.header {
+  color: #ee6e73;
+  font-weight: 300; }
+
+.caption {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 30px; }
+
+.preview {
+  background-color: #FFF;
+  border: 1px solid #eee;
+  padding: 20px 20px; }
+
+.parallax-container {
+  height: 70%; }
+  .parallax-container .text-center {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -27px; }
+
+@media only screen and (max-width: 992px) {
+  .parallax-container {
+    height: auto; } }
+ul.table-of-contents {
+  margin-top: 1.5rem; }
+
+#footer .footer-block {
+  display: inline-block; }
+  #footer .footer-block a {
+    margin-left: 25px;
+    vertical-align: bottom; }
+
+@media only screen and (max-width: 992px) {
+  .footer-block {
+    display: block;
+    margin-bottom: 20px; } }

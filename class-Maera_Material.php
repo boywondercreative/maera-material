@@ -53,10 +53,9 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			wp_register_script( 'materialize-js', MAERA_MATERIAL_SHELL_URL . '/assets/js/materialize.js', false, null, true  );
 			wp_enqueue_script( 'materialize-js' );
 
-			wp_enqueue_style( 'materialize', MAERA_MATERIAL_SHELL_URL . '/assets/css/materialize.css', false, null, 'all' );
-			wp_enqueue_style( 'maera-materialize', MAERA_MATERIAL_SHELL_URL . '/assets/css/style.css', false, null, 'all' );
+			wp_enqueue_style( 'maera-materialize', MAERA_MATERIAL_SHELL_URL . '/assets/css/maera-materialize.css', false, null, 'all' );
 
-			// wp_enqueue_style( 'dashicons' );
+			wp_enqueue_style( 'dashicons' );
 
 		}
 
