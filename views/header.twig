@@ -28,7 +28,8 @@
 	</nav>
 {% endif %}
 
-<div class="header hero">
+<div class="header hero parallax-container">
+	<div class="parallax"><img src="{{ header_img }}"></div>
 	{{ container_open( 'div' ) }}
 		<div class="row">
 			<div class="{{ column_classes( [{'tablet':logo_width_tablet},{'medium':logo_width_medium},{'large':logo_width_large}] ) }} header-property-wrap">
