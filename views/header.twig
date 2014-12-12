@@ -1,3 +1,5 @@
+{% from 'container_open.html.twig' import container_open as container_open %}
+{% from 'container_close.html.twig' import container_close as container_close %}
 {% from 'column_classes.html.twig' import column_classes as column_classes %}
 {% set logo_width_tablet = theme_mods.logo_max_width >= 4 ? 12 : theme_mods.logo_max_width * 2 %}
 {% set logo_width_medium = theme_mods.logo_max_width >= 6 ? 12 : theme_mods.logo_max_width * 2 %}
@@ -7,8 +9,6 @@
 {% set widget_width_large  = logo_width_large  == 12 ? 12 : 12 - logo_width_large %}
 
 {% if not theme_mods.navbar_disable %}
-	{% from 'container_open.html.twig' import container_open as container_open %}
-	{% from 'container_close.html.twig' import container_close as container_close %}
 	{% set navwrapper = 'nav-wrapper' %}
 	<nav>
 		{% block header %}
@@ -29,14 +29,16 @@
 {% endif %}
 
 <div class="header hero">
-	<div class="row">
-		<div class="{{ column_classes( [{'tablet':logo_width_tablet},{'medium':logo_width_medium},{'large':logo_width_large}] ) }} header-property-wrap">
-			<h2>{% include 'site-logo.twig' %}</h2>
+	{{ container_open( 'div' ) }}
+		<div class="row">
+			<div class="{{ column_classes( [{'tablet':logo_width_tablet},{'medium':logo_width_medium},{'large':logo_width_large}] ) }} header-property-wrap">
+				<h2>{% include 'site-logo.twig' %}</h2>
+			</div>
+			{% if sidebar.header %}
+			<div class="{{ column_classes( [{'tablet':widget_width_tablet},{'medium':widget_width_medium},{'large':widget_width_large}] ) }}">
+				{{ sidebar.header }}
+			</div>
+			{% endif %}
 		</div>
-		{% if sidebar.header %}
-		<div class="{{ column_classes( [{'tablet':widget_width_tablet},{'medium':widget_width_medium},{'large':widget_width_large}] ) }}">
-			{{ sidebar.header }}
-		</div>
-		{% endif %}
-	</div>
+	{{ container_close( 'div' ) }}
 </div>
