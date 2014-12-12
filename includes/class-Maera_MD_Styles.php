@@ -57,7 +57,7 @@ class Maera_MD_Styles {
 		$custom_header = get_header_image();
 
 		if ( $custom_header ) {
-			$styles .= '.header.hero{background-image:url("' . $custom_header . '");}';
+			$styles .= '.header.hero .parallax-layer-back{background-image:url("' . $custom_header . '");}';
 		}
 		$styles .= '.header.hero{color:#' . get_theme_mod( 'header_textcolor', '333333' ) . '}';
 

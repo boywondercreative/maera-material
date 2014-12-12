@@ -2046,33 +2046,6 @@ i {
     float: right;
     margin-left: 15px; }
 
-.parallax-container {
-  position: relative;
-  overflow: hidden;
-  height: 500px; }
-
-.parallax {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1; }
-  .parallax img {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    width: 100%; }
-
-@media only screen and (max-width: 992px) {
-  .parallax-container {
-    height: auto; }
-
-  .parallax {
-    position: relative;
-    width: 100%; }
-    .parallax img {
-      position: relative; } }
 @media only screen and (max-width: 600px) {
   .hide-on-small-only, .hide-on-small-and-down {
     display: none !important; } }
@@ -6903,9 +6876,6 @@ ul.table-of-contents a {
 body {
   background-color: #fcfcfc; }
 
-body.parallax-demo {
-  height: 100%; }
-
 p.box {
   padding: 20px; }
 
@@ -6935,18 +6905,6 @@ nav ul li:hover, nav ul li.active {
   border: 1px solid #eee;
   padding: 20px 20px; }
 
-.parallax-container {
-  height: 70%; }
-  .parallax-container .text-center {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    margin-top: -27px; }
-
-@media only screen and (max-width: 992px) {
-  .parallax-container {
-    height: auto; } }
 ul.table-of-contents {
   margin-top: 1.5rem; }
 
@@ -6963,3 +6921,22 @@ ul.table-of-contents {
 .header.hero {
   background-size: cover;
   background-repeat: no-repeat; }
+
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 1px;
+  perspective: 1px; }
+  .parallax .parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+    .parallax .parallax-layer.parallax-layer-base {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(-10); }
+    .parallax .parallax-layer.parallax-layer-back {
+      -webkit-transform: translateZ(-1px) scale(2);
+      transform: translateZ(-1px) scale(2); }

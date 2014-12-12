@@ -19,6 +19,7 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			}
 
 			require_once( __DIR__ . '/includes/variables.php');
+			require_once( __DIR__ . '/includes/class-Maera_MD_Timber.php');
 			require_once( __DIR__ . '/includes/class-Maera_Widget_Dropdown.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Widgets.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Customizer.php');
@@ -81,6 +82,22 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 				'admin-preview-callback' => '',
 			);
 			add_theme_support( 'custom-header', $header_args );
+
+		}
+
+		public static function custom_header_url() {
+
+			$image_url = get_header_image();
+			if ( is_singular() && has_post_thumbnail() ) {
+				$image_array = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+				$image_url = $image_array[0];
+			}
+
+			if ( empty( $image_url ) ) {
+				return false;
+			} else {
+				return $image_url;
+			}
 
 		}
 
