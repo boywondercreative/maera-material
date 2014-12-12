@@ -6960,3 +6960,6 @@ ul.table-of-contents {
   .footer-block {
     display: block;
     margin-bottom: 20px; } }
+.header.hero {
+  background-size: cover;
+  background-repeat: no-repeat; }
