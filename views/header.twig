@@ -1,3 +1,4 @@
+{% if not theme_mods.navbar_disable %}
 {% from 'container_open.html.twig' import container_open as container_open %}
 {% from 'container_close.html.twig' import container_close as container_close %}
 {% set navwrapper = 'nav-wrapper' %}
@@ -17,3 +18,4 @@
 		</div>
 	{% endblock %}
 </nav>
+{% endif %}

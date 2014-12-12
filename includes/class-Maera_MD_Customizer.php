@@ -115,6 +115,15 @@ class Maera_MD_Customizer {
 			'choices'  => maera_md_colors(),
 		);
 
+		$controls[] = array(
+			'type'     => 'checkbox',
+			'setting'  => 'navbar_disable',
+			'label'    => __( 'Disable the Navbar', 'maera_md' ),
+			'section'  => 'nav',
+			'priority' => 30,
+			'default'  => 0,
+		);
+
 		return $controls;
 
 	}
