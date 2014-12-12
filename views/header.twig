@@ -28,9 +28,8 @@
 	</nav>
 {% endif %}
 
-<div class="header hero parallax">
-	<div class="parallax-layer parallax-layer-back"></div>
-	{{ container_open( 'div', '', 'parallax-layer parallax-layer-base' ) }}
+<div class="header hero">
+	{{ container_open( 'div' ) }}
 		<div class="row">
 			<div class="{{ column_classes( [{'tablet':logo_width_tablet},{'medium':logo_width_medium},{'large':logo_width_large}] ) }} header-property-wrap">
 				<h2>{% include 'site-logo.twig' %}</h2>

@@ -4,6 +4,10 @@
 body {
   background-color: #fcfcfc;
 }
+body.parallax-demo {
+  height: 100%;
+}
+
 p.box {
   padding: 20px;
 }
@@ -42,6 +46,24 @@ nav {
   padding: 20px 20px;
 }
 
+.parallax-container {
+  height: 70%;
+
+  .text-center {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -27px;
+  }
+
+}
+@media #{$medium-and-down} {
+  .parallax-container {
+    height: auto;
+  }
+}
+
 // Table of contents
 ul.table-of-contents {
   margin-top: 1.5rem;
@@ -66,29 +88,4 @@ ul.table-of-contents {
 .header.hero {
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.parallax {
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-perspective: 1px;
-    perspective: 1px;
-
-    .parallax-layer {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-
-        &.parallax-layer-base {
-            -webkit-transform: translateZ(0);
-            transform: translateZ(-10);
-        }
-        &.parallax-layer-back {
-            -webkit-transform: translateZ(-1px) scale(2);
-            transform: translateZ(-1px) scale(2);
-        }
-    }
 }
