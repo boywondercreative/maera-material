@@ -38,6 +38,10 @@ class Maera_MD_Customizer {
 			'typography' => array(
 				'title'    => __( 'Typography', 'maera_md' ),
 				'priority' => 30,
+			),
+			'Colors' => array(
+				'title'    => __( 'Colors', 'maera_md' ),
+				'priority' => 40,
 			)
 		);
 
@@ -110,6 +114,16 @@ class Maera_MD_Customizer {
 			'setting'  => 'nav_color',
 			'label'    => __( 'Navbar Color', 'maera_md' ),
 			'section'  => 'nav',
+			'default'  => '',
+			'priority' => 20,
+			'choices'  => maera_md_colors(),
+		);
+
+		$controls[] = array(
+			'type'     => 'select',
+			'setting'  => 'body_bg',
+			'label'    => __( 'Background Color', 'maera_md' ),
+			'section'  => 'colors',
 			'default'  => '',
 			'priority' => 20,
 			'choices'  => maera_md_colors(),
