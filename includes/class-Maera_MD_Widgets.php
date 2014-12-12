@@ -15,6 +15,27 @@ class Maera_MD_Widgets {
 		add_filter( 'maera/widgets/title/after', array( $this, 'widget_title_after' ) );
 		add_filter( 'maera/widgets/before', array( $this, 'widget_before' ) );
 		add_filter( 'maera/widgets/after', array( $this, 'widget_after' ) );
+		add_action( 'widgets_init', array( $this, 'widgets_init' ) );
+
+	}
+
+	/**
+	 * Register sidebars
+	 */
+	function widgets_init() {
+
+		$class        = apply_filters( 'maera/widgets/class', '' );
+		$before_title = apply_filters( 'maera/widgets/title/before', '<h3 class="widget-title">' );
+		$after_title  = apply_filters( 'maera/widgets/title/after', '</h3>' );
+
+		register_sidebar( array(
+			'name'          => __( 'Header', 'maera_md' ),
+			'id'            => 'header',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title"',
+			'after_title'   => '</h3>',
+		) );
 
 	}
 

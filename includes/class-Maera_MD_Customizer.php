@@ -141,7 +141,7 @@ class Maera_MD_Customizer {
 		$controls[] = array(
 			'type'     => 'slider',
 			'setting'  => 'logo_max_width',
-			'label'    => __( 'Logo Maximum Width (1-12 columns)', 'maera_zf' ),
+			'label'    => __( 'Logo Maximum Width (1-12 columns)', 'maera_md' ),
 			'section'  => 'title_tagline',
 			'default'  => 3,
 			'priority' => 50,
