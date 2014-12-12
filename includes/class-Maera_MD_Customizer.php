@@ -59,6 +59,13 @@ class Maera_MD_Customizer {
 
 	function settings( $controls ) {
 
+		$colors = maera_md_colors();
+		$simple_colors = array();
+
+		foreach ( $colors as $color => $values ) {
+			$simple_colors[$color] = $values['label'];
+		}
+
 		$controls[] = array(
 			'type'     => 'radio',
 			'mode'     => 'buttonset',
@@ -82,7 +89,7 @@ class Maera_MD_Customizer {
 			'section'  => 'layout',
 			'priority' => 3,
 			'default'  => 1,
-			'choices'  => $this->layouts(),
+			'choices'  => $simple_colors,
 		);
 
 		$controls[] = array(
@@ -116,7 +123,7 @@ class Maera_MD_Customizer {
 			'section'  => 'nav',
 			'default'  => '',
 			'priority' => 20,
-			'choices'  => maera_md_colors(),
+			'choices'  => $simple_colors,
 		);
 
 		$controls[] = array(
@@ -126,7 +133,7 @@ class Maera_MD_Customizer {
 			'section'  => 'colors',
 			'default'  => '',
 			'priority' => 20,
-			'choices'  => maera_md_colors(),
+			'choices'  => $simple_colors,
 		);
 
 		$controls[] = array(
