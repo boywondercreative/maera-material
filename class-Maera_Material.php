@@ -29,6 +29,8 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 
 			// Enqueue the scripts
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
+			// Add theme supports
+			add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 
 		}
 
@@ -44,7 +46,6 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			return self::$instance;
 		}
 
-
 		/**
 		 * Register all scripts and additional stylesheets (if necessary)
 		 */
@@ -56,6 +57,30 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			wp_enqueue_style( 'maera-materialize', MAERA_MATERIAL_SHELL_URL . '/assets/css/maera-materialize.css', false, null, 'all' );
 
 			wp_enqueue_style( 'dashicons' );
+
+		}
+
+		/**
+		 * Add theme supports
+		 */
+		function theme_supports() {
+
+			// Add theme support for Custom Header
+			$header_args = array(
+				'default-image'          => '',
+				'width'                  => 0,
+				'height'                 => 0,
+				'flex-width'             => true,
+				'flex-height'            => true,
+				'uploads'                => true,
+				'random-default'         => true,
+				'header-text'            => true,
+				'default-text-color'     => '#333333',
+				'wp-head-callback'       => '',
+				'admin-head-callback'    => '',
+				'admin-preview-callback' => '',
+			);
+			add_theme_support( 'custom-header', $header_args );
 
 		}
 
