@@ -19,7 +19,7 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			}
 
 			require_once( __DIR__ . '/includes/variables.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Widget_Dropdown.php');
+			require_once( __DIR__ . '/includes/class-Maera_Widget_Dropdown.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Widgets.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Customizer.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Layout.php');

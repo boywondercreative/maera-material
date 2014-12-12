@@ -2,17 +2,19 @@
 /**
  * Creates a dropdown in each widget and then adds the selected options as a CSS class
  */
-class Maera_MD_Widget_Dropdown {
+class Maera_Widget_Dropdown {
 
 	private $id;
 	private $label;
-	private $options;
+	private $choices;
+	private $default;
 
-	function __construct( $id, $label, $options ) {
+	function __construct( $args = array() ) {
 
-		$this->id = $id;
-		$this->label = $label;
-		$this->options = $options;
+		$this->id      = $args['id'];
+		$this->label   = $args['label'];
+		$this->choices = $args['choices'];
+		$this->default = $args['default'];
 
 		add_action( 'in_widget_form', array( $this, 'in_widget_form' ), 10, 3 );
 		add_filter( 'widget_update_callback', array( $this, 'widget_update_callback' ), 10, 2 );
@@ -29,8 +31,8 @@ class Maera_MD_Widget_Dropdown {
 		$widget_opt = get_option( $widget_obj['callback'][0]->option_name );
 		$widget_num = $widget_obj['params'][0]['number'];
 
-		$option = $widget_opt[$widget_num][$this->id];
-		$value  = $this->options[$option];
+		$option = ( isset( $widget_opt[$widget_num][$this->id] ) ) ? $widget_opt[$widget_num][$this->id] : $this->default;
+		$value  = $this->choices[$option]['classes'];
 
 		preg_match( '/(\<[a-zA-Z]+)(.*?)(\>)/', $params[0]['before_widget'], $mat );
 
@@ -55,18 +57,18 @@ class Maera_MD_Widget_Dropdown {
 
 	function in_widget_form( $widget, $return, $instance ) {
 
-		$options = $this->options;
+		$choices = $this->choices;
 
-		$instance[$this->id] = ( ! isset( $instance[$this->id] ) ) ? null : $instance[$this->id];
+		$instance[$this->id] = ( ! isset( $instance[$this->id] ) ) ? $this->default : $instance[$this->id];
 		?>
 
 		<div style="margin-top: 1em;">
 			<label for="<?php echo $widget->get_field_id( $this->id ); ?>"><?php echo $this->label; ?></label>
 			<select class="widefat" id="<?php echo $widget->get_field_id( $this->id ); ?>" name="<?php echo $widget->get_field_name( $this->id ); ?>">
 				<option value="-1"><?php _e( '', 'maera_md' ); ?></option>
-				<?php foreach ( $options as $option => $name ) : ?>
-					<?php $selected = ( ( ( $option == $instance[$this->id] ) || empty( $instance[$this->id] ) ) ? ' selected="selected"' : '' ); ?>
-					<option value="<?php echo $option; ?>"<?php echo $selected; ?>><?php echo $name; ?></option>
+				<?php foreach ( $choices as $choice => $options ) : ?>
+					<?php $selected = ( ( ( $choice == $instance[$this->id] ) || empty( $instance[$this->id] ) ) ? ' selected="selected"' : '' ); ?>
+					<option value="<?php echo $choice; ?>"<?php echo $selected; ?>><?php echo $options['label']; ?></option>
 				<?php endforeach; ?>
 			</select>
 		</div>

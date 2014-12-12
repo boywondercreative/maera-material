@@ -7,8 +7,23 @@ class Maera_MD_Widgets {
 
 	function __construct() {
 
-		$widget_colors = new Maera_MD_Widget_Dropdown( 'maera_md_color', 'Color', maera_md_colors() );
-		$widget_depths = new Maera_MD_Widget_Dropdown( 'material_depth', 'Depth', maera_md_depths() );
+		$widget_colors = new Maera_Widget_Dropdown(
+			array(
+				'id'      => 'maera_md_color',
+				'label'   => __( 'Width', 'maera_md' ),
+				'choices' => maera_md_colors(),
+				'default' => 0,
+			)
+		);
+
+		$widget_depths = new Maera_Widget_Dropdown(
+			array(
+				'id'      => 'maera_md_depth',
+				'label'   => __( 'Depth', 'maera_md' ),
+				'choices' => maera_md_depths(),
+				'default' => 1,
+			)
+		);
 
 		add_filter( 'maera/widgets/class', array( $this, 'widget_class' ) );
 		add_filter( 'maera/widgets/title/before', array( $this, 'widget_title_before' ) );
