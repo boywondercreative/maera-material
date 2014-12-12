@@ -5,6 +5,7 @@ class Maera_MD_Styles {
 	function __construct() {
 		$this->colors = maera_md_colors();
 		add_filter( 'maera/styles', array( $this, 'color_mods' ) );
+		add_filter( 'maera/styles', array( $this, 'custom_header_css' ) );
 		add_filter( 'body_class', array( $this, 'body_background_classes' ) );
 	}
 
@@ -48,6 +49,19 @@ class Maera_MD_Styles {
 		}
 
 		return $classes;
+
+	}
+
+	function custom_header_css( $styles ) {
+
+		$custom_header = get_header_image();
+
+		if ( $custom_header ) {
+			$styles .= '.header.hero{background-image:url("' . $custom_header . '");}';
+		}
+		$styles .= '.header.hero{color:#' . get_theme_mod( 'header_textcolor', '333333' ) . '}';
+
+		return $styles;
 
 	}
 
