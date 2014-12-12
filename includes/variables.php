@@ -3,6 +3,7 @@
 function maera_md_colors() {
 
 	$colors = array(
+		0        => '',
 		'ffebee' => 'red lighten-5',
 		'ffcdd2' => 'red lighten-4',
 		'ef9a9a' => 'red lighten-3',
