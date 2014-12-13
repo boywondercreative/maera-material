@@ -12,13 +12,18 @@ class Maera_MD_Styles {
 	function color_mods( $css ) {
 
 		$colors = $this->colors;
+		$simple_colors = array();
+
+		foreach ( $colors as $color => $values ) {
+			$simple_colors[$color] = $values['label'];
+		}
 		$styles = get_transient( 'maera_md_colors' );
 
 		if ( false === ( $styles ) ) {
 
 			$styles = '';
 
-			foreach ( $colors as $color => $classes ) {
+			foreach ( $simple_colors as $color => $classes ) {
 				$bg_obj  = new Jetpack_Color( '#' . $color );
 				$classes = '.' . str_replace( ' ', '.', $classes );
 
