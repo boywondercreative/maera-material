@@ -89,7 +89,7 @@ class Maera_MD_Customizer {
 			'section'  => 'layout',
 			'priority' => 3,
 			'default'  => 1,
-			'choices'  => $simple_colors,
+			'choices'  => $this->layouts(),
 		);
 
 		$controls[] = array(
