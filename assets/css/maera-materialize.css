@@ -6903,9 +6903,6 @@ ul.table-of-contents a {
 body {
   background-color: #fcfcfc; }
 
-body.parallax-demo {
-  height: 100%; }
-
 p.box {
   padding: 20px; }
 
@@ -6936,7 +6933,7 @@ nav ul li:hover, nav ul li.active {
   padding: 20px 20px; }
 
 .parallax-container {
-  height: 70%; }
+  height: 30vh; }
   .parallax-container .text-center {
     position: absolute;
     top: 50%;

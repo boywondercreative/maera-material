@@ -4,10 +4,6 @@
 body {
   background-color: #fcfcfc;
 }
-body.parallax-demo {
-  height: 100%;
-}
-
 p.box {
   padding: 20px;
 }
@@ -47,7 +43,7 @@ nav {
 }
 
 .parallax-container {
-  height: 70%;
+  height: 30vh;
 
   .text-center {
     position: absolute;
