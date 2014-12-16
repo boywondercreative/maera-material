@@ -1,17 +1,9 @@
 {#<?php#}
-<div class="entry-summary" itemprop="description">
-	{% if post.thumbnail %}
-	<div class="parallax-container">
-		<a class="parallax featured-image" href="{{ post.link }}" title="{{ post.title }}">
-			<img class="featured-image" src="{{ post.thumbnail.src|resize(thumbnail.width, thumbnail.height) }}" srcset="{{ post.thumbnail.src|resize(thumbnail.width, thumbnail.height)|retina(1) }} 1x, {{ post.thumbnail.src|resize(thumbnail.width, thumbnail.height)|retina(2) }}  2x">
-		</a>
-	</div>
-	{% endif %}
+{% from 'container_open.html.twig' import container_open as container_open %}
+{% from 'container_close.html.twig' import container_close as container_close %}
+{% from 'row_open.html.twig' import row_open as row_open %}
+{% from 'row_close.html.twig' import row_close as row_close %}
 
-	{% if teaser_mode == 'full' %}
-		{{ post.content }}
-	{% else %}
-		{{ post.get_preview }}
-	{% endif %}
-	{{ shell.clearfix }}
-</div>
+{{ container_open( 'div', '', 'entry-content', 'itemprop="description"' ) }}
+	{{ post.content }}
+{{ container_close }}

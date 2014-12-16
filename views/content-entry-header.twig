@@ -1,0 +1,20 @@
+{% from 'container_open.html.twig' import container_open as container_open %}
+{% from 'container_close.html.twig' import container_close as container_close %}
+
+<header class="entry-header">
+	{% if post.thumbnail %}
+		<div class="parallax-container featured-image">
+			<a class="parallax featured-image" href="{{ post.link }}" title="{{ post.title }}">
+				<img class="featured-image" src="{{ post.thumbnail.src|resize(thumbnail.width, thumbnail.height) }}" srcset="{{ post.thumbnail.src|resize(thumbnail.width, thumbnail.height)|retina(1) }} 1x, {{ post.thumbnail.src|resize(thumbnail.width, thumbnail.height)|retina(2) }}  2x">
+			</a>
+		</div>
+	{% endif %}
+	{{ container_open( 'div', '', 'entry-content', 'itemprop="description"' ) }}
+		{% do action( 'maera/teaser/start', post.ID ) %}
+		<title itemprop="name">{{ post.title }}</title>
+		<h2 class="entry-title"><a href="{{ post.link }}">{{ post.title|apply_filters( 'maera/title' ) }}</a></h2>
+		{% if post.post_type == 'post' %}
+			{% include 'content-single-entry-meta.twig' %}
+		{% endif %}
+	{{ container_close }}
+</header>
