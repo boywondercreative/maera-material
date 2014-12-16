@@ -2749,11 +2749,15 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
     var defaults = {
       hover: true
     }
-    options = $.extend(defaults, options);
 
-    var origin = $(this);    
-  
-    var activates = $("#"+ origin.attr('data-activates'));
+    options = $.extend(defaults, options);
+    
+    this.each(function(){
+    
+
+    var origin = $(this);
+    
+    var activates = $("#"+ origin.attr('data-activates')); // Dropdown menu
 
     activates.hide(0);
 
@@ -2769,7 +2773,7 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
       
       // Document click handler        
       activates.on('mouseleave', function(e){ // Mouse out
-        activates.hide({duration: 150, easing: 'easeOutCubic'});
+        activates.hide({duration: 175, easing: 'easeOutCubic'});
       });
       
 
@@ -2778,18 +2782,19 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
       var open = false;
 
       // Click handler for list container
-      origin.click( function(e){ // Mouse over
+      origin.click( function(e){ // Click
         e.preventDefault();
+        e.stopPropagation();
         activates.css('width', origin.outerWidth());
         activates.css('top', origin.offset().top);
         activates.css('left', origin.offset().left);
         activates.show({duration: 200, easing: 'easeOutCubic'});
 
-        $(document).bind('click', function (e) {
-
-          if (!activates.is(e.target) && !origin.is(e.target)) {
-            activates.hide({duration: 150, easing: 'easeOutCubic'});
-            $(document).unbind('click');
+        $(document).bind('click.'+ activates.attr('id'), function (e) {
+          e.preventDefault();
+          if (!activates.is(e.target) && (!origin.is(e.target))) {
+            activates.hide({duration: 175, easing: 'easeOutCubic'});
+            $(document).unbind('click.' + activates.attr('id'));
           }
 
         });
@@ -2799,77 +2804,92 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
     }
 
     // Window Resize Reposition
-    $(window).on('resize', function(){
+    $(document).on('resize', function(){
       if (origin.is(':visible')) {
         activates.css('top', origin.offset().top);
         activates.css('left', origin.offset().left);
       }
     });
-    
+   }); 
   };
-}( jQuery ));;(function($){
- 
-    $.fn.extend({ 
-         
-        leanModal: function(options) {
- 
-            var defaults = {
-                overlay: 0.5
-            }
-            
-            var overlay = $("<div id='lean_overlay'></div>");
-            $("body").append(overlay);
-            options =  $.extend(defaults, options);
-            return this.each(function() {
-            
-                var o = options;
-                $(this).click(function(e) {
-              	var modal_id = $(this).attr("href");
-				$("#lean_overlay").click(function() { 
-                     close_modal(modal_id);                    
-                });
-                
-                $(modal_id).find('.modal_close').click(function(e) { 
-                    e.preventDefault();
-                    close_modal(modal_id);            
-                });
-                  
-        		$('#lean_overlay').css({ 'display' : 'block', opacity : 0 });
-                  
-        		$('#lean_overlay').velocity({opacity: o.overlay}, {duration: 350, queue: false, ease: 'easeOutQuart'});
-//                
-//                var modal_height = $(modal_id).outerHeight();
-//        	  	var modal_width = $(modal_id).outerWidth();
-//                  
-        		$(modal_id).css({ 
-                  
-                  'display' : 'block',
-                  'position' : 'fixed',
-                  'top': 0,
-                  'opacity' : 0,
-                  'z-index': 1000
-        		});
+}( jQuery ));;(function($) {
+  $.fn.extend({
+    openModal: function(options) {
+      var modal = this;
+      var overlay = $('<div id="lean-overlay"></div>');
+      $("body").append(overlay);
 
-        		$(modal_id).velocity({top: '10%', opacity: 1}, {duration: 350, queue: false, ease: 'easeOutQuart'});
+      var defaults = {
+        opacity: 0.5,
+        in_duration: 300,
+        out_duration: 200,
+        ready: undefined,
+        complete: undefined
+      }
 
-                e.preventDefault();
-                		
-              	});
-             
-            });
+      // Override defaults
+      options = $.extend(defaults, options);
 
-			function close_modal(modal_id){
-        		$("#lean_overlay").velocity( { opacity: 0}, {duration: 200, queue: false, ease: 'easeOutQuart'});
-                $(modal_id).fadeOut(200, function() {
-                    $(this).css({ "top": 0 });
-                    $("#lean_overlay").css({"display":'none'});
-                });
-			
-			}
+      $("#lean-overlay").click(function() {
+        closeModal(modal);
+      });
+
+      $(modal).find(".modal-close").click(function(e) {
+        e.preventDefault();
+        closeModal(modal);
+      });
+
+      $("#lean-overlay").css({ display : "block", opacity : 0 });
+
+      $(modal).css({
+        display : "block",
+        top: "4%",
+        opacity: 0
+      });
+
+      $("#lean-overlay").velocity({opacity: options.opacity}, {duration: options.in_duration, queue: false, ease: "easeOutCubic"});
+
+      $(modal).velocity({top: "10%", opacity: 1}, {
+        duration: options.in_duration,
+        queue: false,
+        ease: "easeOutCubic",
+        // Handle modal ready callback
+        complete: function() {
+          if (typeof(options.ready) === "function") {
+            options.ready();
+          }
         }
-    });
-     
-})(jQuery);;(function ($) {
+      });
+
+      function closeModal(modal_id) {
+        $("#lean-overlay").velocity( { opacity: 0}, {duration: options.out_duration, queue: false, ease: "easeOutQuart"});
+        $(modal_id).fadeOut(options.out_duration, function() {
+          $(modal_id).css({ top: 0});
+          $("#lean-overlay").css({display:"none"});
+
+          // Call complete callback
+          if (typeof(options.complete) === "function") {
+            options.complete();
+          }
+        });
+      }
+    }
+  });
+  
+  $.fn.extend({
+    leanModal: function(options) {
+      return this.each(function() {
+        // Close Handlers
+        $(this).click(function(e) {
+          var modal_id = $(this).attr("href");
+          $(modal_id).openModal(options);
+          e.preventDefault();
+        }); // done set on click
+      }); // done return
+    }
+  });
+})(jQuery);
+;(function ($) {
 
   $.fn.materialbox = function () {
 
@@ -3657,7 +3677,7 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
       var panning = false;
       var menuOut = false;
 
-      $('body').hammer({
+      $('nothing').hammer({
           prevent_default: false
       }).bind('pan', function(e) {
 
@@ -3670,12 +3690,7 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
             if (panning) {
               if (!$('#sidenav-overlay').length) {
                 var overlay = $('<div id="sidenav-overlay"></div>');
-                overlay.css('width', $(document).width() + 100) // account for any scrollbar
-                  .css('height', $(document).height() + 100) // account for any scrollbar
-                  .css('top', 0)
-                  .css('left', 0)
-                  .css('opacity', 0)
-                  .css('will-change', 'opacity')
+                overlay.css('opacity', 0)
                   .click(function(){
                     panning = false;
                     menuOut = false;
@@ -3745,12 +3760,7 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
           menu_id.velocity({left: 0}, {duration: 300, queue: false, easing: 'easeOutQuad'});
 
           var overlay = $('<div id="sidenav-overlay"></div>');
-          overlay.css('width', $(document).width() + 100) // account for any scrollbar
-            .css('height', $(document).height() + 100) // account for any scrollbar
-            .css('top', 0)
-            .css('left', 0)
-            .css('opacity', 0)
-            .css('will-change', 'opacity')
+          overlay.css('opacity', 0)
             .click(function(){
               menuOut = false;
               panning = false;
@@ -4066,7 +4076,6 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
   
   text_inputs.each(function(){
     if($(this).val().length !== 0) {
-     console.log('not empty') 
      $(this).siblings('label').addClass('active');
     }
   })
@@ -4176,9 +4185,6 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
   });
 
 
-  //  Select Functionality
-  //  Select Functionality
-  //  Select Functionality
   //  Select Functionality
 
   var createSelectStructure = function($select, $index) { 
