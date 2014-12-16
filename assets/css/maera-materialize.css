@@ -1962,6 +1962,20 @@ th {
 .white-text {
   color: #FFFFFF !important; }
 
+body {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+main {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+
 ul {
   list-style-type: none; }
 
@@ -2097,11 +2111,14 @@ i {
   .center-on-small-only {
     text-align: center; } }
 
-#footer {
-  text-align: center; }
-  #footer a {
-    vertical-align: top;
-    line-height: 30px; }
+footer {
+  margin-top: 20px;
+  padding-top: 20px;
+  background-color: #ee6e73; }
+  footer .footer-copyright {
+    line-height: 50px;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(51, 51, 51, 0.08); }
 
 table, th, td {
   border: none; }
@@ -4419,7 +4436,7 @@ td, th {
   content: "\e8e4"; }
 
 .container {
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   margin: 0 auto;
   max-width: 1280px;
   width: 90%; }
@@ -4431,8 +4448,8 @@ td, th {
   .container {
     width: 70%; } }
 .container .row {
-  margin-left: -0.5rem;
-  margin-right: -0.5rem; }
+  margin-left: -0.75rem;
+  margin-right: -0.75rem; }
 
 .section {
   padding-top: 1rem;
@@ -4458,7 +4475,7 @@ td, th {
     float: left;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 0 0.5rem; }
+    padding: 0 0.75rem; }
     .row .col.s1 {
       width: 8.3333333333%;
       margin-left: 0; }
@@ -4784,7 +4801,7 @@ strong {
 small {
   font-size: 75%; }
 
-.light {
+.light, footer .footer-copyright {
   font-weight: 300; }
 
 .flow-text {
@@ -5224,6 +5241,11 @@ input[type="submit"] {
   .btn-large i {
     font-size: 1.6rem; }
 
+li.divider {
+  height: 1px;
+  overflow: hidden;
+  background-color: #eeeeee; }
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -5234,8 +5256,10 @@ input[type="submit"] {
   .dropdown-content li {
     cursor: pointer;
     font-size: 1.2rem;
-    color: #212121;
-    padding: 1rem 1rem; }
+    color: #212121; }
+    .dropdown-content li a, .dropdown-content li span {
+      display: block;
+      padding: 1rem 1rem; }
   @media only screen and (min-width: 1200px) {
     .dropdown-content li:hover {
       background-color: rgba(0, 0, 0, 0.07); } }
@@ -5365,11 +5389,11 @@ input[type="submit"] {
   .modal h1, .modal h2, .modal h3, .modal h4 {
     margin-top: 0; }
 
-#lean_overlay {
+#lean-overlay {
   position: fixed;
   z-index: 999;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   bottom: 0;
   right: 0;
   height: 115%;
@@ -5432,7 +5456,7 @@ ul.collapsible {
 
 label {
   font-size: 0.8rem;
-  color: #bdbdbd; }
+  color: #9e9e9e; }
 
 /***************************
    Text Inputs + Textarea
@@ -5440,7 +5464,7 @@ label {
 .input-field {
   position: relative; }
   .input-field label {
-    color: #bdbdbd;
+    color: #9e9e9e;
     position: absolute;
     top: .8rem;
     left: .5rem;
@@ -5473,7 +5497,7 @@ input[type=date],
 textarea {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #bdbdbd;
+  border-bottom: 1px solid #9e9e9e;
   outline: none;
   height: 3rem;
   width: 100%;
@@ -5527,6 +5551,9 @@ textarea {
   display: inline-block;
   height: 25px;
   line-height: 25px;
+  font-size: 1rem;
+  -webkit-transition: 0.28s ease;
+  transition: 0.28s ease;
   -webkit-user-select: none;
   /* webkit (safari, chrome) browsers */
   -moz-user-select: none;
@@ -5576,17 +5603,31 @@ textarea {
   -ms-transform: scale(1.02);
   transform: scale(1.02); }
 
+/* Radio With gap */
+[type="radio"]:checked + label:before {
+  border-radius: 50%;
+  border: 2px solid #0f9d58; }
+
+[type="radio"].with-gap:checked + label:after {
+  border-radius: 50%;
+  border: 2px solid #0f9d58;
+  background-color: #0f9d58;
+  z-index: 0;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5); }
+
 /* Disabled style */
 [type="radio"]:disabled:not(:checked) + label:before,
 [type="radio"]:disabled:checked + label:before {
-  background-color: #7c7c7c;
-  border-color: #7c7c7c; }
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0.26); }
 
 [type="radio"]:disabled + label {
-  color: #7c7c7c; }
+  color: rgba(0, 0, 0, 0.26); }
 
 [type="radio"]:disabled:not(:checked) + label:hover:before {
-  border-color: #7c7c7c; }
+  border-color: rgba(0, 0, 0, 0.26); }
 
 /***************
    Checkboxes 
@@ -5613,6 +5654,7 @@ form p:last-child {
   display: inline-block;
   height: 25px;
   line-height: 25px;
+  font-size: 1rem;
   -webkit-user-select: none;
   /* webkit (safari, chrome) browsers */
   -moz-user-select: none;
@@ -5665,19 +5707,19 @@ form p:last-child {
   top: 0;
   left: 0;
   box-shadow: none;
-  background-color: #7c7c7c;
+  background-color: rgba(0, 0, 0, 0.26);
   width: 14px;
   height: 14px;
-  border: 2px solid #7c7c7c;
+  border: 2px solid rgba(0, 0, 0, 0.26);
   -webkit-transform: rotateZ(0deg);
   -ms-transform: rotateZ(0deg);
   transform: rotateZ(0deg); }
 
 [type="checkbox"]:disabled + label {
-  color: #7c7c7c; }
+  color: rgba(0, 0, 0, 0.26); }
 
 [type="checkbox"]:disabled:not(:checked) + label:hover:before {
-  border-color: #7c7c7c; }
+  border-color: rgba(0, 0, 0, 0.26); }
 
 /***************
   Select Field 
@@ -5688,7 +5730,7 @@ form p:last-child {
   color: #444;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #bdbdbd;
+  border-bottom: 1px solid #9e9e9e;
   outline: none;
   height: 3rem;
   line-height: 3rem;
@@ -5889,7 +5931,7 @@ ul.table-of-contents a {
     top: 0;
     height: 120%;
     background-color: #FFF;
-    z-index: 1000;
+    z-index: 999;
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     will-change: left; }
     ul.side-nav li {
@@ -5916,7 +5958,7 @@ ul.table-of-contents a {
   right: 0px;
   bottom: 0px;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  z-index: 998;
   will-change: opacity; }
 
 /*
@@ -6900,6 +6942,9 @@ ul.table-of-contents a {
 /***************
   HTML Styles
 ***************/
+html {
+  overflow-x: hidden; }
+
 body {
   background-color: #fcfcfc; }
 
@@ -6940,6 +6985,8 @@ nav ul li:hover, nav ul li.active {
     left: 0;
     right: 0;
     margin-top: -27px; }
+  .parallax-container.featured-image {
+    height: 60vh; }
 
 @media only screen and (max-width: 992px) {
   .parallax-container {
