@@ -1,4 +1,5 @@
-<div class="entry-header">
+{% import 'grid_classes.html.twig' as grid %}
+<div class="{{ grid.container() }} entry-header">
 	<title itemprop="name">{{ post.title }}</title>
 	<h1 class="entry-title">{{ post.title|apply_filters( 'maera/title' ) }}</h1>
 </div>
