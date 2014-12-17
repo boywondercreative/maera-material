@@ -1,0 +1,9 @@
+{#<?php#}
+{% extends "main.twig" %}
+{% block content %}
+
+{% for post in posts %}
+	{% include ["content-"~post.post_type~".twig", "content.twig"] %}
+{% endfor %}
+
+{% endblock %}
