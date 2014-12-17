@@ -1,5 +1,4 @@
-{% from 'container_open.html.twig' import container_open as container_open %}
-{% from 'container_close.html.twig' import container_close as container_close %}
+{% import 'grid_classes.html.twig' as grid %}
 
 <div class="entry-header">
 	{% if post.thumbnail %}
@@ -9,12 +8,12 @@
 			</a>
 		</div>
 	{% endif %}
-	{{ container_open( 'div', '', 'entry-content', 'itemprop="description"' ) }}
+	<div class="{{ grid.container() }} entry-content" itemprop="description">
 		{% do action( 'maera/teaser/start', post.ID ) %}
 		<title itemprop="name">{{ post.title }}</title>
 		<h2 class="entry-title"><a href="{{ post.link }}">{{ post.title|apply_filters( 'maera/title' ) }}</a></h2>
 		{% if post.post_type == 'post' %}
 			{% include 'content-single-entry-meta.twig' %}
 		{% endif %}
-	{{ container_close }}
+	</div>
 </div>
