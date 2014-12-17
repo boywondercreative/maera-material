@@ -96,7 +96,21 @@ ul.table-of-contents {
     min-height: 500px;
 }
 
-img {
+img, figure {
     max-width: 100%;
     height: auto;
+}
+
+.container.entry-content figure {
+    margin: 0;
+}
+
+.main-content-wrapper .parallax-container.featured-image {
+    margin-left: -.75em;
+}
+
+.container.entry-content .container.entry-meta {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
