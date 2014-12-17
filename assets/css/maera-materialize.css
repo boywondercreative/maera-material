@@ -7009,3 +7009,7 @@ ul.table-of-contents {
   background-repeat: no-repeat;
   height: 50vh;
   min-height: 500px; }
+
+img {
+  max-width: 100%;
+  height: auto; }
