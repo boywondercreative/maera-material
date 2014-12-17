@@ -1,7 +1,7 @@
 {% import 'grid_classes.html.twig' as grid %}
 <main>
 	{% do action( 'maera/wrap/before', post.ID ) %}
-	{% if sidebar.primary %}
+	{% if sidebar.primary and 0 != theme_mods.layout %}
 		<div class="{{ grid.row() }}">
 			<div class="col s{{ 12 - theme_mods.sidebar_width }} main-content-wrapper">
 				{% endif %}
@@ -12,9 +12,8 @@
 					{% do action( 'maera/main/after', post.ID ) %}
 				</div>
 				{% do action( 'maera/content/after' ) %}
-				{% if sidebar.primary %}
+				{% if sidebar.primary and 0 != theme_mods.layout %}
 			</div>
-			fff
 			<div class="col s{{ theme_mods.sidebar_width }}">
 				{{ sidebar.primary }}
 			</div>
