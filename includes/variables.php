@@ -277,3 +277,15 @@ function maera_md_depths() {
 	return $depths;
 
 }
+
+function maera_md_simple_colors() {
+	$colors = maera_md_colors();
+	$simple_colors = array();
+
+	foreach ( $colors as $color => $values ) {
+		$simple_colors[$color] = $values['label'];
+	}
+
+	return $simple_colors;
+
+}

@@ -25,7 +25,6 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			require_once( __DIR__ . '/includes/class-Maera_MD_Customizer.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Layout.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Typo.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Nav.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Styles.php');
 
 			// Enqueue the scripts
@@ -67,7 +66,7 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 		function theme_supports() {
 
 			// Add theme support for Custom Header
-			$header_args = array(
+			add_theme_support( 'custom-header', array(
 				'default-image'          => '',
 				'width'                  => 0,
 				'height'                 => 0,
@@ -80,8 +79,16 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 				'wp-head-callback'       => '',
 				'admin-head-callback'    => '',
 				'admin-preview-callback' => '',
-			);
-			add_theme_support( 'custom-header', $header_args );
+			) );
+
+			add_theme_support( 'infinite-scroll', array(
+				'type'           => 'click',
+				'footer_widgets' => false,
+				'container'      => 'content',
+				'wrapper'        => false,
+				'render'         => false,
+				'posts_per_page' => false,
+			) );
 
 		}
 

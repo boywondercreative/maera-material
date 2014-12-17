@@ -118,9 +118,9 @@ class Maera_MD_Customizer {
 
 		$controls[] = array(
 			'type'     => 'select',
-			'setting'  => 'nav_color',
-			'label'    => __( 'Navbar Color', 'maera_md' ),
-			'section'  => 'nav',
+			'setting'  => 'site_color',
+			'label'    => __( 'Site Color', 'maera_md' ),
+			'section'  => 'colors',
 			'default'  => '',
 			'priority' => 20,
 			'choices'  => $simple_colors,

@@ -3,7 +3,7 @@
 class Maera_MD_Styles {
 
 	function __construct() {
-		$this->colors = maera_md_colors();
+		$this->colors = maera_md_simple_colors();
 		add_filter( 'maera/styles', array( $this, 'color_mods' ) );
 		add_filter( 'maera/styles', array( $this, 'custom_header_css' ) );
 		add_filter( 'body_class', array( $this, 'body_background_classes' ) );
@@ -11,19 +11,13 @@ class Maera_MD_Styles {
 
 	function color_mods( $css ) {
 
-		$colors = $this->colors;
-		$simple_colors = array();
-
-		foreach ( $colors as $color => $values ) {
-			$simple_colors[$color] = $values['label'];
-		}
 		$styles = get_transient( 'maera_md_colors' );
 
 		if ( false === ( $styles ) ) {
 
 			$styles = '';
 
-			foreach ( $simple_colors as $color => $classes ) {
+			foreach ( $colors as $color => $classes ) {
 				$bg_obj  = new Jetpack_Color( '#' . $color );
 				$classes = '.' . str_replace( ' ', '.', $classes );
 
@@ -50,6 +44,7 @@ class Maera_MD_Styles {
 		$current_color = get_theme_mod( 'body_bg', '' );
 
 		if ( ! empty( $current_color ) ) {
+			print_r('-----' . $this->colors . '-----');
 			$classes[] = $this->colors[$current_color];
 		}
 
