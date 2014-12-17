@@ -1,5 +1,4 @@
-{% from 'container_open.html.twig' import container_open as container_open %}
-{% from 'container_close.html.twig' import container_close as container_close %}
+{% import 'grid_classes.html.twig' as grid %}
 {% from 'column_classes.html.twig' import column_classes as column_classes %}
 {% set logo_width_tablet = theme_mods.logo_max_width >= 4 ? 12 : theme_mods.logo_max_width * 2 %}
 {% set logo_width_medium = theme_mods.logo_max_width >= 6 ? 12 : theme_mods.logo_max_width * 2 %}
@@ -19,7 +18,7 @@
 			<nav>
 				{% block header %}
 					<div class="{{ navwrapper|apply_filters('maera/nav/class') }}">
-						{{ container_open( 'div' ) }}
+						<div class="{{ grid.container() }}">
 							<a href="#" class="brand-logo">{{ bloginfo( 'name' ) }}</a>
 							<ul id="nav-mobile" class="right side-nav">
 								{% for item in menu.primary.items %}
@@ -28,7 +27,8 @@
 									</li>
 								{% endfor %}
 							</ul>
-						{{ container_close( 'div' ) }}
+							<a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+						</div>
 					</div>
 				{% endblock %}
 			</nav>
@@ -36,8 +36,8 @@
 
 		<div class="header hero parallax-container">
 			<div class="parallax"><img src="{{ header_img }}"></div>
-			{{ container_open( 'div' ) }}
-				<div class="row">
+			<div class="{{ grid.container() }}">
+				<div class="{{ grid.row() }}">
 					<div class="{{ column_classes( [{'tablet':logo_width_tablet},{'medium':logo_width_medium},{'large':logo_width_large}] ) }} header-property-wrap">
 						<h2>{% include 'site-logo.twig' %}</h2>
 					</div>
@@ -47,7 +47,7 @@
 					</div>
 					{% endif %}
 				</div>
-			{{ container_close( 'div' ) }}
+			</div>
 		</div>
 		{% do action( 'maera/header/after', post.ID ) %}
 	</header>

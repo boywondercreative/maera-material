@@ -8,7 +8,10 @@
 		{% do action( 'maera/footer/start', post.ID ) %}
 		{{ container_open( 'div', 'wrap-footer-section', 'wrap footer-section' ) }}
 			{% do action( 'maera/footer/content' ) %}
-			<script>$(document).ready(function(){$('.parallax').parallax();});</script>
+			<script>$(document).ready(function(){
+				$('.parallax').parallax();
+				$(".button-collapse").sideNav();
+			});</script>
 			{{ container_close( 'div' ) }}
 		{% do action( 'maera/footer/end', post.ID ) %}
 	</div>
