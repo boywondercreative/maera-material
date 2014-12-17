@@ -44,7 +44,6 @@ class Maera_MD_Styles {
 		$current_color = get_theme_mod( 'body_bg', '' );
 
 		if ( ! empty( $current_color ) ) {
-			print_r('-----' . $this->colors . '-----');
 			$classes[] = $this->colors[$current_color];
 		}
 
