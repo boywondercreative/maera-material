@@ -7196,6 +7196,12 @@ body.accent-blue-grey .btn,
 body.accent-blue-grey .btn-large, body.accent-blue-grey .btn-large, body.accent-blue-grey button, body.accent-blue-grey input[type="button"], body.accent-blue-grey input[type="reset"], body.accent-blue-grey input[type="submit"] {
   color: #fff; }
 
+@media only screen and (max-width: 992px) {
+  body.blue-grey.darken-4 ul.side-nav {
+    background: #263238; }
+    body.blue-grey.darken-4 ul.side-nav li:hover,
+    body.blue-grey.darken-4 ul.side-nav li .active {
+      background: #37474f; } }
 ul.pagination {
   text-align: center; }
   ul.pagination li {

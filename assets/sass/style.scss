@@ -235,9 +235,22 @@ body {
             color: #fff;
         }
     }
-
 }
 
+@media #{$medium-and-down} {
+    body.blue-grey.darken-4 {
+        ul.side-nav {
+            background: color("blue-grey", "darken-4");
+
+            li {
+                &:hover,
+                .active {
+                    background: color("blue-grey", "darken-3");
+                }
+            }
+        }
+    }
+}
 ul.pagination {
     text-align: center;
     li {
