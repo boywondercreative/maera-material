@@ -20,7 +20,7 @@ class Maera_MD_Styles {
 
 			$styles = '';
 
-			foreach ( $colors as $color => $classes ) {
+			foreach ( $this->colors as $color => $classes ) {
 				$bg_obj  = new Jetpack_Color( '#' . $color );
 				$classes = '.' . str_replace( ' ', '.', $classes );
 
