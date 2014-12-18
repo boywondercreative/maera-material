@@ -1,13 +1,6 @@
 {% import 'grid_classes.html.twig' as grid %}
 
 <div class="entry-header">
-	{% if post.thumbnail %}
-	<div class="parallax-container featured-image">
-		<a class="parallax featured-image" href="{{ post.link }}" title="{{ post.title }}">
-			<img class="featured-image" src="{{ post.thumbnail.src|resize(thumbnail.width, thumbnail.height) }}" srcset="{{ post.thumbnail.src|resize(thumbnail.width, thumbnail.height)|retina(1) }} 1x, {{ post.thumbnail.src|resize(thumbnail.width, thumbnail.height)|retina(2) }}  2x">
-		</a>
-	</div>
-	{% endif %}
 	<div class="{{ grid.container() }} entry-content" itemprop="description">
 		{% do action( 'maera/teaser/start', post.ID ) %}
 		<title itemprop="name">{{ post.title }}</title>
