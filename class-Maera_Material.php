@@ -74,7 +74,7 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 				'flex-height'            => true,
 				'uploads'                => true,
 				'random-default'         => true,
-				'header-text'            => true,
+				'header-text'            => false,
 				'default-text-color'     => '#333333',
 				'wp-head-callback'       => '',
 				'admin-head-callback'    => '',
