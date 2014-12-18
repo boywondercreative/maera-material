@@ -1,0 +1,12 @@
+{% macro button_classes(color, size, type, extra) %}
+	waves-effect waves-light btn
+	{% if color == 'success' %}green{% endif %}
+	{% if color == 'info' %}cyan{% endif %}
+	{% if color == 'warning' %}orange{% endif %}
+	{% if color == 'danger' %}red{% endif %}
+	{% if size == 'large' or size == 'extra-large' %}large{% endif %}
+
+	{{ type }}
+	{{ extra }}
+
+{% endmacro %}
