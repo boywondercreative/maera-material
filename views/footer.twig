@@ -2,7 +2,7 @@
 {% from 'container_open.html.twig' import container_open as container_open %}
 {% from 'container_close.html.twig' import container_close as container_close %}
 
-<footer class="{{ theme_mods.accent_color }} lighten-2">
+<footer class="{{ red|apply_filters('maera/nav/class') }} lighten-2">
 	{% do action( 'maera/footer/before', post.ID ) %}
 	<div class="page-footer">
 		{% do action( 'maera/footer/start', post.ID ) %}

@@ -15,7 +15,7 @@
 		{% do action( 'maera/header/before', post.ID ) %}
 		{% if not theme_mods.navbar_disable %}
 			{% set navwrapper = 'nav-wrapper' %}
-			<nav class="{{ theme_mods.accent_color }} lighten-1">
+			<nav class="{{ red|apply_filters('maera/nav/class') }} lighten-1">
 				{% block header %}
 					<div class="navwrapper">
 						<div class="{{ grid.container() }}">

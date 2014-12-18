@@ -40,7 +40,7 @@ class Maera_MD_Styles {
 	}
 
 	function color( $class ) {
-		return $class . ' ' . $this->color;
+		return $class . ' ' . get_theme_mod( 'accent_color', 'red' );
 	}
 
 	/**
