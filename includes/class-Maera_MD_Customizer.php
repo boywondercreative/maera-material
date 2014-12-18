@@ -86,7 +86,7 @@ class Maera_MD_Customizer {
 		$controls[] = array(
 			'type'     => 'radio',
 			'mode'     => 'buttonset',
-			'setting'  => 'dark_light',
+			'setting'  => 'background_mode',
 			'label'    => __( 'Background Mode', 'maera_md' ),
 			'section'  => 'colors',
 			'default'  => 'light',

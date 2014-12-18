@@ -48,10 +48,11 @@ class Maera_MD_Styles {
 	 */
 	function body_classes( $classes ) {
 
-		$back_color   = get_theme_mod( 'body_bg', '' );
+		$background_mode = get_theme_mod( 'background_mode', 'light' );
 
-		if ( ! empty( $back_color ) ) {
-			$classes[] = $this->colors[$back_color];
+		if ( 'dark' == $background_mode ) {
+			$classes[] = 'blue-grey';
+			$classes[] = 'darken-4';
 		}
 
 		$classes[] = 'accent-' . get_theme_mod( 'accent_color', 'red' );
