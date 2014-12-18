@@ -15,18 +15,10 @@ class Maera_MD_Customizer {
 	function customizer_sections( $wp_customize ) {
 
 		$sections = array(
-			'layout'     => array(
-				'title'    => __( 'Layout', 'maera_md' ),
-				'priority' => 20,
-			),
-			'typography' => array(
-				'title'    => __( 'Typography', 'maera_md' ),
-				'priority' => 30,
-			),
-			'Colors' => array(
-				'title'    => __( 'Colors', 'maera_md' ),
-				'priority' => 40,
-			)
+			'layout'     => array( 'title' => __( 'Layout', 'maera_md' ), 'priority' => 20, ),
+			'typography' => array( 'title' => __( 'Typography', 'maera_md' ), 'priority' => 30, ),
+			'colors'     => array( 'title' => __( 'Colors', 'maera_md' ), 'priority' => 40, ),
+			'blog'       => array( 'title' => __( 'Blog', 'maera_md' ), 'priority' => 50, ),
 		);
 
 		foreach ( $sections as $section => $args ) {
@@ -148,6 +140,21 @@ class Maera_MD_Customizer {
 			'choices'  => array(
 				'min'  => 1,
 				'max'  => 12,
+				'step' => 1,
+			),
+		);
+
+		$controls[] = array(
+			'type'     => 'slider',
+			'setting'  => 'feat_img_height',
+			'label'    => __( 'Featured Image Height on Archives', 'maera_md' ),
+			'subtitle' => __( 'Set to 0 if you want to completely disable featured images on archives', 'maera_md' ),
+			'section'  => 'blog',
+			'priority' => 4,
+			'default'  => 60,
+			'choices'  => array(
+				'min'  => 0,
+				'max'  => 100,
 				'step' => 1,
 			),
 		);

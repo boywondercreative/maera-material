@@ -6,6 +6,7 @@ class Maera_MD_Styles {
 		$this->colors = maera_md_simple_colors();
 		add_filter( 'maera/styles', array( $this, 'color_mods' ) );
 		add_filter( 'maera/styles', array( $this, 'custom_header_css' ) );
+		add_filter( 'maera/styles', array( $this, 'featured_image_height' ) );
 		add_filter( 'body_class', array( $this, 'body_classes' ) );
 
 		$this->color = get_theme_mod( 'accent_color', '' );
@@ -72,6 +73,10 @@ class Maera_MD_Styles {
 
 		return $styles;
 
+	}
+
+	function featured_image_height( $styles ) {
+		return $styles . '.parallax-container.featured-image{height:' . get_theme_mod( 'feat_img_height', 60 ) . 'vh;}';
 	}
 
 }

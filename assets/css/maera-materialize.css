@@ -6982,8 +6982,6 @@ nav a {
     left: 0;
     right: 0;
     margin-top: -27px; }
-  .parallax-container.featured-image {
-    height: 60vh; }
 
 @media only screen and (max-width: 992px) {
   .parallax-container {
