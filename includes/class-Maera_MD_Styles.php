@@ -54,7 +54,7 @@ class Maera_MD_Styles {
 			$classes[] = $this->colors[$back_color];
 		}
 
-		$classes[] = 'links-' . get_theme_mod( 'accent_color', 'red' );
+		$classes[] = 'accent-' . get_theme_mod( 'accent_color', 'red' );
 
 		return $classes;
 

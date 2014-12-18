@@ -19,7 +19,7 @@
 				{% block header %}
 					<div class="navwrapper">
 						<div class="{{ grid.container() }}">
-							<a href="#" class="brand-logo">{{ bloginfo( 'name' ) }}</a>
+							<a href="{{ site.link }}" class="brand-logo">{{ bloginfo( 'name' ) }}</a>
 							<ul id="nav-mobile" class="right side-nav">
 								{% for item in menu.primary.items %}
 									<li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}{% if 'current-menu-item' in item.classes %} active{% endif %}">

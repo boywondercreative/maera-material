@@ -114,45 +114,102 @@ img, figure {
 }
 
 body {
-    &.links-red a { color: color("red", "base"); }
-    &.links-pink a { color: color("pink", "base"); }
-    &.links-purple a { color: color("purple", "base"); }
-    &.links-deep-purple a { color: color("deep-purple", "base"); }
-    &.links-indigo a { color: color("indigo", "base"); }
-    &.links-blue a { color: color("blue", "base"); }
-    &.links-light-blue a { color: color("light-blue", "base"); }
-    &.links-cyan a { color: color("cyan", "base"); }
-    &.links-teal a { color: color("teal", "base"); }
-    &.links-green a { color: color("green", "base"); }
-    &.links-light-green a { color: color("light-green", "base"); }
-    &.links-lime a { color: color("lime", "base"); }
-    &.links-yellow a { color: color("yellow", "base"); }
-    &.links-amber a { color: color("amber", "base"); }
-    &.links-orange a { color: color("orange", "base"); }
-    &.links-deep-orange a { color: color("deep-orange", "base"); }
-    &.links-brown a { color: color("brown", "base"); }
-    &.links-grey a { color: color("grey", "base"); }
-    &.links-blue-grey a { color: color("blue-grey", "base"); }
+    &.accent-red {
+        a { color: color("red", "base"); }
+        blockquote { border-left: 5px solid color("red", "lighten-3"); }
+    }
+    &.accent-pink {
+        a { color: color("pink", "base"); }
+        blockquote { border-left: 5px solid color("pink", "lighten-3"); }
+    }
+    &.accent-purple {
+        a { color: color("purple", "base"); }
+        blockquote { border-left: 5px solid color("purple", "lighten-3"); }
+    }
+    &.accent-deep-purple {
+        a { color: color("deep-purple", "base"); }
+        blockquote { border-left: 5px solid color("deep-purple", "lighten-3"); }
+    }
+    &.accent-indigo {
+        a { color: color("indigo", "base"); }
+        blockquote { border-left: 5px solid color("indigo", "lighten-3"); }
+    }
+    &.accent-blue {
+        a { color: color("blue", "base"); }
+        blockquote { border-left: 5px solid color("blue", "lighten-3"); }
+    }
+    &.accent-light-blue {
+        a { color: color("light-blue", "base"); }
+        blockquote { border-left: 5px solid color("light-blue", "lighten-3"); }
+    }
+    &.accent-cyan {
+        a { color: color("cyan", "base"); }
+        blockquote { border-left: 5px solid color("cyan", "lighten-3"); }
+    }
+    &.accent-teal {
+        a { color: color("teal", "base"); }
+        blockquote { border-left: 5px solid color("teal", "lighten-3"); }
+    }
+    &.accent-green {
+        a { color: color("green", "base"); }
+        blockquote { border-left: 5px solid color("green", "lighten-3"); }
+    }
+    &.accent-light-green {
+        a { color: color("light-green", "base"); }
+        blockquote { border-left: 5px solid color("light-green", "lighten-3"); }
+    }
+    &.accent-lime {
+        a { color: color("lime", "base"); }
+        blockquote { border-left: 5px solid color("lime", "lighten-3"); }
+    }
+    &.accent-yellow {
+        a { color: color("yellow", "base"); }
+        blockquote { border-left: 5px solid color("yellow", "lighten-3"); }
+    }
+    &.accent-amber {
+        a { color: color("amber", "base"); }
+        blockquote { border-left: 5px solid color("amber", "lighten-3"); }
+    }
+    &.accent-orange {
+        a { color: color("orange", "base"); }
+        blockquote { border-left: 5px solid color("orange", "lighten-3"); }
+    }
+    &.accent-deep-orange {
+        a { color: color("deep-orange", "base"); }
+        blockquote { border-left: 5px solid color("deep-orange", "lighten-3"); }
+    }
+    &.accent-brown {
+        a { color: color("brown", "base"); }
+        blockquote { border-left: 5px solid color("brown", "lighten-3"); }
+    }
+    &.accent-grey {
+        a { color: color("grey", "base"); }
+        blockquote { border-left: 5px solid color("grey", "lighten-3"); }
+    }
+    &.accent-blue-grey {
+        a { color: color("blue-grey", "base"); }
+        blockquote { border-left: 5px solid color("blue-grey", "lighten-3"); }
+    }
 
-    &.links-red,
-    &.links-pink,
-    &.links-purple,
-    &.links-deep-purple,
-    &.links-indigo,
-    &.links-blue,
-    &.links-light-blue,
-    &.links-cyan,
-    &.links-teal,
-    &.links-green,
-    &.links-light-green,
-    &.links-lime,
-    &.links-yellow,
-    &.links-amber,
-    &.links-orange,
-    &.links-deep-orange,
-    &.links-brown,
-    &.links-grey,
-    &.links-blue-grey {
+    &.accent-red,
+    &.accent-pink,
+    &.accent-purple,
+    &.accent-deep-purple,
+    &.accent-indigo,
+    &.accent-blue,
+    &.accent-light-blue,
+    &.accent-cyan,
+    &.accent-teal,
+    &.accent-green,
+    &.accent-light-green,
+    &.accent-lime,
+    &.accent-yellow,
+    &.accent-amber,
+    &.accent-orange,
+    &.accent-deep-orange,
+    &.accent-brown,
+    &.accent-grey,
+    &.accent-blue-grey {
         nav a, footer {
             color: #fff;
         }

@@ -7022,43 +7022,81 @@ img, figure {
   margin: 0;
   padding: 0; }
 
-body.links-red a {
+body.accent-red a {
   color: #F44336; }
-body.links-pink a {
+body.accent-red blockquote {
+  border-left: 5px solid #EF9A9A; }
+body.accent-pink a {
   color: #e91e63; }
-body.links-purple a {
+body.accent-pink blockquote {
+  border-left: 5px solid #f48fb1; }
+body.accent-purple a {
   color: #9c27b0; }
-body.links-deep-purple a {
+body.accent-purple blockquote {
+  border-left: 5px solid #ce93d8; }
+body.accent-deep-purple a {
   color: #673ab7; }
-body.links-indigo a {
+body.accent-deep-purple blockquote {
+  border-left: 5px solid #b39ddb; }
+body.accent-indigo a {
   color: #3f51b5; }
-body.links-blue a {
+body.accent-indigo blockquote {
+  border-left: 5px solid #9fa8da; }
+body.accent-blue a {
   color: #2196F3; }
-body.links-light-blue a {
+body.accent-blue blockquote {
+  border-left: 5px solid #90CAF9; }
+body.accent-light-blue a {
   color: #03a9f4; }
-body.links-cyan a {
+body.accent-light-blue blockquote {
+  border-left: 5px solid #81d4fa; }
+body.accent-cyan a {
   color: #00bcd4; }
-body.links-teal a {
+body.accent-cyan blockquote {
+  border-left: 5px solid #80deea; }
+body.accent-teal a {
   color: #009688; }
-body.links-green a {
+body.accent-teal blockquote {
+  border-left: 5px solid #80cbc4; }
+body.accent-green a {
   color: #4CAF50; }
-body.links-light-green a {
+body.accent-green blockquote {
+  border-left: 5px solid #A5D6A7; }
+body.accent-light-green a {
   color: #8bc34a; }
-body.links-lime a {
+body.accent-light-green blockquote {
+  border-left: 5px solid #c5e1a5; }
+body.accent-lime a {
   color: #cddc39; }
-body.links-yellow a {
+body.accent-lime blockquote {
+  border-left: 5px solid #e6ee9c; }
+body.accent-yellow a {
   color: #ffeb3b; }
-body.links-amber a {
+body.accent-yellow blockquote {
+  border-left: 5px solid #fff59d; }
+body.accent-amber a {
   color: #ffc107; }
-body.links-orange a {
+body.accent-amber blockquote {
+  border-left: 5px solid #ffe082; }
+body.accent-orange a {
   color: #ff9800; }
-body.links-deep-orange a {
+body.accent-orange blockquote {
+  border-left: 5px solid #ffcc80; }
+body.accent-deep-orange a {
   color: #ff5722; }
-body.links-brown a {
+body.accent-deep-orange blockquote {
+  border-left: 5px solid #ffab91; }
+body.accent-brown a {
   color: #795548; }
-body.links-grey a {
+body.accent-brown blockquote {
+  border-left: 5px solid #bcaaa4; }
+body.accent-grey a {
   color: #9e9e9e; }
-body.links-blue-grey a {
+body.accent-grey blockquote {
+  border-left: 5px solid #eeeeee; }
+body.accent-blue-grey a {
   color: #607d8b; }
-body.links-red nav a, body.links-red footer, body.links-pink nav a, body.links-pink footer, body.links-purple nav a, body.links-purple footer, body.links-deep-purple nav a, body.links-deep-purple footer, body.links-indigo nav a, body.links-indigo footer, body.links-blue nav a, body.links-blue footer, body.links-light-blue nav a, body.links-light-blue footer, body.links-cyan nav a, body.links-cyan footer, body.links-teal nav a, body.links-teal footer, body.links-green nav a, body.links-green footer, body.links-light-green nav a, body.links-light-green footer, body.links-lime nav a, body.links-lime footer, body.links-yellow nav a, body.links-yellow footer, body.links-amber nav a, body.links-amber footer, body.links-orange nav a, body.links-orange footer, body.links-deep-orange nav a, body.links-deep-orange footer, body.links-brown nav a, body.links-brown footer, body.links-grey nav a, body.links-grey footer, body.links-blue-grey nav a, body.links-blue-grey footer {
+body.accent-blue-grey blockquote {
+  border-left: 5px solid #b0bec5; }
+body.accent-red nav a, body.accent-red footer, body.accent-pink nav a, body.accent-pink footer, body.accent-purple nav a, body.accent-purple footer, body.accent-deep-purple nav a, body.accent-deep-purple footer, body.accent-indigo nav a, body.accent-indigo footer, body.accent-blue nav a, body.accent-blue footer, body.accent-light-blue nav a, body.accent-light-blue footer, body.accent-cyan nav a, body.accent-cyan footer, body.accent-teal nav a, body.accent-teal footer, body.accent-green nav a, body.accent-green footer, body.accent-light-green nav a, body.accent-light-green footer, body.accent-lime nav a, body.accent-lime footer, body.accent-yellow nav a, body.accent-yellow footer, body.accent-amber nav a, body.accent-amber footer, body.accent-orange nav a, body.accent-orange footer, body.accent-deep-orange nav a, body.accent-deep-orange footer, body.accent-brown nav a, body.accent-brown footer, body.accent-grey nav a, body.accent-grey footer, body.accent-blue-grey nav a, body.accent-blue-grey footer {
   color: #fff; }
