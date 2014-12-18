@@ -264,6 +264,34 @@ function maera_md_colors() {
 
 }
 
+function maera_md_main_colors() {
+
+	$colors = array(
+		'f44336' => array( 'label' => 'red', 'classes' => 'red' ),
+		'e91e63' => array( 'label' => 'pink', 'classes' => 'pink' ),
+		'9c27b0' => array( 'label' => 'purple', 'classes' => 'purple' ),
+		'673ab7' => array( 'label' => 'deep-purple', 'classes' => 'deep-purple' ),
+		'3f51b5' => array( 'label' => 'indigo', 'classes' => 'indigo' ),
+		'2196f3' => array( 'label' => 'blue', 'classes' => 'blue' ),
+		'03a9f4' => array( 'label' => 'light-blue', 'classes' => 'light-blue' ),
+		'00bcd4' => array( 'label' => 'cyan', 'classes' => 'cyan' ),
+		'009688' => array( 'label' => 'teal', 'classes' => 'teal' ),
+		'4caf50' => array( 'label' => 'green', 'classes' => 'green' ),
+		'8bc34a' => array( 'label' => 'light-green', 'classes' => 'light-green' ),
+		'cddc39' => array( 'label' => 'lime', 'classes' => 'lime' ),
+		'ffeb3b' => array( 'label' => 'yellow', 'classes' => 'yellow' ),
+		'ffc107' => array( 'label' => 'amber', 'classes' => 'amber' ),
+		'ff9800' => array( 'label' => 'orange', 'classes' => 'orange' ),
+		'ff5722' => array( 'label' => 'deep-orange', 'classes' => 'deep-orange' ),
+		'795548' => array( 'label' => 'brown', 'classes' => 'brown' ),
+		'9e9e9e' => array( 'label' => 'grey', 'classes' => 'grey' ),
+		'607d8b' => array( 'label' => 'blue-grey', 'classes' => 'blue-grey' ),
+	);
+
+	return $colors;
+
+}
+
 function maera_md_depths() {
 
 	$depths = array(
@@ -279,11 +307,29 @@ function maera_md_depths() {
 }
 
 function maera_md_simple_colors() {
+
 	$colors = maera_md_colors();
 	$simple_colors = array();
 
 	foreach ( $colors as $color => $values ) {
 		$simple_colors[$color] = $values['label'];
+	}
+
+	return $simple_colors;
+
+}
+
+function maera_md_simple_main_colors( $only_labels = false ) {
+
+	$colors = maera_md_main_colors();
+	$simple_colors = array();
+
+	foreach ( $colors as $color => $values ) {
+		if ( $only_labels ) {
+			$simple_colors[$values['label']] = $values['label'];
+		} else {
+			$simple_colors[$color] = $values['label'];
+		}
 	}
 
 	return $simple_colors;

@@ -6,7 +6,10 @@ class Maera_MD_Styles {
 		$this->colors = maera_md_simple_colors();
 		add_filter( 'maera/styles', array( $this, 'color_mods' ) );
 		add_filter( 'maera/styles', array( $this, 'custom_header_css' ) );
-		add_filter( 'body_class', array( $this, 'body_background_classes' ) );
+		add_filter( 'body_class', array( $this, 'body_classes' ) );
+
+		$this->color = get_theme_mod( 'accent_color', '' );
+		add_filter( 'maera/nav/class', array( $this, 'color' ) );
 	}
 
 	function color_mods( $css ) {
@@ -36,16 +39,22 @@ class Maera_MD_Styles {
 
 	}
 
+	function color( $class ) {
+		return $class . ' ' . $this->color;
+	}
+
 	/**
 	 * Add background color classes to the body
 	 */
-	function body_background_classes( $classes ) {
+	function body_classes( $classes ) {
 
-		$current_color = get_theme_mod( 'body_bg', '' );
+		$back_color   = get_theme_mod( 'body_bg', '' );
 
-		if ( ! empty( $current_color ) ) {
-			$classes[] = $this->colors[$current_color];
+		if ( ! empty( $back_color ) ) {
+			$classes[] = $this->colors[$back_color];
 		}
+
+		$classes[] = 'links-' . get_theme_mod( 'accent_color', 'red' );
 
 		return $classes;
 

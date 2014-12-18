@@ -6960,11 +6960,8 @@ h1, h2, h3, h4, h5, h6 {
 
 nav a {
   -webkit-font-smoothing: antialiased; }
-nav ul li:hover, nav ul li.active {
-  background-color: #ea454b; }
 
 .header {
-  color: #ee6e73;
   font-weight: 300; }
 
 .caption {
@@ -7024,3 +7021,44 @@ img, figure {
   width: 100%;
   margin: 0;
   padding: 0; }
+
+body.links-red a {
+  color: #F44336; }
+body.links-pink a {
+  color: #e91e63; }
+body.links-purple a {
+  color: #9c27b0; }
+body.links-deep-purple a {
+  color: #673ab7; }
+body.links-indigo a {
+  color: #3f51b5; }
+body.links-blue a {
+  color: #2196F3; }
+body.links-light-blue a {
+  color: #03a9f4; }
+body.links-cyan a {
+  color: #00bcd4; }
+body.links-teal a {
+  color: #009688; }
+body.links-green a {
+  color: #4CAF50; }
+body.links-light-green a {
+  color: #8bc34a; }
+body.links-lime a {
+  color: #cddc39; }
+body.links-yellow a {
+  color: #ffeb3b; }
+body.links-amber a {
+  color: #ffc107; }
+body.links-orange a {
+  color: #ff9800; }
+body.links-deep-orange a {
+  color: #ff5722; }
+body.links-brown a {
+  color: #795548; }
+body.links-grey a {
+  color: #9e9e9e; }
+body.links-blue-grey a {
+  color: #607d8b; }
+body.links-red nav a, body.links-red footer, body.links-pink nav a, body.links-pink footer, body.links-purple nav a, body.links-purple footer, body.links-deep-purple nav a, body.links-deep-purple footer, body.links-indigo nav a, body.links-indigo footer, body.links-blue nav a, body.links-blue footer, body.links-light-blue nav a, body.links-light-blue footer, body.links-cyan nav a, body.links-cyan footer, body.links-teal nav a, body.links-teal footer, body.links-green nav a, body.links-green footer, body.links-light-green nav a, body.links-light-green footer, body.links-lime nav a, body.links-lime footer, body.links-yellow nav a, body.links-yellow footer, body.links-amber nav a, body.links-amber footer, body.links-orange nav a, body.links-orange footer, body.links-deep-orange nav a, body.links-deep-orange footer, body.links-brown nav a, body.links-brown footer, body.links-grey nav a, body.links-grey footer, body.links-blue-grey nav a, body.links-blue-grey footer {
+  color: #fff; }

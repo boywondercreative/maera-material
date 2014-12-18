@@ -15,9 +15,9 @@
 		{% do action( 'maera/header/before', post.ID ) %}
 		{% if not theme_mods.navbar_disable %}
 			{% set navwrapper = 'nav-wrapper' %}
-			<nav>
+			<nav class="{{ theme_mods.accent_color }} lighten-1">
 				{% block header %}
-					<div class="{{ navwrapper|apply_filters('maera/nav/class') }}">
+					<div class="navwrapper">
 						<div class="{{ grid.container() }}">
 							<a href="#" class="brand-logo">{{ bloginfo( 'name' ) }}</a>
 							<ul id="nav-mobile" class="right side-nav">
