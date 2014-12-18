@@ -9,25 +9,9 @@ class Maera_MD_Customizer {
 
 	}
 
-	/**
-	 * An array of the available layouts.
-	 * This will be used in the controls later.
-	 */
-	function layouts() {
-
-		$layouts = array(
-			0 => get_template_directory_uri() . '/assets/images/1c.png',
-			1 => get_template_directory_uri() . '/assets/images/2cr.png',
-			2 => get_template_directory_uri() . '/assets/images/2cl.png',
-		);
-
-		return $layouts;
-
-	}
-
 	/*
-	* Create the sections
-	*/
+	 * Create the sections
+	 */
 	function customizer_sections( $wp_customize ) {
 
 		$sections = array(
@@ -61,20 +45,6 @@ class Maera_MD_Customizer {
 
 		$controls[] = array(
 			'type'     => 'radio',
-			'mode'     => 'buttonset',
-			'setting'  => 'container',
-			'label'    => __( 'Container', 'maera_md' ),
-			'section'  => 'layout',
-			'priority' => 2,
-			'default'  => 1,
-			'choices'  => array(
-				'off'  => __( 'Off', 'maera_md' ),
-				'on'   => __( 'On', 'maera_md' ),
-			),
-		);
-
-		$controls[] = array(
-			'type'     => 'radio',
 			'mode'     => 'image',
 			'setting'  => 'layout',
 			'label'    => __( 'Layout', 'maera_md' ),
@@ -82,7 +52,11 @@ class Maera_MD_Customizer {
 			'section'  => 'layout',
 			'priority' => 3,
 			'default'  => 1,
-			'choices'  => $this->layouts(),
+			'choices'  => array(
+				0 => get_template_directory_uri() . '/assets/images/1c.png',
+				1 => get_template_directory_uri() . '/assets/images/2cr.png',
+				2 => get_template_directory_uri() . '/assets/images/2cl.png',
+			),
 		);
 
 		$controls[] = array(
@@ -110,23 +84,49 @@ class Maera_MD_Customizer {
 		);
 
 		$controls[] = array(
-			'type'     => 'select',
-			'setting'  => 'accent_color',
-			'label'    => __( 'Accent Color', 'maera_md' ),
+			'type'     => 'radio',
+			'mode'     => 'buttonset',
+			'setting'  => 'dark_light',
+			'label'    => __( 'Background Mode', 'maera_md' ),
 			'section'  => 'colors',
-			'default'  => '',
+			'default'  => 'light',
 			'priority' => 20,
-			'choices'  => maera_md_simple_main_colors( true ),
+			'choices'  => array(
+				'light' => __( 'Light', 'maera_md' ),
+				'dark'  => __( 'Dark', 'maera_md' ),
+			),
 		);
 
 		$controls[] = array(
-			'type'     => 'select',
-			'setting'  => 'body_bg',
-			'label'    => __( 'Background Color', 'maera_md' ),
+			'type'     => 'radio',
+			'mode'     => 'image',
+			'setting'  => 'accent_color',
+			'subtitle' => __( 'Please select a color. This will change the color of the navbar, links and the footer.', 'maera_md' ),
+			'label'    => __( 'Accent Color', 'maera_md' ),
 			'section'  => 'colors',
 			'default'  => '',
-			'priority' => 20,
-			'choices'  => maera_md_simple_colors(),
+			'priority' => 30,
+			'choices'  => array(
+				'red'         => MAERA_MATERIAL_SHELL_URL . '/assets/img/red.png',
+				'pink'        => MAERA_MATERIAL_SHELL_URL . '/assets/img/pink.png',
+				'purple'      => MAERA_MATERIAL_SHELL_URL . '/assets/img/purple.png',
+				'deep-purple' => MAERA_MATERIAL_SHELL_URL . '/assets/img/deep-purple.png',
+				'indigo'      => MAERA_MATERIAL_SHELL_URL . '/assets/img/indigo.png',
+				'blue'        => MAERA_MATERIAL_SHELL_URL . '/assets/img/blue.png',
+				'light-blue'  => MAERA_MATERIAL_SHELL_URL . '/assets/img/light-blue.png',
+				'cyan'        => MAERA_MATERIAL_SHELL_URL . '/assets/img/cyan.png',
+				'teal'        => MAERA_MATERIAL_SHELL_URL . '/assets/img/teal.png',
+				'green'       => MAERA_MATERIAL_SHELL_URL . '/assets/img/green.png',
+				'light-green' => MAERA_MATERIAL_SHELL_URL . '/assets/img/light-green.png',
+				'lime'        => MAERA_MATERIAL_SHELL_URL . '/assets/img/lime.png',
+				'yellow'      => MAERA_MATERIAL_SHELL_URL . '/assets/img/yellow.png',
+				'amber'       => MAERA_MATERIAL_SHELL_URL . '/assets/img/amber.png',
+				'orange'      => MAERA_MATERIAL_SHELL_URL . '/assets/img/orange.png',
+				'deep-orange' => MAERA_MATERIAL_SHELL_URL . '/assets/img/deep-orange.png',
+				'brown'       => MAERA_MATERIAL_SHELL_URL . '/assets/img/brown.png',
+				'grey'        => MAERA_MATERIAL_SHELL_URL . '/assets/img/grey.png',
+				'blue-grey'   => MAERA_MATERIAL_SHELL_URL . '/assets/img/blue-grey.png',
+			),
 		);
 
 		$controls[] = array(
