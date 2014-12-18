@@ -1,20 +1,19 @@
 {#<?php#}
+<div class="clearfix"></div>
 <ul class="pagination" itemprop="pagination">
 	{% if pagination.prev %}
-		<li><a href="{{ pagination.prev.link }}" class="prev {{ pagination.prev.link|length ? '' : 'invisible' }}">&laquo;</a></li>
-	{% endif %}
-
-	{% for page in pagination.pages %}
 		<li>
-			{% if page.link %}
-				<a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
-			{% else %}
-				<span class="{{ page.class }}">{{ page.title }}</span>
-			{% endif %}
+			<a href="{{ pagination.prev.link }}" class="btn waves-effect waves-light prev {{ pagination.prev.link|length ? '' : 'invisible' }}">
+				{{ __('Previous Posts', 'maera_md') }}<i class="mdi-navigation-chevron-left left"></i>
+			</a>
 		</li>
-	{% endfor %}
-
+	{% endif %}
 	{% if pagination.next %}
-		<li><a href="{{ pagination.next.link }}" class="next {{ pagination.next.link|length ? '' : 'invisible' }}">&raquo;</a></li>
+		<li>
+			<a href="{{ pagination.next.link }}" class="btn waves-effect waves-light next {{ pagination.next.link|length ? '' : 'invisible' }}">
+				{{ __('Next Posts', 'maera_md') }}<i class="mdi-navigation-chevron-right right"></i>
+			</a>
+		</li>
 	{% endif %}
 </ul>
+<div class="clearfix"></div>

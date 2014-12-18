@@ -7098,5 +7098,69 @@ body.accent-blue-grey a {
   color: #607d8b; }
 body.accent-blue-grey blockquote {
   border-left: 5px solid #b0bec5; }
-body.accent-red nav a, body.accent-red footer, body.accent-pink nav a, body.accent-pink footer, body.accent-purple nav a, body.accent-purple footer, body.accent-deep-purple nav a, body.accent-deep-purple footer, body.accent-indigo nav a, body.accent-indigo footer, body.accent-blue nav a, body.accent-blue footer, body.accent-light-blue nav a, body.accent-light-blue footer, body.accent-cyan nav a, body.accent-cyan footer, body.accent-teal nav a, body.accent-teal footer, body.accent-green nav a, body.accent-green footer, body.accent-light-green nav a, body.accent-light-green footer, body.accent-lime nav a, body.accent-lime footer, body.accent-yellow nav a, body.accent-yellow footer, body.accent-amber nav a, body.accent-amber footer, body.accent-orange nav a, body.accent-orange footer, body.accent-deep-orange nav a, body.accent-deep-orange footer, body.accent-brown nav a, body.accent-brown footer, body.accent-grey nav a, body.accent-grey footer, body.accent-blue-grey nav a, body.accent-blue-grey footer {
+body.accent-red nav a,
+body.accent-red footer,
+body.accent-red .btn,
+body.accent-red .btn-large, body.accent-red .btn-large, body.accent-red button, body.accent-red input[type="button"], body.accent-red input[type="reset"], body.accent-red input[type="submit"], body.accent-pink nav a,
+body.accent-pink footer,
+body.accent-pink .btn,
+body.accent-pink .btn-large, body.accent-pink .btn-large, body.accent-pink button, body.accent-pink input[type="button"], body.accent-pink input[type="reset"], body.accent-pink input[type="submit"], body.accent-purple nav a,
+body.accent-purple footer,
+body.accent-purple .btn,
+body.accent-purple .btn-large, body.accent-purple .btn-large, body.accent-purple button, body.accent-purple input[type="button"], body.accent-purple input[type="reset"], body.accent-purple input[type="submit"], body.accent-deep-purple nav a,
+body.accent-deep-purple footer,
+body.accent-deep-purple .btn,
+body.accent-deep-purple .btn-large, body.accent-deep-purple .btn-large, body.accent-deep-purple button, body.accent-deep-purple input[type="button"], body.accent-deep-purple input[type="reset"], body.accent-deep-purple input[type="submit"], body.accent-indigo nav a,
+body.accent-indigo footer,
+body.accent-indigo .btn,
+body.accent-indigo .btn-large, body.accent-indigo .btn-large, body.accent-indigo button, body.accent-indigo input[type="button"], body.accent-indigo input[type="reset"], body.accent-indigo input[type="submit"], body.accent-blue nav a,
+body.accent-blue footer,
+body.accent-blue .btn,
+body.accent-blue .btn-large, body.accent-blue .btn-large, body.accent-blue button, body.accent-blue input[type="button"], body.accent-blue input[type="reset"], body.accent-blue input[type="submit"], body.accent-light-blue nav a,
+body.accent-light-blue footer,
+body.accent-light-blue .btn,
+body.accent-light-blue .btn-large, body.accent-light-blue .btn-large, body.accent-light-blue button, body.accent-light-blue input[type="button"], body.accent-light-blue input[type="reset"], body.accent-light-blue input[type="submit"], body.accent-cyan nav a,
+body.accent-cyan footer,
+body.accent-cyan .btn,
+body.accent-cyan .btn-large, body.accent-cyan .btn-large, body.accent-cyan button, body.accent-cyan input[type="button"], body.accent-cyan input[type="reset"], body.accent-cyan input[type="submit"], body.accent-teal nav a,
+body.accent-teal footer,
+body.accent-teal .btn,
+body.accent-teal .btn-large, body.accent-teal .btn-large, body.accent-teal button, body.accent-teal input[type="button"], body.accent-teal input[type="reset"], body.accent-teal input[type="submit"], body.accent-green nav a,
+body.accent-green footer,
+body.accent-green .btn,
+body.accent-green .btn-large, body.accent-green .btn-large, body.accent-green button, body.accent-green input[type="button"], body.accent-green input[type="reset"], body.accent-green input[type="submit"], body.accent-light-green nav a,
+body.accent-light-green footer,
+body.accent-light-green .btn,
+body.accent-light-green .btn-large, body.accent-light-green .btn-large, body.accent-light-green button, body.accent-light-green input[type="button"], body.accent-light-green input[type="reset"], body.accent-light-green input[type="submit"], body.accent-lime nav a,
+body.accent-lime footer,
+body.accent-lime .btn,
+body.accent-lime .btn-large, body.accent-lime .btn-large, body.accent-lime button, body.accent-lime input[type="button"], body.accent-lime input[type="reset"], body.accent-lime input[type="submit"], body.accent-yellow nav a,
+body.accent-yellow footer,
+body.accent-yellow .btn,
+body.accent-yellow .btn-large, body.accent-yellow .btn-large, body.accent-yellow button, body.accent-yellow input[type="button"], body.accent-yellow input[type="reset"], body.accent-yellow input[type="submit"], body.accent-amber nav a,
+body.accent-amber footer,
+body.accent-amber .btn,
+body.accent-amber .btn-large, body.accent-amber .btn-large, body.accent-amber button, body.accent-amber input[type="button"], body.accent-amber input[type="reset"], body.accent-amber input[type="submit"], body.accent-orange nav a,
+body.accent-orange footer,
+body.accent-orange .btn,
+body.accent-orange .btn-large, body.accent-orange .btn-large, body.accent-orange button, body.accent-orange input[type="button"], body.accent-orange input[type="reset"], body.accent-orange input[type="submit"], body.accent-deep-orange nav a,
+body.accent-deep-orange footer,
+body.accent-deep-orange .btn,
+body.accent-deep-orange .btn-large, body.accent-deep-orange .btn-large, body.accent-deep-orange button, body.accent-deep-orange input[type="button"], body.accent-deep-orange input[type="reset"], body.accent-deep-orange input[type="submit"], body.accent-brown nav a,
+body.accent-brown footer,
+body.accent-brown .btn,
+body.accent-brown .btn-large, body.accent-brown .btn-large, body.accent-brown button, body.accent-brown input[type="button"], body.accent-brown input[type="reset"], body.accent-brown input[type="submit"], body.accent-grey nav a,
+body.accent-grey footer,
+body.accent-grey .btn,
+body.accent-grey .btn-large, body.accent-grey .btn-large, body.accent-grey button, body.accent-grey input[type="button"], body.accent-grey input[type="reset"], body.accent-grey input[type="submit"], body.accent-blue-grey nav a,
+body.accent-blue-grey footer,
+body.accent-blue-grey .btn,
+body.accent-blue-grey .btn-large, body.accent-blue-grey .btn-large, body.accent-blue-grey button, body.accent-blue-grey input[type="button"], body.accent-blue-grey input[type="reset"], body.accent-blue-grey input[type="submit"] {
   color: #fff; }
+
+ul.pagination {
+  text-align: center; }
+  ul.pagination li {
+    display: inline-block;
+    list-display: none;
+    list-display-type: none; }

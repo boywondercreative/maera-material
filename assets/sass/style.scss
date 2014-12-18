@@ -210,9 +210,20 @@ body {
     &.accent-brown,
     &.accent-grey,
     &.accent-blue-grey {
-        nav a, footer {
+        nav a,
+        footer,
+        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] {
             color: #fff;
         }
     }
 
+}
+
+ul.pagination {
+    text-align: center;
+    li {
+        display: inline-block;
+        list-display: none;
+        list-display-type: none;
+    }
 }
