@@ -81,14 +81,14 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 				'admin-preview-callback' => '',
 			) );
 
-			add_theme_support( 'infinite-scroll', array(
-				'type'           => 'click',
-				'footer_widgets' => false,
-				'container'      => 'content',
-				'wrapper'        => false,
-				'render'         => false,
-				'posts_per_page' => false,
-			) );
+			// add_theme_support( 'infinite-scroll', array(
+			// 	'type'           => 'click',
+			// 	'footer_widgets' => false,
+			// 	'container'      => 'content',
+			// 	'wrapper'        => false,
+			// 	'render'         => false,
+			// 	'posts_per_page' => false,
+			// ) );
 
 		}
 
