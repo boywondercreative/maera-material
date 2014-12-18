@@ -7024,78 +7024,116 @@ img, figure {
 
 body.accent-red a {
   color: #F44336; }
+body.accent-red .btn, body.accent-red .btn-large, body.accent-red .btn-large, body.accent-red button, body.accent-red input[type="button"], body.accent-red input[type="reset"], body.accent-red input[type="submit"] {
+  background: #F44336; }
 body.accent-red blockquote {
   border-left: 5px solid #EF9A9A; }
 body.accent-pink a {
   color: #e91e63; }
+body.accent-pink .btn, body.accent-pink .btn-large, body.accent-pink .btn-large, body.accent-pink button, body.accent-pink input[type="button"], body.accent-pink input[type="reset"], body.accent-pink input[type="submit"] {
+  background: #e91e63; }
 body.accent-pink blockquote {
   border-left: 5px solid #f48fb1; }
 body.accent-purple a {
   color: #9c27b0; }
+body.accent-purple .btn, body.accent-purple .btn-large, body.accent-purple .btn-large, body.accent-purple button, body.accent-purple input[type="button"], body.accent-purple input[type="reset"], body.accent-purple input[type="submit"] {
+  background: #9c27b0; }
 body.accent-purple blockquote {
   border-left: 5px solid #ce93d8; }
 body.accent-deep-purple a {
   color: #673ab7; }
+body.accent-deep-purple .btn, body.accent-deep-purple .btn-large, body.accent-deep-purple .btn-large, body.accent-deep-purple button, body.accent-deep-purple input[type="button"], body.accent-deep-purple input[type="reset"], body.accent-deep-purple input[type="submit"] {
+  background: #673ab7; }
 body.accent-deep-purple blockquote {
   border-left: 5px solid #b39ddb; }
 body.accent-indigo a {
   color: #3f51b5; }
+body.accent-indigo .btn, body.accent-indigo .btn-large, body.accent-indigo .btn-large, body.accent-indigo button, body.accent-indigo input[type="button"], body.accent-indigo input[type="reset"], body.accent-indigo input[type="submit"] {
+  background: #3f51b5; }
 body.accent-indigo blockquote {
   border-left: 5px solid #9fa8da; }
 body.accent-blue a {
   color: #2196F3; }
+body.accent-blue .btn, body.accent-blue .btn-large, body.accent-blue .btn-large, body.accent-blue button, body.accent-blue input[type="button"], body.accent-blue input[type="reset"], body.accent-blue input[type="submit"] {
+  background: #2196F3; }
 body.accent-blue blockquote {
   border-left: 5px solid #90CAF9; }
 body.accent-light-blue a {
   color: #03a9f4; }
+body.accent-light-blue .btn, body.accent-light-blue .btn-large, body.accent-light-blue .btn-large, body.accent-light-blue button, body.accent-light-blue input[type="button"], body.accent-light-blue input[type="reset"], body.accent-light-blue input[type="submit"] {
+  background: #03a9f4; }
 body.accent-light-blue blockquote {
   border-left: 5px solid #81d4fa; }
 body.accent-cyan a {
   color: #00bcd4; }
+body.accent-cyan .btn, body.accent-cyan .btn-large, body.accent-cyan .btn-large, body.accent-cyan button, body.accent-cyan input[type="button"], body.accent-cyan input[type="reset"], body.accent-cyan input[type="submit"] {
+  background: #00bcd4; }
 body.accent-cyan blockquote {
   border-left: 5px solid #80deea; }
 body.accent-teal a {
   color: #009688; }
+body.accent-teal .btn, body.accent-teal .btn-large, body.accent-teal .btn-large, body.accent-teal button, body.accent-teal input[type="button"], body.accent-teal input[type="reset"], body.accent-teal input[type="submit"] {
+  background: #009688; }
 body.accent-teal blockquote {
   border-left: 5px solid #80cbc4; }
 body.accent-green a {
   color: #4CAF50; }
+body.accent-green .btn, body.accent-green .btn-large, body.accent-green .btn-large, body.accent-green button, body.accent-green input[type="button"], body.accent-green input[type="reset"], body.accent-green input[type="submit"] {
+  background: #4CAF50; }
 body.accent-green blockquote {
   border-left: 5px solid #A5D6A7; }
 body.accent-light-green a {
   color: #8bc34a; }
+body.accent-light-green .btn, body.accent-light-green .btn-large, body.accent-light-green .btn-large, body.accent-light-green button, body.accent-light-green input[type="button"], body.accent-light-green input[type="reset"], body.accent-light-green input[type="submit"] {
+  background: #8bc34a; }
 body.accent-light-green blockquote {
   border-left: 5px solid #c5e1a5; }
 body.accent-lime a {
   color: #cddc39; }
+body.accent-lime .btn, body.accent-lime .btn-large, body.accent-lime .btn-large, body.accent-lime button, body.accent-lime input[type="button"], body.accent-lime input[type="reset"], body.accent-lime input[type="submit"] {
+  background: #cddc39; }
 body.accent-lime blockquote {
   border-left: 5px solid #e6ee9c; }
 body.accent-yellow a {
   color: #ffeb3b; }
+body.accent-yellow .btn, body.accent-yellow .btn-large, body.accent-yellow .btn-large, body.accent-yellow button, body.accent-yellow input[type="button"], body.accent-yellow input[type="reset"], body.accent-yellow input[type="submit"] {
+  background: #ffeb3b; }
 body.accent-yellow blockquote {
   border-left: 5px solid #fff59d; }
 body.accent-amber a {
   color: #ffc107; }
+body.accent-amber .btn, body.accent-amber .btn-large, body.accent-amber .btn-large, body.accent-amber button, body.accent-amber input[type="button"], body.accent-amber input[type="reset"], body.accent-amber input[type="submit"] {
+  background: #ffc107; }
 body.accent-amber blockquote {
   border-left: 5px solid #ffe082; }
 body.accent-orange a {
   color: #ff9800; }
+body.accent-orange .btn, body.accent-orange .btn-large, body.accent-orange .btn-large, body.accent-orange button, body.accent-orange input[type="button"], body.accent-orange input[type="reset"], body.accent-orange input[type="submit"] {
+  background: #ff9800; }
 body.accent-orange blockquote {
   border-left: 5px solid #ffcc80; }
 body.accent-deep-orange a {
   color: #ff5722; }
+body.accent-deep-orange .btn, body.accent-deep-orange .btn-large, body.accent-deep-orange .btn-large, body.accent-deep-orange button, body.accent-deep-orange input[type="button"], body.accent-deep-orange input[type="reset"], body.accent-deep-orange input[type="submit"] {
+  background: #ff5722; }
 body.accent-deep-orange blockquote {
   border-left: 5px solid #ffab91; }
 body.accent-brown a {
   color: #795548; }
+body.accent-brown .btn, body.accent-brown .btn-large, body.accent-brown .btn-large, body.accent-brown button, body.accent-brown input[type="button"], body.accent-brown input[type="reset"], body.accent-brown input[type="submit"] {
+  background: #795548; }
 body.accent-brown blockquote {
   border-left: 5px solid #bcaaa4; }
 body.accent-grey a {
   color: #9e9e9e; }
+body.accent-grey .btn, body.accent-grey .btn-large, body.accent-grey .btn-large, body.accent-grey button, body.accent-grey input[type="button"], body.accent-grey input[type="reset"], body.accent-grey input[type="submit"] {
+  background: #9e9e9e; }
 body.accent-grey blockquote {
   border-left: 5px solid #eeeeee; }
 body.accent-blue-grey a {
   color: #607d8b; }
+body.accent-blue-grey .btn, body.accent-blue-grey .btn-large, body.accent-blue-grey .btn-large, body.accent-blue-grey button, body.accent-blue-grey input[type="button"], body.accent-blue-grey input[type="reset"], body.accent-blue-grey input[type="submit"] {
+  background: #607d8b; }
 body.accent-blue-grey blockquote {
   border-left: 5px solid #b0bec5; }
 body.accent-red nav a,
