@@ -10,7 +10,7 @@ class Maera_MD_Widgets {
 		$widget_colors = new Maera_Widget_Dropdown(
 			array(
 				'id'      => 'maera_md_color',
-				'label'   => __( 'Width', 'maera_md' ),
+				'label'   => __( 'Color', 'maera_md' ),
 				'choices' => maera_md_colors(),
 				'default' => 0,
 			)
@@ -22,6 +22,15 @@ class Maera_MD_Widgets {
 				'label'   => __( 'Depth', 'maera_md' ),
 				'choices' => maera_md_depths(),
 				'default' => 1,
+			)
+		);
+
+		$widget_widths = new Maera_Widget_Dropdown(
+			array(
+				'id'      => 'maera_md_width',
+				'label'   => __( 'Width', 'maera_md' ),
+				'choices' => maera_md_widths(),
+				'default' => 12,
 			)
 		);
 

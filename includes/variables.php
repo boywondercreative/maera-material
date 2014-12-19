@@ -306,6 +306,27 @@ function maera_md_depths() {
 
 }
 
+function maera_md_widths() {
+
+	$depths = array(
+		12 => array( 'label' => 'Full', 'classes' => 'col s12' ),
+		1  => array( 'label' => '1/12', 'classes' => 'col s12 m12 l1' ),
+		2  => array( 'label' => '2/12', 'classes' => 'col s12 m12 l2' ),
+		3  => array( 'label' => '3/12', 'classes' => 'col s12 m12 l3' ),
+		4  => array( 'label' => '4/12', 'classes' => 'col s12 m12 l4' ),
+		5  => array( 'label' => '5/12', 'classes' => 'col s12 m12 l5' ),
+		6  => array( 'label' => '6/12', 'classes' => 'col s12 m12 l6' ),
+		7  => array( 'label' => '7/12', 'classes' => 'col s12 m12 l7' ),
+		8  => array( 'label' => '8/12', 'classes' => 'col s12 m12 l8' ),
+		9  => array( 'label' => '9/12', 'classes' => 'col s12 m12 l9' ),
+		10 => array( 'label' => '10/12', 'classes' => 'col s12 m12 l10' ),
+		11 => array( 'label' => '11/12', 'classes' => 'col s12 m12 l11' ),
+	);
+
+	return $depths;
+
+}
+
 function maera_md_simple_colors() {
 
 	$colors = maera_md_colors();
