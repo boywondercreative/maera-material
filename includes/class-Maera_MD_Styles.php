@@ -30,6 +30,8 @@ class Maera_MD_Styles {
 				$link_color = ( '000000' == $color ) ? 'rgba(0,0,0,.75)' : 'rgba(255,255,255,.75)';
 
 				$styles .= $classes . ',' . $classes . ' p{background:' . $bg . ';color:' . $color . ';}' . $classes . ' a{color:' . $link_color . ';}';
+				$styles .= $classes . ' input#searchform{border-bottom: 1px solid ' . $color . ';box-shadow: 0px 1px 0px 0px ' . $color . ';}';
+				$styles .= $classes . ' .input-field label, .input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=date]:focus + label, .input-field textarea:focus + label { color: ' . $link_color . ';}';
 			}
 
 			set_transient( 'maera_md_colors', $styles, 60 * 60 );

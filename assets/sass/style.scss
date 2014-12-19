@@ -109,127 +109,125 @@ img, figure {
     padding: 0;
 }
 
-body {
-    &.accent-red {
-        a { color: color("red", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("red", "base"); }
-        blockquote { border-left: 5px solid color("red", "lighten-3"); }
-    }
-    &.accent-pink {
-        a { color: color("pink", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("pink", "base"); }
-        blockquote { border-left: 5px solid color("pink", "lighten-3"); }
-    }
-    &.accent-purple {
-        a { color: color("purple", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("purple", "base"); }
-        blockquote { border-left: 5px solid color("purple", "lighten-3"); }
-    }
-    &.accent-deep-purple {
-        a { color: color("deep-purple", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("deep-purple", "base"); }
-        blockquote { border-left: 5px solid color("deep-purple", "lighten-3"); }
-    }
-    &.accent-indigo {
-        a { color: color("indigo", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("indigo", "base"); }
-        blockquote { border-left: 5px solid color("indigo", "lighten-3"); }
-    }
-    &.accent-blue {
-        a { color: color("blue", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("blue", "base"); }
-        blockquote { border-left: 5px solid color("blue", "lighten-3"); }
-    }
-    &.accent-light-blue {
-        a { color: color("light-blue", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("light-blue", "base"); }
-        blockquote { border-left: 5px solid color("light-blue", "lighten-3"); }
-    }
-    &.accent-cyan {
-        a { color: color("cyan", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("cyan", "base"); }
-        blockquote { border-left: 5px solid color("cyan", "lighten-3"); }
-    }
-    &.accent-teal {
-        a { color: color("teal", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("teal", "base"); }
-        blockquote { border-left: 5px solid color("teal", "lighten-3"); }
-    }
-    &.accent-green {
-        a { color: color("green", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("green", "base"); }
-        blockquote { border-left: 5px solid color("green", "lighten-3"); }
-    }
-    &.accent-light-green {
-        a { color: color("light-green", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("light-green", "base"); }
-        blockquote { border-left: 5px solid color("light-green", "lighten-3"); }
-    }
-    &.accent-lime {
-        a { color: color("lime", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("lime", "base"); }
-        blockquote { border-left: 5px solid color("lime", "lighten-3"); }
-    }
-    &.accent-yellow {
-        a { color: color("yellow", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("yellow", "base"); }
-        blockquote { border-left: 5px solid color("yellow", "lighten-3"); }
-    }
-    &.accent-amber {
-        a { color: color("amber", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("amber", "base"); }
-        blockquote { border-left: 5px solid color("amber", "lighten-3"); }
-    }
-    &.accent-orange {
-        a { color: color("orange", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("orange", "base"); }
-        blockquote { border-left: 5px solid color("orange", "lighten-3"); }
-    }
-    &.accent-deep-orange {
-        a { color: color("deep-orange", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("deep-orange", "base"); }
-        blockquote { border-left: 5px solid color("deep-orange", "lighten-3"); }
-    }
-    &.accent-brown {
-        a { color: color("brown", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("brown", "base"); }
-        blockquote { border-left: 5px solid color("brown", "lighten-3"); }
-    }
-    &.accent-grey {
-        a { color: color("grey", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("grey", "base"); }
-        blockquote { border-left: 5px solid color("grey", "lighten-3"); }
-    }
-    &.accent-blue-grey {
-        a { color: color("blue-grey", "base"); }
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("blue-grey", "base"); }
-        blockquote { border-left: 5px solid color("blue-grey", "lighten-3"); }
-    }
+.accent-red {
+    a { color: color("red", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("red", "base"); }
+    blockquote { border-left: 5px solid color("red", "lighten-3"); }
+}
+.accent-pink {
+    a { color: color("pink", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("pink", "base"); }
+    blockquote { border-left: 5px solid color("pink", "lighten-3"); }
+}
+.accent-purple {
+    a { color: color("purple", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("purple", "base"); }
+    blockquote { border-left: 5px solid color("purple", "lighten-3"); }
+}
+.accent-deep-purple {
+    a { color: color("deep-purple", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("deep-purple", "base"); }
+    blockquote { border-left: 5px solid color("deep-purple", "lighten-3"); }
+}
+.accent-indigo {
+    a { color: color("indigo", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("indigo", "base"); }
+    blockquote { border-left: 5px solid color("indigo", "lighten-3"); }
+}
+.accent-blue {
+    a { color: color("blue", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("blue", "base"); }
+    blockquote { border-left: 5px solid color("blue", "lighten-3"); }
+}
+.accent-light-blue {
+    a { color: color("light-blue", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("light-blue", "base"); }
+    blockquote { border-left: 5px solid color("light-blue", "lighten-3"); }
+}
+.accent-cyan {
+    a { color: color("cyan", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("cyan", "base"); }
+    blockquote { border-left: 5px solid color("cyan", "lighten-3"); }
+}
+.accent-teal {
+    a { color: color("teal", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("teal", "base"); }
+    blockquote { border-left: 5px solid color("teal", "lighten-3"); }
+}
+.accent-green {
+    a { color: color("green", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("green", "base"); }
+    blockquote { border-left: 5px solid color("green", "lighten-3"); }
+}
+.accent-light-green {
+    a { color: color("light-green", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("light-green", "base"); }
+    blockquote { border-left: 5px solid color("light-green", "lighten-3"); }
+}
+.accent-lime {
+    a { color: color("lime", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("lime", "base"); }
+    blockquote { border-left: 5px solid color("lime", "lighten-3"); }
+}
+.accent-yellow {
+    a { color: color("yellow", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("yellow", "base"); }
+    blockquote { border-left: 5px solid color("yellow", "lighten-3"); }
+}
+.accent-amber {
+    a { color: color("amber", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("amber", "base"); }
+    blockquote { border-left: 5px solid color("amber", "lighten-3"); }
+}
+.accent-orange {
+    a { color: color("orange", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("orange", "base"); }
+    blockquote { border-left: 5px solid color("orange", "lighten-3"); }
+}
+.accent-deep-orange {
+    a { color: color("deep-orange", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("deep-orange", "base"); }
+    blockquote { border-left: 5px solid color("deep-orange", "lighten-3"); }
+}
+.accent-brown {
+    a { color: color("brown", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("brown", "base"); }
+    blockquote { border-left: 5px solid color("brown", "lighten-3"); }
+}
+.accent-grey {
+    a { color: color("grey", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("grey", "base"); }
+    blockquote { border-left: 5px solid color("grey", "lighten-3"); }
+}
+.accent-blue-grey {
+    a { color: color("blue-grey", "base"); }
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] { background: color("blue-grey", "base"); }
+    blockquote { border-left: 5px solid color("blue-grey", "lighten-3"); }
+}
 
-    &.accent-red,
-    &.accent-pink,
-    &.accent-purple,
-    &.accent-deep-purple,
-    &.accent-indigo,
-    &.accent-blue,
-    &.accent-light-blue,
-    &.accent-cyan,
-    &.accent-teal,
-    &.accent-green,
-    &.accent-light-green,
-    &.accent-lime,
-    &.accent-yellow,
-    &.accent-amber,
-    &.accent-orange,
-    &.accent-deep-orange,
-    &.accent-brown,
-    &.accent-grey,
-    &.accent-blue-grey {
-        nav a,
-        footer,
-        .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] {
-            color: #fff;
-        }
+.accent-red,
+.accent-pink,
+.accent-purple,
+.accent-deep-purple,
+.accent-indigo,
+.accent-blue,
+.accent-light-blue,
+.accent-cyan,
+.accent-teal,
+.accent-green,
+.accent-light-green,
+.accent-lime,
+.accent-yellow,
+.accent-amber,
+.accent-orange,
+.accent-deep-orange,
+.accent-brown,
+.accent-grey,
+.accent-blue-grey {
+    nav a,
+    footer,
+    .btn, .btn-large, button, input[type="button"], input[type="reset"], input[type="submit"] {
+        color: #fff;
     }
 }
 
@@ -254,4 +252,8 @@ ul.pagination {
         list-display: none;
         list-display-type: none;
     }
+}
+
+.btn.search-submit {
+    width: 100%;
 }
