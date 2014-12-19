@@ -45,19 +45,19 @@ class Maera_MD_Widgets {
 
 		register_sidebar( array(
 			'name'          => __( 'Header', 'maera_md' ),
-			'id'            => 'header',
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title"',
+			'id'            => 'sidebar_header',
+			'before_widget' => '<section id="%1$s" class="card widget %2$s"><div class="card-content">',
+			'after_widget'  => '<div></section>',
+			'before_title'  => '<h3 class="widget-title card-title"',
 			'after_title'   => '</h3>',
 		) );
 
 		register_sidebar( array(
 			'name'          => __( 'Footer', 'maera_md' ),
-			'id'            => 'footer',
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title"',
+			'id'            => 'sidebar_footer',
+			'before_widget' => '<section id="%1$s" class="card widget %2$s"><div class="card-content">',
+			'after_widget'  => '<div></section>',
+			'before_title'  => '<h3 class="widget-title card-title"',
 			'after_title'   => '</h3>',
 		) );
 
