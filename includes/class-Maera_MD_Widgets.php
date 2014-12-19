@@ -11,7 +11,7 @@ class Maera_MD_Widgets {
 			array(
 				'id'      => 'maera_md_color',
 				'label'   => __( 'Color', 'maera_md' ),
-				'choices' => maera_md_colors(),
+				'choices' => Maera_MD_Data::colors(),
 				'default' => 0,
 			)
 		);
@@ -20,7 +20,7 @@ class Maera_MD_Widgets {
 			array(
 				'id'      => 'maera_md_depth',
 				'label'   => __( 'Depth', 'maera_md' ),
-				'choices' => maera_md_depths(),
+				'choices' => Maera_MD_Data::depths(),
 				'default' => 1,
 			)
 		);
@@ -29,7 +29,7 @@ class Maera_MD_Widgets {
 			array(
 				'id'      => 'maera_md_width',
 				'label'   => __( 'Width', 'maera_md' ),
-				'choices' => maera_md_widths(),
+				'choices' => Maera_MD_Data::widths(),
 				'default' => 12,
 			)
 		);
