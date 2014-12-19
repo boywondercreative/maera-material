@@ -84,4 +84,3 @@ class Maera_MD_Widgets {
 	}
 
 }
-$widget_costomizations = new Maera_MD_Widgets();

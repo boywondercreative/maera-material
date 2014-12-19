@@ -82,4 +82,3 @@ class Maera_MD_Styles {
 	}
 
 }
-$styles = new Maera_MD_Styles();

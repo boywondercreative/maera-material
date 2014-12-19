@@ -64,5 +64,3 @@ class Maera_MD_Layout {
 	// }
 
 }
-// Instantianate the class
-$layout = new Maera_MD_Layout();

@@ -46,14 +46,14 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 				define( 'MAERA_SHELL_PATH', dirname( __FILE__ ) );
 			}
 
-			require_once( __DIR__ . '/includes/variables.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Timber.php');
-			require_once( __DIR__ . '/includes/class-Maera_Widget_Dropdown.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Widgets.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Customizer.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Layout.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Typo.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Styles.php');
+			$this->requires();
+
+			$maera_md_timber     = new Maera_MD_Timber();
+			$maera_md_widgets    = new Maera_MD_Widgets();
+			$maera_md_customizer = new Maera_MD_Customizer();
+			$maera_md_layout     = new Maera_MD_Layout();
+			$maera_md_layout     = new Maera_MD_Typo();
+			$maera_md_styles     = new Maera_MD_Styles();
 
 			// Enqueue the scripts
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
@@ -72,6 +72,23 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			}
 
 			return self::$instance;
+
+		}
+
+		/**
+		 * Include required files
+		 */
+		function requires() {
+
+			require_once( __DIR__ . '/includes/variables.php');
+			require_once( __DIR__ . '/includes/class-Maera_MD_Timber.php');
+			require_once( __DIR__ . '/includes/class-Maera_Widget_Dropdown.php');
+			require_once( __DIR__ . '/includes/class-Maera_MD_Widgets.php');
+			require_once( __DIR__ . '/includes/class-Maera_MD_Customizer.php');
+			require_once( __DIR__ . '/includes/class-Maera_MD_Layout.php');
+			require_once( __DIR__ . '/includes/class-Maera_MD_Typo.php');
+			require_once( __DIR__ . '/includes/class-Maera_MD_Styles.php');
+
 		}
 
 		/**

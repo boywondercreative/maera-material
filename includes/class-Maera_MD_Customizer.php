@@ -164,5 +164,3 @@ class Maera_MD_Customizer {
 	}
 
 }
-
-$customizer = new Maera_MD_Customizer();

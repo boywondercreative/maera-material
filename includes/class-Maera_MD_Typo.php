@@ -18,4 +18,3 @@ class Maera_MD_Typo {
 	}
 
 }
-$layout = new Maera_MD_Typo();

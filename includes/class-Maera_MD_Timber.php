@@ -17,4 +17,3 @@ class Maera_MD_Timber {
 	}
 
 }
-$maera_md_timber = new Maera_MD_Timber();
