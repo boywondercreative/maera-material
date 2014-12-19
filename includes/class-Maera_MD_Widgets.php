@@ -52,7 +52,16 @@ class Maera_MD_Widgets {
 			'after_title'   => '</h3>',
 		) );
 
-	}
+		register_sidebar( array(
+			'name'          => __( 'Footer', 'maera_md' ),
+			'id'            => 'footer',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title"',
+			'after_title'   => '</h3>',
+		) );
+
+		}
 
 	function widget_class() {
 		return 'card';
