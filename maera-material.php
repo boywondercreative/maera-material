@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name:         Maera Material Shell
-Plugin URI:
+Plugin URI:          http://press.codes
 Description:         Material Design shell
-Version:             0.1-dev
+Version:             0.3-dev
 Author:              Aristeides Stathopoulos
 Author URI:          http://press.codes
 */
@@ -47,6 +47,7 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			}
 
 			$this->requires();
+			$this->required_plugins();
 
 			$maera_md_timber     = new Maera_MD_Timber();
 			$maera_md_widgets    = new Maera_MD_Widgets();
@@ -88,6 +89,26 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			require_once( __DIR__ . '/includes/class-Maera_MD_Layout.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Typo.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Styles.php');
+
+		}
+
+		/**
+		* Build the array of required plugins.
+		* You can use the 'maera/required_plugins' filter to add or remove plugins.
+		*/
+		function required_plugins( $plugins = array() ) {
+
+			if ( ! $plugins || empty( $plugins ) ) {
+				$plugins = array();
+			}
+
+			$plugins[] = array(
+				'name' => 'jQuery Updater',
+				'file' => 'jquery-updater.php',
+				'slug' => 'jquery-updater',
+			);
+
+			$plugins = new Maera_Required_Plugins( $plugins );
 
 		}
 
