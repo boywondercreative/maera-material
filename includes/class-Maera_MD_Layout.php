@@ -15,8 +15,8 @@ class Maera_MD_Layout {
 		if ( $this->layout ) {
 			// add_filter( 'maera/container_class', array( $this, 'container_class' ) );
 			// add_filter( 'maera/section_class/wrapper', array( $this, 'wrapper_class' ) );
-			// add_filter( 'maera/section_class/content', array( $this, 'content_class' ) );
-			// add_filter( 'maera/section_class/primary', array( $this, 'sidebar_class' ) );
+			add_filter( 'maera/section_class/content', array( $this, 'content_class' ) );
+			add_filter( 'maera/section_class/primary', array( $this, 'sidebar_class' ) );
 		}
 
 	}
@@ -43,24 +43,24 @@ class Maera_MD_Layout {
 	//
 	// }
 	//
-	// /**
-	//  * Filter the classes of the main content area
-	//  */
-	// function content_class( $class ) {
-	//
-	// 	$width = 12 - $this->sidebar_width;
-	// 	$alignment = ( 2 == $this->layout ) ? ' right-align' : '';
-	// 	return $class . ' col s12 m' . $width . $alignment;
-	//
-	// }
-	//
-	// /**
-	//  * Filter the classes of the sidebar
-	//  */
-	// function sidebar_class( $class ) {
-	//
-	// 	return $class . ' col s12 m' . $this->sidebar_width;
-	//
-	// }
+	/**
+	 * Filter the classes of the main content area
+	 */
+	function content_class( $class ) {
+
+		$width = 12 - $this->sidebar_width;
+		$alignment = ( 2 == $this->layout ) ? ' right-align' : '';
+		return $class . ' col s12 m' . $width . $alignment;
+
+	}
+
+	/**
+	 * Filter the classes of the sidebar
+	 */
+	function sidebar_class( $class ) {
+
+		return $class . ' col s12 m' . $this->sidebar_width;
+
+	}
 
 }

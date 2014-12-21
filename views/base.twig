@@ -3,7 +3,7 @@
 	{% do action( 'maera/wrap/before', post.ID ) %}
 	{% if sidebar.primary and 0 != theme_mods.layout %}
 		<div class="{{ grid.row() }}">
-			<div class="col s{{ 12 - theme_mods.sidebar_width }} main-content-wrapper">
+			<div class="{{ 'main-content-area'|apply_filters( 'maera/section_class/content' ) }} main-content-wrapper">
 				{% endif %}
 				{% do action( 'maera/content/before', post.ID ) %}
 				<div class="content" id="content" itemprop="mainContentOfPage">
