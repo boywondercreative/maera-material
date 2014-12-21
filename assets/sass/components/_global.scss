@@ -23,13 +23,13 @@ $medium-only: "only screen and (min-width : #{$small-screen}) and (max-width : #
 //}
 
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+  // display: flex;
+  // min-height: 100vh;
+  // flex-direction: column;
 }
 
 main {
-  flex: 1;
+  // flex: 1 0 auto;
 }
 
 ul {
@@ -40,9 +40,7 @@ a {
 	color: color("blue", "darken-1");
 	text-decoration: none;
 }
-p {
-  color: #555;
-}
+
 
 
 // No Text Select
@@ -63,7 +61,7 @@ p {
 .right-align {
   text-align: right
 }
-.center {
+.center, .center-align {
   text-align: center; 
 }
 
@@ -138,6 +136,13 @@ i {
     margin-left: 15px;
   }
 }
+
+// Images
+img.responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+
 
 // parallax
 .parallax-container {
@@ -293,7 +298,9 @@ td, th{
   margin: 0 0 1rem 0;
   border: 1px solid #e0e0e0;
   border-radius: 2px;
+
   .collection-item {
+    line-height: 1.5rem;
     padding: 10px 20px;
     margin: 0px;
     border-bottom: 1px solid #e0e0e0;
@@ -348,6 +355,7 @@ td, th{
       margin: 0px;
       padding: 0px;
       font-size: 1rem;
+
       a {
        padding: 0px 5px; 
       }
@@ -364,3 +372,29 @@ td, th{
   
 }
 
+// Badges
+span.badge {
+  min-width: 3rem;
+  padding: 0 6px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: inherit;
+  color: color('grey', 'darken-1');
+  float: right;
+  @include box-sizing(border-box);
+
+  &.new {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: color('blue', 'base');
+    @include border-radius(2px);
+  }
+  &.new:after {
+    content: " new";
+  }
+}
+
+img.circle {
+  @include border-radius(50%);
+}

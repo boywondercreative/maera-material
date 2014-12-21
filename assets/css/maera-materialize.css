@@ -1962,29 +1962,12 @@ th {
 .white-text {
   color: #FFFFFF !important; }
 
-body {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 100vh;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-
-main {
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1; }
-
 ul {
   list-style-type: none; }
 
 a {
   color: #1E88E5;
   text-decoration: none; }
-
-p {
-  color: #555; }
 
 .no-select, input[type=range], input[type=range] + .thumb {
   -webkit-touch-callout: none;
@@ -2000,7 +1983,7 @@ p {
 .right-align {
   text-align: right; }
 
-.center {
+.center, .center-align {
   text-align: center; }
 
 .left {
@@ -2059,6 +2042,10 @@ i {
   i.right {
     float: right;
     margin-left: 15px; }
+
+img.responsive-img {
+  max-width: 100%;
+  height: auto; }
 
 .parallax-container {
   position: relative;
@@ -2157,6 +2144,7 @@ td, th {
   border: 1px solid #e0e0e0;
   border-radius: 2px; }
   .collection .collection-item {
+    line-height: 1.5rem;
     padding: 10px 20px;
     margin: 0px;
     border-bottom: 1px solid #e0e0e0; }
@@ -2194,6 +2182,30 @@ td, th {
         color: #FFF; }
       .collection.pagination li:hover {
         background-color: #e1f5fe; }
+
+span.badge {
+  min-width: 3rem;
+  padding: 0 6px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: inherit;
+  color: #757575;
+  float: right;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  span.badge.new {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #2196F3;
+    border-radius: 2px;
+    background-clip: padding-box; }
+  span.badge.new:after {
+    content: " new"; }
+
+img.circle {
+  border-radius: 50%;
+  background-clip: padding-box; }
 
 @font-face {
   font-family: "Material-Design-Icons";
@@ -4745,7 +4757,7 @@ html {
   line-height: 1.5;
   font-family: "Roboto", sans-serif;
   font-weight: normal;
-  color: #212121; }
+  color: rgba(0, 0, 0, 0.87); }
   @media only screen and (min-width: 0) {
     html {
       font-size: 14px; } }
@@ -4940,6 +4952,8 @@ small {
   background-clip: padding-box; }
 
 .card {
+  position: relative;
+  overflow: hidden;
   margin-top: 10px;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -4949,6 +4963,14 @@ small {
     color: #fff;
     font-size: 24px;
     font-weight: 300; }
+  .card a {
+    color: #ffab40;
+    margin-right: 16px;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+    text-transform: uppercase; }
+    .card a:hover {
+      color: #ffd8a6; }
   .card.small {
     height: 300px;
     position: relative; }
@@ -4995,14 +5017,19 @@ small {
   .card .card-action {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
     padding: 16px; }
-    .card .card-action a {
-      color: #ffab40;
-      margin-right: 16px;
-      -webkit-transition: color 0.3s ease;
-      transition: color 0.3s ease;
-      text-transform: uppercase; }
-      .card .card-action a:hover {
-        color: #ffd8a6; }
+  .card .card-reveal {
+    padding: 16px;
+    position: absolute;
+    background-color: #FFF;
+    height: 100%;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .card .card-reveal span.card-title {
+      cursor: pointer;
+      display: block; }
 
 #toast-container {
   display: block;
@@ -5036,8 +5063,22 @@ small {
   height: 48px;
   line-height: 48px;
   background-color: #323232;
-  padding: 0px 24px;
-  display: block; }
+  padding: 0px 20px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #FFF;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+  .toast .btn, .toast .btn-large, .toast .btn-flat {
+    margin: 0;
+    margin-left: 3rem; }
   .toast.rounded {
     border-radius: 24px; }
   @media only screen and (max-width: 600px) {
@@ -5049,12 +5090,6 @@ small {
   @media only screen and (min-width: 992px) {
     .toast {
       float: right; } }
-  .toast span {
-    padding: 0px;
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: #FFF;
-    text-align: center; }
 
 ul.tabs {
   position: relative;
@@ -5106,14 +5141,14 @@ ul.tabs li.tab {
   color: #fff;
   height: 1rem;
   line-height: 1rem;
-  max-width: 200px;
   opacity: 0;
   display: none;
   position: absolute;
   text-align: center;
   overflow: hidden;
   left: 0;
-  top: 0; }
+  top: 0;
+  will-change: top, left; }
 
 .backdrop {
   position: absolute;
@@ -5127,7 +5162,8 @@ ul.tabs li.tab {
   z-index: -1;
   -webkit-transform-origin: 50% 10%;
   -ms-transform-origin: 50% 10%;
-  transform-origin: 50% 10%; }
+  transform-origin: 50% 10%;
+  will-change: transform, opacity; }
 
 .btn, .btn-large,
 .btn-flat,
@@ -5256,8 +5292,9 @@ li.divider {
   .dropdown-content li {
     cursor: pointer;
     font-size: 1.2rem;
-    color: #212121; }
-    .dropdown-content li a, .dropdown-content li span {
+    color: rgba(0, 0, 0, 0.87);
+    line-height: 1.5rem; }
+    .dropdown-content li > a, .dropdown-content li > span {
       display: block;
       padding: 1rem 1rem; }
   @media only screen and (min-width: 1200px) {
@@ -5282,17 +5319,24 @@ li.divider {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out; }
   .waves-effect .waves-ripple {
     position: absolute;
     pointer-events: none;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    background-clip: padding-box;
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.2);
-    -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+    -webkit-transition-property: -webkit-transform, opacity;
+    transition-property: transform, opacity;
     -webkit-transform: scale(0);
     -ms-transform: scale(0);
     transform: scale(0); }
@@ -5318,7 +5362,9 @@ li.divider {
 .waves-button,
 .waves-icon {
   -webkit-transform: translateZ(0);
-  -webkit-image-mask: -webkit-radial-gradient(circle, transparent, transparent); }
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(circle, #ffffff 100%, #000000 100%); }
 
 .waves-button,
 .waves-button:hover,
@@ -5344,7 +5390,7 @@ li.divider {
   .waves-input-wrapper.waves-button {
     padding: 0; }
   .waves-input-wrapper .waves-button-input {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 1; }
@@ -5377,7 +5423,7 @@ li.divider {
   margin: auto;
   overflow-y: auto;
   z-index: 1000;
-  border-radius: "2px";
+  border-radius: 2px;
   background-clip: padding-box;
   -webkit-transform: translate(0);
   -ms-transform: translate(0);
@@ -5466,8 +5512,8 @@ label {
   .input-field label {
     color: #9e9e9e;
     position: absolute;
-    top: .8rem;
-    left: .5rem;
+    top: 0.8rem;
+    left: 0.75rem;
     font-size: 1rem;
     -webkit-transition: 0.2s ease-out;
     transition: 0.2s ease-out; }
@@ -5927,7 +5973,7 @@ ul.table-of-contents a {
   ul.side-nav {
     position: fixed;
     width: 240px;
-    left: -240px;
+    left: -250px;
     top: 0;
     height: 120%;
     background-color: #FFF;
@@ -5952,7 +5998,7 @@ ul.table-of-contents a {
   #front-page-nav ul.side-nav a {
     color: #444; } }
 #sidenav-overlay {
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
