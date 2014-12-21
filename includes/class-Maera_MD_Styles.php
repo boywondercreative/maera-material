@@ -56,6 +56,9 @@ class Maera_MD_Styles {
 		if ( 'dark' == $background_mode ) {
 			$classes[] = 'blue-grey';
 			$classes[] = 'darken-4';
+			$classes[] = 'dark-mode';
+		} else {
+			$classes[] = 'light-mode';
 		}
 
 		$classes[] = 'accent-' . get_theme_mod( 'accent_color', 'red' );

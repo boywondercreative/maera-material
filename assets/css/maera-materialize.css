@@ -7336,3 +7336,6 @@ ul.pagination {
 
 .btn.search-submit, .search-submit.btn-large {
   width: 100%; }
+
+body.light-mode ul#nav-mobile a {
+  color: #333; }
