@@ -231,19 +231,27 @@ img, figure {
 }
 
 @media #{$medium-and-down} {
-    body.blue-grey.darken-4 {
-        ul.side-nav {
-            background: color("blue-grey", "darken-4");
+    body {
+        &.dark-mode {
+            ul.side-nav {
+                background: color("blue-grey", "darken-4");
 
-            li {
-                &:hover,
-                .active {
-                    background: color("blue-grey", "darken-3");
+                li {
+                    &:hover,
+                    .active {
+                        background: color("blue-grey", "darken-3");
+                    }
                 }
+            }
+        }
+        &.light-mode {
+            ul#nav-mobile a {
+                color: #333;
             }
         }
     }
 }
+
 ul.pagination {
     text-align: center;
     li {
@@ -255,8 +263,4 @@ ul.pagination {
 
 .btn.search-submit {
     width: 100%;
-}
-
-body.light-mode ul#nav-mobile a {
-    color: #333;
 }

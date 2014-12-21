@@ -7321,11 +7321,13 @@ img, figure {
   color: #fff; }
 
 @media only screen and (max-width: 992px) {
-  body.blue-grey.darken-4 ul.side-nav {
+  body.dark-mode ul.side-nav {
     background: #263238; }
-    body.blue-grey.darken-4 ul.side-nav li:hover,
-    body.blue-grey.darken-4 ul.side-nav li .active {
-      background: #37474f; } }
+    body.dark-mode ul.side-nav li:hover,
+    body.dark-mode ul.side-nav li .active {
+      background: #37474f; }
+  body.light-mode ul#nav-mobile a {
+    color: #333; } }
 ul.pagination {
   text-align: center; }
   ul.pagination li {
@@ -7335,6 +7337,3 @@ ul.pagination {
 
 .btn.search-submit, .search-submit.btn-large {
   width: 100%; }
-
-body.light-mode ul#nav-mobile a {
-  color: #333; }
