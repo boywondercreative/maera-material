@@ -14,7 +14,7 @@
 				{% do action( 'maera/content/after' ) %}
 				{% if sidebar.primary and 0 != theme_mods.layout %}
 			</div>
-			<div class="col s{{ theme_mods.sidebar_width }}">
+			<div class="{{ sidebar|apply_filters('maera/section_class/primary') }}">
 				{{ sidebar.primary }}
 			</div>
 		</div>
