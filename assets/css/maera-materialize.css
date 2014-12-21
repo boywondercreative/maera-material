@@ -7329,7 +7329,9 @@ img, figure {
     body.dark-mode ul.side-nav li .active {
       background: #37474f; }
   body.light-mode ul#nav-mobile a {
-    color: #333; } }
+    color: #333; }
+  body.admin-bar #nav-mobile {
+    margin-top: 32px; } }
 ul.pagination {
   text-align: center; }
   ul.pagination li {
