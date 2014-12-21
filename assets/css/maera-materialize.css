@@ -7095,6 +7095,8 @@ img, figure {
   background: #8bc34a; }
 .accent-light-green blockquote {
   border-left: 5px solid #c5e1a5; }
+.accent-light-green ul#nav-mobile a {
+  color: #333; }
 
 .accent-lime a {
   color: #cddc39; }
@@ -7102,6 +7104,8 @@ img, figure {
   background: #cddc39; }
 .accent-lime blockquote {
   border-left: 5px solid #e6ee9c; }
+.accent-lime ul#nav-mobile a {
+  color: #333; }
 
 .accent-yellow a {
   color: #ffeb3b; }
@@ -7109,6 +7113,8 @@ img, figure {
   background: #ffeb3b; }
 .accent-yellow blockquote {
   border-left: 5px solid #fff59d; }
+.accent-yellow ul#nav-mobile a {
+  color: #333; }
 
 .accent-amber a {
   color: #ffc107; }
@@ -7116,6 +7122,8 @@ img, figure {
   background: #ffc107; }
 .accent-amber blockquote {
   border-left: 5px solid #ffe082; }
+.accent-amber ul#nav-mobile a {
+  color: #333; }
 
 .accent-orange a {
   color: #ff9800; }
@@ -7144,6 +7152,8 @@ img, figure {
   background: #9e9e9e; }
 .accent-grey blockquote {
   border-left: 5px solid #eeeeee; }
+.accent-grey ul#nav-mobile a {
+  color: #333; }
 
 .accent-blue-grey a {
   color: #607d8b; }
