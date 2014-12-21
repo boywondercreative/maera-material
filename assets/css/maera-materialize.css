@@ -7321,6 +7321,8 @@ img, figure {
   color: #fff; }
 
 @media only screen and (max-width: 992px) {
+  body .hero .parallax {
+    position: absolute; }
   body.dark-mode ul.side-nav {
     background: #263238; }
     body.dark-mode ul.side-nav li:hover,

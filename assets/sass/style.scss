@@ -232,6 +232,10 @@ img, figure {
 
 @media #{$medium-and-down} {
     body {
+        .hero .parallax {
+            position: absolute;
+        }
+
         &.dark-mode {
             ul.side-nav {
                 background: color("blue-grey", "darken-4");
@@ -241,15 +245,19 @@ img, figure {
                     .active {
                         background: color("blue-grey", "darken-3");
                     }
+
                 }
             }
         }
+
         &.light-mode {
             ul#nav-mobile a {
                 color: #333;
             }
         }
+
     }
+
 }
 
 ul.pagination {
