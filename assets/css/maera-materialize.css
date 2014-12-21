@@ -7397,3 +7397,6 @@ ul.pagination {
 
 .btn.search-submit, .search-submit.btn-large {
   width: 100%; }
+
+footer {
+  overflow-y: hidden; }
