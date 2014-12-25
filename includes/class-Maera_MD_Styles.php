@@ -8,6 +8,7 @@ class Maera_MD_Styles {
 		add_filter( 'maera/styles', array( $this, 'custom_header_css' ) );
 		add_filter( 'maera/styles', array( $this, 'featured_image_height' ) );
 		add_filter( 'body_class', array( $this, 'body_classes' ) );
+		add_filter( 'maera_md/header_classes', array( $this, 'hero_classes' ) );
 
 		$this->color = get_theme_mod( 'accent_color', '' );
 		add_filter( 'maera/nav/class', array( $this, 'color' ) );
@@ -82,6 +83,15 @@ class Maera_MD_Styles {
 
 	function featured_image_height( $styles ) {
 		return $styles . '.parallax-container.featured-image{height:' . get_theme_mod( 'feat_img_height', 60 ) . 'vh;}';
+	}
+
+	function hero_classes() {
+
+		$main_color = get_theme_mod( 'accent_color', '' );
+		$variation  = get_theme_mod( 'header_color_variation', '' );
+
+		return $main_color . ' ' . $variation;
+
 	}
 
 }

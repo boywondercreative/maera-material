@@ -35,7 +35,7 @@
 		{% endif %}
 
 		<div class="header hero parallax-container">
-			<div class="parallax"><img src="{{ header_img }}"></div>
+			<div class="parallax {{ ''|apply_filters('maera_md/header_classes') }}"><img src="{{ header_img }}"></div>
 			<div class="{{ grid.container() }}">
 				{{ theme_mods.header_content }}
 				<div class="{{ grid.row() }}">

@@ -47,6 +47,31 @@ class Maera_MD_Customizer {
 
 		$controls[] = array(
 			'type'     => 'radio',
+			'setting'  => 'header_color_variation',
+			'label'    => __( 'Header background shade', 'maera_md' ),
+			'section'  => 'header_image',
+			'default'  => 'darken-2',
+			'priority' => 20,
+			'choices'  => array(
+				'lighten-5' => __( 'Lighten 5', 'maera_md' ),
+				'lighten-4' => __( 'Lighten 4', 'maera_md' ),
+				'lighten-3' => __( 'Lighten 3', 'maera_md' ),
+				'lighten-2' => __( 'Lighten 2', 'maera_md' ),
+				'lighten-1' => __( 'Lighten 1', 'maera_md' ),
+				'base'      => __( 'Base', 'maera_md' ),
+				'darken-1'  => __( 'Darken 1', 'maera_md' ),
+				'darken-2'  => __( 'Darken 2', 'maera_md' ),
+				'darken-3'  => __( 'Darken 3', 'maera_md' ),
+				'darken-4'  => __( 'Darken 4', 'maera_md' ),
+				'accent-1'  => __( 'Accent 1', 'maera_md' ),
+				'accent-2'  => __( 'Accent 2', 'maera_md' ),
+				'accent-3'  => __( 'Accent 3', 'maera_md' ),
+				'accent-4'  => __( 'Accent 4', 'maera_md' ),
+			),
+		);
+
+		$controls[] = array(
+			'type'     => 'radio',
 			'mode'     => 'image',
 			'setting'  => 'layout',
 			'label'    => __( 'Layout', 'maera_md' ),
