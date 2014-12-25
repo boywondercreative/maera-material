@@ -15,10 +15,11 @@ class Maera_MD_Customizer {
 	function customizer_sections( $wp_customize ) {
 
 		$sections = array(
-			'layout'     => array( 'title' => __( 'Layout', 'maera_md' ), 'priority' => 20, ),
-			'typography' => array( 'title' => __( 'Typography', 'maera_md' ), 'priority' => 30, ),
-			'colors'     => array( 'title' => __( 'Colors', 'maera_md' ), 'priority' => 40, ),
-			'blog'       => array( 'title' => __( 'Blog', 'maera_md' ), 'priority' => 50, ),
+			'layout'       => array( 'title' => __( 'Layout', 'maera_md' ), 'priority' => 20, ),
+			'typography'   => array( 'title' => __( 'Typography', 'maera_md' ), 'priority' => 30, ),
+			'colors'       => array( 'title' => __( 'Colors', 'maera_md' ), 'priority' => 40, ),
+			'blog'         => array( 'title' => __( 'Blog', 'maera_md' ), 'priority' => 50, ),
+			'header_image' => array( 'title' => __( 'Header', 'maera_md' ), 'priority' => 10 ),
 		);
 
 		foreach ( $sections as $section => $args ) {
@@ -34,6 +35,15 @@ class Maera_MD_Customizer {
 	}
 
 	function settings( $controls ) {
+
+		$controls[] = array(
+			'type'     => 'textarea',
+			'setting'  => 'header_content',
+			'label'    => __( 'Header Content', 'textdomain' ),
+			'section'  => 'header_image',
+			'default'  => '',
+			'priority' => 30,
+		);
 
 		$controls[] = array(
 			'type'     => 'radio',
