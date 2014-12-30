@@ -1,6 +1,3 @@
-$default-color: #00bcd4 !default; 
-$card-padding: 16px !default;
-$footer-font-color: #000 !default;
 
 .card-panel {
   padding: 1rem;
@@ -18,10 +15,13 @@ $footer-font-color: #000 !default;
   @extend .z-depth-1;
 
 
-  span.card-title {
+  .card-title {
     color: #fff;
     font-size: 24px;
     font-weight: 300;
+    &.activator {
+      cursor: pointer;
+    }
   }
 
   a {
@@ -71,7 +71,7 @@ $footer-font-color: #000 !default;
       z-index: -1;
     }
 
-    span.card-title {
+    .card-title {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -89,7 +89,7 @@ $footer-font-color: #000 !default;
       margin: 0;
       color: inherit;
     }
-    span.card-title {
+    .card-title {
       line-height: 48px;
     }
   }
@@ -103,10 +103,10 @@ $footer-font-color: #000 !default;
     padding: $card-padding;
     position: absolute;
     background-color: #FFF;
+    top: 100%;
     height: 100%;
-    @include transform(translateY(100%));
 
-    span.card-title {
+    .card-title {
       cursor: pointer;
       display: block;
     }

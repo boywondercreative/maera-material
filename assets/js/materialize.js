@@ -285,70 +285,93 @@ jQuery.extend( jQuery.easing,
 
   $.fn.dropdown = function (options) {
     var defaults = {
+      constrain_width: true, // Constrains width of dropdown to the activator
       hover: true
     }
 
     options = $.extend(defaults, options);
-    
     this.each(function(){
-    
-
     var origin = $(this);
     
-    var activates = $("#"+ origin.attr('data-activates')); // Dropdown menu
-
+    // Dropdown menu
+    var activates = $("#"+ origin.attr('data-activates'));
     activates.hide(0);
 
+    // Move Dropdown menu to body. This allows for absolute positioning to work
+    if ( !(activates.parent().is($('body'))) ) {
+      activates.detach();
+      $('body').append(activates);
+    }
 
-    if (defaults.hover) {
-      // Click handler for list container
-      origin.on('mouseover', function(e){ // Mouse over
+
+    /*    
+      Helper function to position and resize dropdown.
+      Used in hover and click handler.
+    */    
+    function placeDropdown() {
+      if (options.constrain_width === true) {
         activates.css('width', origin.outerWidth());
-        activates.css('top', origin.offset().top);
-        activates.css('left', origin.offset().left);
-        activates.show({duration: 200, easing: 'easeOutCubic'});
+      }
+      activates.css('top', origin.offset().top);
+      activates.css('left', origin.offset().left);
+      activates.show({duration: 250, easing: 'easeOutCubic'});
+    }
+    function elementOrParentIsFixed(element) {
+        var $element = $(element);
+        var $checkElements = $element.add($element.parents());
+        var isFixed = false;
+        $checkElements.each(function(){
+            if ($(this).css("position") === "fixed") {
+                isFixed = true;
+                return false;
+            }
+        });
+        return isFixed;
+    }
+
+    if (elementOrParentIsFixed(origin[0])) {
+      console.log('fixed it is');
+      activates.css('position', 'fixed');
+    }
+
+
+    // Hover
+    if (options.hover) {
+      // Hover handler to show dropdown
+      origin.on('mouseover', function(e){ // Mouse over
+        placeDropdown();
       });
       
       // Document click handler        
       activates.on('mouseleave', function(e){ // Mouse out
         activates.hide({duration: 175, easing: 'easeOutCubic'});
       });
-      
 
-      
+    // Click
     } else {
       var open = false;
 
-      // Click handler for list container
+      // Click handler to show dropdown
       origin.click( function(e){ // Click
-        e.preventDefault();
+        e.preventDefault(); // Prevents button click from moving window
         e.stopPropagation();
-        activates.css('width', origin.outerWidth());
-        activates.css('top', origin.offset().top);
-        activates.css('left', origin.offset().left);
-        activates.show({duration: 200, easing: 'easeOutCubic'});
-
+        placeDropdown();
         $(document).bind('click.'+ activates.attr('id'), function (e) {
           if (!activates.is(e.target) && (!origin.is(e.target))) {
             activates.hide({duration: 175, easing: 'easeOutCubic'});
             $(document).unbind('click.' + activates.attr('id'));
           }
-
         });
       });
-      
-      
-    }
+
+    } // End else
 
     // Window Resize Reposition
     $(document).on('resize', function(){
-      if (origin.is(':visible')) {
-        activates.css('top', origin.offset().top);
-        activates.css('left', origin.offset().left);
-      }
+
     });
-   }); 
-  };
+   });
+  }; // End dropdown plugin
 }( jQuery ));;(function($) {
   $.fn.extend({
     openModal: function(options) {
@@ -456,12 +479,18 @@ jQuery.extend( jQuery.easing,
         var windowWidth = window.innerWidth;
         var windowHeight = window.innerHeight;
         
-          // If already modal, do nothing
-         if (overlayActive || doneAnimating === false) {
-           returnToOriginal();
-           return false;
-         }
-        
+        // If already modal, do nothing
+        if (overlayActive || doneAnimating === false) {
+          returnToOriginal();
+          return false;
+        }
+        origin.stop();
+        $('#materialbox-overlay').stop(true, true, true);
+
+
+        // Stop ongoing animation
+        // origin.stop( {jumpToEnd: true} );
+
         // add active class
         origin.addClass('active');
         originalWidth = origin.width();
@@ -473,12 +502,18 @@ jQuery.extend( jQuery.easing,
           .css('height', originalHeight)
           .css('position', 'relative')
           .css('top', 0)
-          .css('left', 0)
-          .css('z-index', origin.attr('z-indez'));
+          .css('left', 0);
 
         
         origin.css('position', 'absolute');
-        
+
+        // Add caption if it exists
+        if (origin.data('caption') !== "") {
+          var $photo_caption = $('<div class="materialbox-caption"></div');
+          $photo_caption.text(origin.data('caption'));
+          $('body').append($photo_caption);
+        }
+
         // Add overlay
         var overlay = $('<div></div>');
         overlay.attr('id', 'materialbox-overlay')
@@ -504,6 +539,7 @@ jQuery.extend( jQuery.easing,
         var ratio = 0;
         var widthPercent = originalWidth / windowWidth;
         var heightPercent = originalHeight / windowHeight;
+        
         var newWidth = 0;
         var newHeight = 0;
 
@@ -518,15 +554,38 @@ jQuery.extend( jQuery.easing,
           newHeight = windowHeight * 0.9;
         }
 
+        // Animate caption
+        if (origin.data('caption') !== "") {
+          $photo_caption.css({ "display": "inline" });
+          $photo_caption.velocity({opacity: 1}, {duration: inDuration, queue: false, easing: 'easeOutQuad'})
+        }
+
         // Reposition Element AND Animate image + set z-index
-        origin.css('left', 0)
-          .css('top', 0)
-          .css('z-index', 1000)
-          .css('will-change', 'left, top')
-          .animate({ height: newHeight, width: newWidth }, {duration: inDuration, queue: false, easing: 'easeOutQuad'})
-          .animate({ left: $(document).scrollLeft() + windowWidth/2 - origin.parent('.material-placeholder').offset().left - newWidth/2 }, {duration: inDuration, queue: false, easing: 'easeOutQuad'})
-          .animate({ top: $(document).scrollTop() + windowHeight/2 - origin.parent('.material-placeholder').offset().top - newHeight/ 2}, {duration: inDuration, queue: false, easing: 'easeOutQuad', complete: function(){doneAnimating = true;} });
-        });
+        origin.css('z-index', 1000)
+        .css('will-change', 'left, top')
+        if(origin.hasClass('responsive-img')) {
+          origin.velocity({'max-width': newWidth, 'width': originalWidth}, {duration: 0, queue: false, 
+            complete: function(){
+              origin.css('left', 0)
+                .css('top', 0)
+                
+                .velocity({ height: newHeight, width: newWidth }, {duration: inDuration, queue: false, easing: 'easeOutQuad'})
+                .velocity({ left: $(document).scrollLeft() + windowWidth/2 - origin.parent('.material-placeholder').offset().left - newWidth/2 }, {duration: inDuration, queue: false, easing: 'easeOutQuad'})
+                .velocity({ top: $(document).scrollTop() + windowHeight/2 - origin.parent('.material-placeholder').offset().top - newHeight/ 2}, {duration: inDuration, queue: false, easing: 'easeOutQuad', complete: function(){doneAnimating = true;} });
+            }
+          });
+        }
+        else {
+          origin.css('left', 0)
+            .css('top', 0)
+            .velocity({ height: newHeight, width: newWidth }, {duration: inDuration, queue: false, easing: 'easeOutQuad'})
+            .velocity({ left: $(document).scrollLeft() + windowWidth/2 - origin.parent('.material-placeholder').offset().left - newWidth/2 }, {duration: inDuration, queue: false, easing: 'easeOutQuad'})
+            .velocity({ top: $(document).scrollTop() + windowHeight/2 - origin.parent('.material-placeholder').offset().top - newHeight/ 2}, {duration: inDuration, queue: false, easing: 'easeOutQuad', complete: function(){doneAnimating = true;} });
+        }
+
+
+
+        }); // End origin on click
 
       
       // Return on scroll
@@ -561,15 +620,18 @@ jQuery.extend( jQuery.easing,
             origin.css('z-index', original_z_index);
           });
           // Resize
-          origin.animate({ width: originalWidth}, {duration: outDuration, queue: false, easing: 'easeOutQuad'});
-          origin.animate({ height: originalHeight}, {duration: outDuration, queue: false, easing: 'easeOutQuad'});
+          origin.velocity({ width: originalWidth}, {duration: outDuration, queue: false, easing: 'easeOutQuad'});
+          origin.velocity({ height: originalHeight}, {duration: outDuration, queue: false, easing: 'easeOutQuad'});
 
           // Reposition Element
-          origin.animate({ left: 0}, {duration: outDuration, queue: false, easing: 'easeOutQuad'});
-          origin.animate({ top: 0 }, {duration: outDuration, queue: false, easing: 'easeOutQuad'});
+          origin.velocity({ left: 0}, {duration: outDuration, queue: false, easing: 'easeOutQuad'});
+          origin.velocity({ top: 0 }, {duration: outDuration, queue: false, easing: 'easeOutQuad'});
           origin.css('will-change', '');
           // add active class
           origin.removeClass('active');
+
+          // Remove Caption
+          $('.materialbox-caption').velocity({opacity: 0}, {duration: outDuration, queue: false, easing: 'easeOutQuad', complete: function(){$(this).remove();}});
       }
     });
   };
@@ -719,14 +781,13 @@ jQuery.extend( jQuery.easing,
   };
 }( jQuery ));
 ;(function ($) {
-    
-    var newTooltip;
     var timeout;
     var counter;
     var started;
     var counterInterval;
     $.fn.tooltip = function (options) {
       var margin = 5;
+      
       started = false;
 
       // Defaults
@@ -745,7 +806,7 @@ jQuery.extend( jQuery.easing,
       
       var backdrop = $('<div></div').addClass('backdrop');
       backdrop.appendTo(newTooltip);
-      backdrop.css({ top: 0, left:0, marginLeft: (newTooltip.outerWidth()/2) - (backdrop.width()/2) });
+      backdrop.css({ top: 0, left:0 });
       
 
       // Mouse In
@@ -756,21 +817,96 @@ jQuery.extend( jQuery.easing,
           counter += 50;
           if (counter >= defaults.delay && started == false) {
             started = true
-            newTooltip.css({ display: 'block' });
+            newTooltip.css({ display: 'block', left: '0px', top: '0px' });
 
-            // Bottom Position
-            newTooltip.css({top: origin.offset().top + origin.outerHeight() + margin,
-                  left: origin.offset().left + origin.outerWidth()/2 - newTooltip.outerWidth()/2 });
+            // Tooltip positioning
+            var originWidth = origin.outerWidth();
+            var originHeight = origin.outerHeight();
+            var tooltipPosition =  origin.attr('data-position');
+            var tooltipHeight = newTooltip.outerHeight();
+            var tooltipWidth = newTooltip.outerWidth();
+            var tooltipVerticalMovement = '0px';
+            var tooltipHorizontalMovement = '0px';
+            var scale_factor = 8;
+
+            // console.log(origin.offset().left);
+
+            if (tooltipPosition === "top") {
+            // Top Position
+            newTooltip.css({
+              top: origin.offset().top - tooltipHeight - margin,
+              left: origin.offset().left + originWidth/2 - tooltipWidth/2
+            });
+            tooltipVerticalMovement = '-10px';
+            backdrop.css({
+              borderRadius: '14px 14px 0 0',
+              transformOrigin: '50% 90%',
+              marginTop: tooltipHeight,
+              marginLeft: (tooltipWidth/2) - (backdrop.width()/2)
+
+            });
+            }
+            // Left Position
+            else if (tooltipPosition === "left") {
+              newTooltip.css({
+                top: origin.offset().top + originHeight/2 - tooltipHeight/2,
+                left: origin.offset().left - tooltipWidth - margin
+              });
+              tooltipHorizontalMovement = '-10px';
+              backdrop.css({
+                width: '14px',
+                height: '14px',
+                borderRadius: '14px 0 0 14px',
+                transformOrigin: '95% 50%',
+                marginTop: tooltipHeight/2,
+                marginLeft: tooltipWidth
+              });
+            }
+            // Right Position
+            else if (tooltipPosition === "right") {
+              newTooltip.css({
+                top: origin.offset().top + originHeight/2 - tooltipHeight/2,
+                left: origin.offset().left + originWidth + margin
+              });
+              tooltipHorizontalMovement = '+10px';
+              backdrop.css({
+                width: '14px',
+                height: '14px',
+                borderRadius: '0 14px 14px 0',
+                transformOrigin: '5% 50%',
+                marginTop: tooltipHeight/2,
+                marginLeft: '0px'
+              });
+            }
+            else {
+              // Bottom Position
+              newTooltip.css({
+                top: origin.offset().top + origin.outerHeight() + margin,
+                left: origin.offset().left + originWidth/2 - tooltipWidth/2
+              });
+              console.log(origin.offset().left)
+              console.log(originWidth/2)
+              console.log(tooltipWidth/2)
+              tooltipVerticalMovement = '+10px';
+              backdrop.css({
+                marginLeft: (tooltipWidth/2) - (backdrop.width()/2)
+              });
+            }
 
             // Calculate Scale to fill
-            scale_factor = newTooltip.width() / 8;
-            if (scale_factor < 8)
+            scale_factor = tooltipWidth / 8;
+            if (scale_factor < 8) {
               scale_factor = 8;
+            }
+            if (tooltipPosition === "right" || tooltipPosition === "left") {
+              scale_factor = tooltipHeight / 4;
+            }
 
-            newTooltip.velocity({ opacity: 1, marginTop: '+10px'}, { duration: 350, queue: false });
+            newTooltip.velocity({ opacity: 1, marginTop: tooltipVerticalMovement, marginLeft: tooltipHorizontalMovement}, { duration: 350, queue: false });
             backdrop.css({ display: 'block' })
-            .velocity({opacity:1},{duration: 75, delay: 0, queue: false})
+            .velocity({opacity:1},{duration: 55, delay: 0, queue: false})
             .velocity({scale: scale_factor}, {duration: 300, delay: 0, queue: false, easing: 'easeInOutQuad'});
+
           }
         }, 50); // End Interval
 
@@ -782,7 +918,7 @@ jQuery.extend( jQuery.easing,
 
         // Animate back
         newTooltip.velocity({
-          opacity: 0, marginTop: '-10px'}, { duration: 225, queue: false, delay: 275 }
+          opacity: 0, marginTop: 0, marginLeft: 0}, { duration: 225, queue: false, delay: 275 }
         );
         backdrop.velocity({opacity: 0, scale: 1}, {
           duration:225,
@@ -874,8 +1010,7 @@ jQuery.extend( jQuery.easing,
             var pos         = offset(el);
             var relativeY   = (e.pageY - pos.top);
             var relativeX   = (e.pageX - pos.left);
-            var scale       = 'scale('+((el.clientWidth / 100) * 2.5)+')';
-            // var scale = 'scale(15)';
+            var scale       = 'scale('+((el.clientWidth / 100) * 22)+')';
           
             // Support for touch devices
             if ('touches' in e) {
@@ -907,10 +1042,15 @@ jQuery.extend( jQuery.easing,
             rippleStyle.transform = scale;
             rippleStyle.opacity   = '1';
 
-            rippleStyle['-webkit-transition-duration'] = Effect.duration + 'ms';
-            rippleStyle['-moz-transition-duration']    = Effect.duration + 'ms';
-            rippleStyle['-o-transition-duration']      = Effect.duration + 'ms';
-            rippleStyle['transition-duration']         = Effect.duration + 'ms';
+            rippleStyle['-webkit-transition-duration'] = 'cubic-bezier(0.215, 0.610, 0.355, 1.000)';
+            rippleStyle['-moz-transition-duration']    = 'cubic-bezier(0.215, 0.610, 0.355, 1.000)';
+            rippleStyle['-o-transition-duration']      = 'cubic-bezier(0.215, 0.610, 0.355, 1.000)';
+            rippleStyle['transition-duration']         = 'cubic-bezier(0.215, 0.610, 0.355, 1.000)';
+
+            rippleStyle['-webkit-transition-timing-function'] = 'cubic-bezier(0.215, 0.610, 0.355, 1.000)';
+            rippleStyle['-moz-transition-timing-function']    = 'cubic-bezier(0.215, 0.610, 0.355, 1.000)';
+            rippleStyle['-o-transition-timing-function']      = 'cubic-bezier(0.215, 0.610, 0.355, 1.000)';
+            rippleStyle['transition-timing-function']         = 'cubic-bezier(0.215, 0.610, 0.355, 1.000)';
 
             ripple.setAttribute('style', convertStyle(rippleStyle));
 
@@ -1061,7 +1201,7 @@ jQuery.extend( jQuery.easing,
       Waves.displayEffect();
     });
 
-})(window);;function toast(message, displayLength, className) {
+})(window);;function toast(message, displayLength, className, completeCallback) {
     className = className || "";
     if ($('#toast-container').length == 0) {
         // create notification container
@@ -1098,7 +1238,11 @@ jQuery.extend( jQuery.easing,
                         { duration: 375,
                           easing: 'easeOutExpo',
                           queue: false,
-                          complete: function(){$(this).remove()}
+                          complete: function(){
+                            $(this).remove();
+                            if(typeof(completeCallback) === "function")
+                              completeCallback();
+                          }
                         }
                        );
         window.clearInterval(counterInterval);
@@ -1565,6 +1709,7 @@ jQuery.extend( jQuery.easing,
 			else {
 				visible.push($(this));				
 			}
+				
 
 			$('a[href=#' + visible[0].attr('id') + ']').addClass('active');
 		});
@@ -1573,13 +1718,15 @@ jQuery.extend( jQuery.easing,
 	      return value.height() != 0;
 	    });
 
-			if (visible[0]) {
+			if (visible[0]) {			
 				$('a[href=#' + visible[0].attr('id') + ']').removeClass('active');
 				var $this = $(this);
 				visible = $.grep(visible, function(value) {
 	        return value.attr('id') != $this.attr('id');
 	      });
-				$('a[href=#' + visible[0].attr('id') + ']').addClass('active');
+	      if (visible[0]) { // Check if empty
+					$('a[href=#' + visible[0].attr('id') + ']').addClass('active');
+	      }
 			}
 		});
 
@@ -1622,17 +1769,35 @@ jQuery.extend( jQuery.easing,
     
     $(input_selector).each(function(){
       if($(this).val().length !== 0) {
-       $(this).siblings('label').addClass('active');
+       $(this).siblings('label, i').addClass('active');
       }
     })
 
     $(document).on('focus', input_selector, function () {
-      $(this).siblings('label').addClass('active');
+      $(this).siblings('label, i').addClass('active');
     });
 
     $(document).on('blur', input_selector, function () {
+      console.log($(this).is(':valid'));
       if ($(this).val().length === 0) {
-        $(this).siblings('label').removeClass('active');      
+        $(this).siblings('label, i').removeClass('active');     
+
+        if ($(this).hasClass('validate')) {
+          $(this).removeClass('valid');          
+          $(this).removeClass('invalid');                 
+        } 
+      }
+      else {
+        if ($(this).hasClass('validate')) {
+          if ($(this).is(':valid')) {
+            $(this).removeClass('invalid');
+            $(this).addClass('valid');
+          }
+          else {
+            $(this).removeClass('valid');
+            $(this).addClass('invalid');         
+          }                          
+        } 
       }
     });
 
@@ -1649,7 +1814,6 @@ jQuery.extend( jQuery.easing,
         // console.log($(this).val());
         content = $(this).val();
         content = content.replace(/\n/g, '<br>');
-        console.log(content);
         hiddenDiv.html(content + '<br>');
         // console.log(hiddenDiv.html());
         $(this).css('height', hiddenDiv.height());
@@ -1740,28 +1904,32 @@ jQuery.extend( jQuery.easing,
     $.fn.material_select = function () {
       $(this).each(function(){
         $select = $(this);
-        if ( $select.hasClass('disabled') || $select.hasClass('initialized') ){
-          return false;
+        if ( $select.hasClass('browser-default') || $select.hasClass('initialized')) {
+          return; // Continue to next (return false breaks out of entire loop)
         }
 
         var uniqueID = guid();
         var wrapper = $('<div class="select-wrapper"></div>');
-        var options = $('<ul id="select-options-' + uniqueID+'" class="dropdown-content"></ul>');
+        var options = $('<ul id="select-options-' + uniqueID+'" class="dropdown-content select-dropdown"></ul>');
         var selectOptions = $select.children('option');
         var label = selectOptions.first();
 
 
         // Create Dropdown structure
         selectOptions.each(function () {
-          options.append($('<li><span>' + $(this).html() + '</span></li>'));
+          // Add disabled attr if disabled
+          options.append($('<li class="' + (($(this).is(':disabled')) ? 'disabled' : '') + '"><span>' + $(this).html() + '</span></li>'));
         });
 
 
         options.find('li').each(function (i) {
           var $curr_select = $select;
           $(this).click(function () {
-            $curr_select.find('option').eq(i + 1).prop('selected', true);
-            $curr_select.prev('span.select-dropdown').html($(this).text());
+            // Check if option element is disabled
+            if (!$(this).hasClass('disabled')) {
+              $curr_select.find('option').eq(i).prop('selected', true);
+              $curr_select.prev('span.select-dropdown').html($(this).text());
+            }
           });
         });
 
@@ -1769,10 +1937,15 @@ jQuery.extend( jQuery.easing,
         $select.wrap(wrapper);
 
         // Add Select Display Element
-        var $newSelect = $('<span class="select-dropdown" data-activates="select-options-' + uniqueID +'">' + label.html() + '</span>');
+        var $newSelect = $('<span class="select-dropdown ' + (($select.is(':disabled')) ? 'disabled' : '') 
+                         + '" data-activates="select-options-' + uniqueID +'">' + label.html() + '</span>');
         $select.before($newSelect);
         $('body').append(options);
-        $newSelect.dropdown({"hover": false});
+
+        // Check if section element is disabled
+        if (!$select.is(':disabled')) {
+          $newSelect.dropdown({"hover": false});
+        }
 
         $select.addClass('initialized');
 
@@ -1843,7 +2016,10 @@ jQuery.extend( jQuery.easing,
           $caption = $active.find('.caption');
 
           $active.removeClass('active');
-          $active.velocity({opacity: 0}, {duration: options.transition, queue: false, easing: 'easeOutQuad'});
+          $active.velocity({opacity: 0}, {duration: options.transition, queue: false, easing: 'easeOutQuad',
+                            complete: function() {
+                              $slides.not('.active').velocity({opacity: 0, translateX: 0, translateY: 0}, {duration: 0, queue: false});
+                            } });
           captionTransition($caption, options.transition);
 
 
@@ -1908,7 +2084,6 @@ jQuery.extend( jQuery.easing,
         $active.show();
       }
       else {
-        console.log("false");
         $slides.first().addClass('active').velocity({opacity: 1}, {duration: options.transition, queue: false, easing: 'easeOutQuad'});
 
         $active_index = 0;
@@ -1968,6 +2143,25 @@ jQuery.extend( jQuery.easing,
             swipeLeft = true;
           }
 
+          // Make Slide Behind active slide visible
+          var next_slide;
+          if (swipeLeft) {
+            next_slide = $curr_slide.next();
+            if (next_slide.length === 0) {
+              next_slide = $slides.first();
+            }
+            next_slide.velocity({ opacity: 1
+                }, {duration: 300, queue: false, easing: 'easeOutQuad'});
+          }
+          if (swipeRight) {
+            next_slide = $curr_slide.prev();
+            if (next_slide.length === 0) {
+              next_slide = $slides.last();
+            }
+            next_slide.velocity({ opacity: 1
+                }, {duration: 300, queue: false, easing: 'easeOutQuad'});
+          }
+
           
         }
       
@@ -2024,17 +2218,104 @@ jQuery.extend( jQuery.easing,
 
     $(document).on('click.card', '.card', function (e) {
       if ($(this).find('.card-reveal').length) {
-        console.log("card reveal");
-        if ($(e.target).is($('.card-reveal span.card-title')) || $(e.target).is($('.card-reveal span.card-title i'))) {
+        if ($(e.target).is($('.card-reveal .card-title')) || $(e.target).is($('.card-reveal .card-title i'))) {
           $(this).find('.card-reveal').velocity({translateY: 0}, {duration: 300, queue: false, easing: 'easeOutQuad'});        
         }
-        else {
+        else if ($(e.target).is($('.card .card-title')) || 
+                 $(e.target).is($('.card .card-title i')) ||
+                 $(e.target).is($('.card .card-image')) ) {
           $(this).find('.card-reveal').velocity({translateY: '-100%'}, {duration: 300, queue: false, easing: 'easeOutQuad'});        
         }
       }
 
 
     });  
+
+  });
+}( jQuery ));;(function ($) {
+  $(document).ready(function() {
+
+    // Unique ID
+    var guid = (function() {
+      function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+                   .toString(16)
+                   .substring(1);
+      }
+      return function() {
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+               s4() + '-' + s4() + s4() + s4();
+      };
+    })();
+
+    $.fn.pushpin = function (options) {
+
+      var defaults = {
+        top: 0,
+        bottom: Infinity,
+        offset: 0
+      }
+      options = $.extend(defaults, options);
+
+      $index = 0;
+      return this.each(function() {
+        var $uniqueId = guid(),
+            $this = $(this),
+            $original_offset = $(this).offset().top;
+        // console.log(options.top, options.bottom, $(this).offset().top);
+
+        function removePinClasses(object) {
+          object.removeClass('pin-top');
+          object.removeClass('pinned');
+          object.removeClass('pin-bottom');
+        }
+
+        function updateElements(objects, scrolled) {
+          // console.log("OBJECTS", objects);
+          objects.each(function () {
+            // Add position fixed (because its between top and bottom)
+            if (options.top <= scrolled && options.bottom >= scrolled && !$(this).hasClass('pinned')) {
+              removePinClasses($(this));
+              $(this).css('top', options.offset);
+              $(this).addClass('pinned');
+              // console.log("Pinned!", $(this));
+            }
+
+            // Add pin-top (when scrolled position is above top)
+            if (scrolled < options.top && !$(this).hasClass('pin-top')) {
+              removePinClasses($(this));
+              $(this).css('top', 0);
+              $(this).addClass('pin-top');
+              // console.log("Pin Top!", $(this));
+            }
+
+            // Add pin-bottom (when scrolled position is below bottom)
+            if (scrolled > options.bottom && !$(this).hasClass('pin-bottom')) {
+              removePinClasses($(this));
+              $(this).addClass('pin-bottom');
+              $(this).css('top', options.bottom - $original_offset);
+              // console.log("Pin Bottom!", $(this));
+            }
+          });
+        }
+
+
+        
+        updateElements($this, $(window).scrollTop());
+        $(window).on('scroll.' + $uniqueId, function () {
+          var $scrolled = $(window).scrollTop() + options.offset;
+          // console.log($(window).scrollTop(), $scrolled);
+          updateElements($this, $scrolled);
+        });
+
+      }); 
+
+
+
+    };
+
+  
+  
 
   });
 }( jQuery ));;/*!
