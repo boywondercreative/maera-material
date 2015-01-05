@@ -1,11 +1,5 @@
 {% import 'grid_classes.html.twig' as grid %}
 {% from 'column_classes.html.twig' import column_classes as column_classes %}
-{% set logo_width_tablet = theme_mods.logo_max_width >= 4 ? 12 : theme_mods.logo_max_width * 2 %}
-{% set logo_width_medium = theme_mods.logo_max_width >= 6 ? 12 : theme_mods.logo_max_width * 2 %}
-{% set logo_width_large  = theme_mods.logo_max_width %}
-{% set widget_width_tablet = logo_width_tablet == 12 ? 12 : 12 - logo_width_tablet %}
-{% set widget_width_medium = logo_width_medium == 12 ? 12 : 12 - logo_width_medium %}
-{% set widget_width_large  = logo_width_large  == 12 ? 12 : 12 - logo_width_large %}
 
 {% include 'head.twig' %}
 <body class="{{ body_class }}">
@@ -19,7 +13,7 @@
 				{% block header %}
 					<div class="navwrapper">
 						<div class="{{ grid.container() }}">
-							<a href="{{ site.link }}" class="brand-logo">{{ bloginfo( 'name' ) }}</a>
+							{% include 'site-logo.twig' %}
 							<ul id="nav-mobile" class="right side-nav">
 								{% for item in menu.primary.items %}
 									<li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}{% if 'current-menu-item' in item.classes %} active{% endif %}">
@@ -39,13 +33,8 @@
 			<div class="{{ grid.container() }}">
 				{{ theme_mods.header_content }}
 				<div class="{{ grid.row() }}">
-					<div class="{{ column_classes( [{'tablet':logo_width_tablet},{'medium':logo_width_medium},{'large':logo_width_large}] ) }} header-property-wrap">
-						<h2>{% include 'site-logo.twig' %}</h2>
-					</div>
 					{% if sidebar.header %}
-						<div class="{{ column_classes( [{'tablet':widget_width_tablet},{'medium':widget_width_medium},{'large':widget_width_large}] ) }}">
-							{{ sidebar.header }}
-						</div>
+						{{ sidebar.header }}
 					{% endif %}
 				</div>
 			</div>

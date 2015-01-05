@@ -20,6 +20,7 @@ class Maera_MD_Customizer {
 			'colors'       => array( 'title' => __( 'Colors', 'maera_md' ), 'priority' => 40, ),
 			'blog'         => array( 'title' => __( 'Blog', 'maera_md' ), 'priority' => 50, ),
 			'header_image' => array( 'title' => __( 'Header', 'maera_md' ), 'priority' => 10 ),
+			'advanced'     => array( 'title' => __( 'Advanced', 'maera_md' ), 'priority' => 200 ),
 		);
 
 		foreach ( $sections as $section => $args ) {
@@ -167,20 +168,6 @@ class Maera_MD_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'logo_max_width',
-			'label'    => __( 'Logo Maximum Width (1-12 columns)', 'maera_md' ),
-			'section'  => 'title_tagline',
-			'default'  => 3,
-			'priority' => 50,
-			'choices'  => array(
-				'min'  => 1,
-				'max'  => 12,
-				'step' => 1,
-			),
-		);
-
-		$controls[] = array(
-			'type'     => 'slider',
 			'setting'  => 'feat_img_height',
 			'label'    => __( 'Featured Image Height on Archives', 'maera_md' ),
 			'subtitle' => __( 'Set to 0 if you want to completely disable featured images on archives', 'maera_md' ),
@@ -192,6 +179,26 @@ class Maera_MD_Customizer {
 				'max'  => 100,
 				'step' => 1,
 			),
+		);
+
+		$controls[] = array(
+			'type'     => 'textarea',
+			'setting'  => 'css',
+			'label'    => __( 'Custom CSS', 'maera_bs' ),
+			'subtitle' => __( 'You can write your custom CSS here. This code will appear in a style tag appended in the header section of the page.', 'maera_md' ),
+			'section'  => 'advanced',
+			'priority' => 4,
+			'default'  => '',
+		);
+
+		$controls[] = array(
+			'type'     => 'textarea',
+			'setting'  => 'js',
+			'label'    => __( 'Custom JS', 'maera_bs' ),
+			'subtitle' => __( 'You can write your custom JavaScript/jQuery here. The code will be included in a script tag appended to the bottom of the page.', 'maera_md' ),
+			'section'  => 'advanced',
+			'priority' => 6,
+			'default'  => '',
 		);
 
 		return $controls;
