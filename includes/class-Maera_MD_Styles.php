@@ -12,6 +12,9 @@ class Maera_MD_Styles {
 
 		$this->color = get_theme_mod( 'accent_color', '' );
 		add_filter( 'maera/nav/class', array( $this, 'color' ) );
+
+		// Add the custom CSS
+		add_action( 'wp_enqueue_scripts', array( $this, 'custom_css' ), 105 );
 	}
 
 	function color_mods( $css ) {
@@ -92,6 +95,17 @@ class Maera_MD_Styles {
 
 		return $main_color . ' ' . $variation;
 
+	}
+
+	/**
+	* Include the custom CSS
+	*/
+	function custom_css() {
+		$css = get_theme_mod( 'css', '' );
+
+		if ( ! empty( $css ) ) {
+			wp_add_inline_style( 'maera', $css );
+		}
 	}
 
 }
