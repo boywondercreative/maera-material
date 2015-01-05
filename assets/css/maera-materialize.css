@@ -7626,3 +7626,7 @@ ul.pagination {
 
 footer {
   overflow-y: hidden; }
+
+.navwrapper .site-name-logo img {
+  height: 100%;
+  padding: 5px 0; }
