@@ -156,6 +156,8 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			// 	'posts_per_page' => false,
 			// ) );
 
+			add_theme_support( 'site-logo' );
+
 		}
 
 		public static function custom_header_url() {
