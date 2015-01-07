@@ -3,7 +3,7 @@
 class Maera_MD_Timber {
 
 	function __construct() {
-		add_filter( 'timber_context', array( $this, 'timber_global_context' ) );
+		add_filter( 'maera/timber/context', array( $this, 'timber_global_context' ) );
 	}
 
 	/**
