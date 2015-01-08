@@ -4,7 +4,6 @@ class Maera_MD_Styles {
 
 	function __construct() {
 		$this->colors = Maera_MD_Data::simple_colors();
-		add_filter( 'maera/styles', array( $this, 'color_mods' ) );
 		add_filter( 'maera/styles', array( $this, 'custom_header_css' ) );
 		add_filter( 'maera/styles', array( $this, 'featured_image_height' ) );
 		add_filter( 'body_class', array( $this, 'body_classes' ) );
@@ -15,35 +14,6 @@ class Maera_MD_Styles {
 
 		// Add the custom CSS
 		add_action( 'wp_enqueue_scripts', array( $this, 'custom_css' ), 105 );
-	}
-
-	function color_mods( $css ) {
-
-		$styles = get_transient( 'maera_md_colors' );
-
-		if ( false === ( $styles ) ) {
-
-			$styles = '';
-
-			foreach ( $this->colors as $color => $args ) {
-				$bg_obj  = new Jetpack_Color( '#' . $color );
-				$classes = '.' . str_replace( ' ', '.', $classes );
-
-				$bg         = '#' . str_replace( '#', '', $bg_obj->toHex() );
-				$color      = '#' . $bg_obj->getReadableContrastingColor( $bg_obj, 2 )->toHex();
-				$link_color = ( '000000' == $color ) ? 'rgba(0,0,0,.75)' : 'rgba(255,255,255,.75)';
-
-				$styles .= $classes . ',' . $classes . ' p{background:' . $bg . ';color:' . $color . ';}' . $classes . ' a{color:' . $link_color . ';}';
-				$styles .= $classes . ' input#searchform{border-bottom: 1px solid ' . $color . ';box-shadow: 0px 1px 0px 0px ' . $color . ';}';
-				$styles .= $classes . ' .input-field label, .input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=date]:focus + label, .input-field textarea:focus + label { color: ' . $link_color . ';}';
-			}
-
-			set_transient( 'maera_md_colors', $styles, 60 * 60 );
-
-		}
-
-		return $css . $styles;
-
 	}
 
 	function color( $class ) {
