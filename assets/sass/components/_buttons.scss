@@ -13,6 +13,8 @@ input[type="submit"] {
   line-height: $button-line-height;
   text-transform: uppercase;
   border:none;
+  // Gets rid of tap active state
+  -webkit-tap-highlight-color: transparent;
 }
 // Disabled shared style
 .btn.disabled,
