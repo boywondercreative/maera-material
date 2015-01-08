@@ -19,13 +19,13 @@ class Maera_MD_Styles {
 
 	function color_mods( $css ) {
 
-		$styles = get_transient( 'Maera_MD_Data::colors' );
+		$styles = get_transient( 'maera_md_colors' );
 
 		if ( false === ( $styles ) ) {
 
 			$styles = '';
 
-			foreach ( $this->colors as $color => $classes ) {
+			foreach ( $this->colors as $color => $args ) {
 				$bg_obj  = new Jetpack_Color( '#' . $color );
 				$classes = '.' . str_replace( ' ', '.', $classes );
 
@@ -38,7 +38,7 @@ class Maera_MD_Styles {
 				$styles .= $classes . ' .input-field label, .input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=date]:focus + label, .input-field textarea:focus + label { color: ' . $link_color . ';}';
 			}
 
-			set_transient( 'Maera_MD_Data::colors', $styles, 60 * 60 );
+			set_transient( 'maera_md_colors', $styles, 60 * 60 );
 
 		}
 
