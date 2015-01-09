@@ -37,6 +37,12 @@ class Maera_MD_Customizer {
 
 	function settings( $controls ) {
 
+		$colors = Maera_MD_Data::colors();
+		$colors_array = array();
+		foreach ( $colors as $color => $definitions ) {
+			$colors_array[$color] = $definitions['label'];
+		}
+
 		$controls[] = array(
 			'type'     => 'textarea',
 			'setting'  => 'header_content',
@@ -47,28 +53,13 @@ class Maera_MD_Customizer {
 		);
 
 		$controls[] = array(
-			'type'     => 'radio',
-			'setting'  => 'header_color_variation',
+			'type'     => 'select',
+			'setting'  => 'header_color',
 			'label'    => __( 'Header background shade', 'maera_md' ),
 			'section'  => 'header_image',
 			'default'  => 'darken-2',
 			'priority' => 20,
-			'choices'  => array(
-				'lighten-5' => '50',
-				'lighten-4' => '100',
-				'lighten-3' => '200',
-				'lighten-2' => '300',
-				'lighten-1' => '400',
-				'base'      => '500',
-				'darken-1'  => '600',
-				'darken-2'  => '700',
-				'darken-3'  => '800',
-				'darken-4'  => '900',
-				'accent-1'  => 'A100',
-				'accent-2'  => 'A200',
-				'accent-3'  => 'A400',
-				'accent-4'  => 'A700',
-			),
+			'choices'  => $colors_array,
 		);
 
 		$controls[] = array(

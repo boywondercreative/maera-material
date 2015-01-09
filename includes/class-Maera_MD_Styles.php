@@ -60,10 +60,11 @@ class Maera_MD_Styles {
 
 	function hero_classes() {
 
-		$main_color = get_theme_mod( 'accent_color', '' );
-		$variation  = get_theme_mod( 'header_color_variation', '' );
+		$colors  = Maera_MD_Data::colors();
+		$color   = get_theme_mod( 'header_color', '' );
+		$classes = $colors[$color]['classes'];
 
-		return $main_color . ' ' . $variation;
+		return $main_color . ' ' . $classes;
 
 	}
 
