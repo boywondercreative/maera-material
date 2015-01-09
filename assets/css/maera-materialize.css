@@ -7729,8 +7729,8 @@ ul.pagination {
 footer {
   overflow-y: hidden; }
 
-.navwrapper .site-name-logo img {
-  height: 100%;
+nav .brand-logo img {
+  height: 64px;
   padding: 5px 0; }
 
 .card.no-depth {
