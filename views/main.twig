@@ -1,7 +1,9 @@
 {% extends "base.twig" %}
 {% block main %}
 <div class="main" role="main">
-	{% if title %}<h1>{{ title }}</h1>{% endif %}
+	{% if title %}
+		<div class="title-container {{ grid.container() }}"><h1>{{ title }}</h1></div>
+	{% endif %}
 	{% block content %}
 		{{ __( 'Sorry, no content', 'maera' ) }}
 	{% endblock %}
