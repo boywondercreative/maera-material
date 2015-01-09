@@ -28,16 +28,18 @@
 			</nav>
 		{% endif %}
 
-		<div class="header hero parallax-container">
-			<div class="parallax {{ ''|apply_filters('maera_md/header_classes') }}"><img src="{{ header_img }}"></div>
-			<div class="{{ grid.container() }}">
-				{{ theme_mods.header_content }}
-				<div class="{{ grid.row() }}">
-					{% if sidebar.header %}
-						{{ sidebar.header }}
-					{% endif %}
+		{% if not theme_mods.header_front or ( theme_mods.header_front and function('is_front_page') ) %}
+			<div class="header hero parallax-container">
+				<div class="parallax {{ ''|apply_filters('maera_md/header_classes') }}"><img src="{{ header_img }}"></div>
+				<div class="{{ grid.container() }}">
+					{{ theme_mods.header_content }}
+					<div class="{{ grid.row() }}">
+						{% if sidebar.header %}
+							{{ sidebar.header }}
+						{% endif %}
+					</div>
 				</div>
 			</div>
-		</div>
+		{% endif %}
 		{% do action( 'maera/header/after', post.ID ) %}
 	</header>

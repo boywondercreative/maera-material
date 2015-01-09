@@ -63,6 +63,15 @@ class Maera_MD_Customizer {
 		);
 
 		$controls[] = array(
+			'type'     => 'checkbox',
+			'setting'  => 'header_front',
+			'label'    => __( 'Show only on homepage', 'maera_md' ),
+			'section'  => 'header_image',
+			'default'  => 1,
+			'priority' => 30,
+		);
+
+		$controls[] = array(
 			'type'     => 'radio',
 			'mode'     => 'image',
 			'setting'  => 'layout',
