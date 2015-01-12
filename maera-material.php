@@ -108,6 +108,19 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 				'slug' => 'jquery-updater',
 			);
 
+			if ( ! function_exists( 'is_plugin_active' ) ) {
+				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			}
+
+			// If ACF-Pro is not installed, require the free version of ACF.
+			if ( ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
+				$plugins[] = array(
+					'name' => 'Advanced Custom Fields',
+					'file' => 'acf.php',
+					'slug' => 'advanced-custom-fields',
+				);
+			}
+
 			$plugins = new Maera_Required_Plugins( $plugins );
 
 		}
