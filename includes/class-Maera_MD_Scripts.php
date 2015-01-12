@@ -17,7 +17,7 @@ class Maera_MD_Scripts {
 			add_action( 'wp_enqueue_scripts', array( $this, 'dev_scripts' ) );
 		}
 		// Enqueue the styles
-		add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'styles' ) );
 
 	}
 
