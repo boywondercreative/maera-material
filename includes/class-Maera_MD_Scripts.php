@@ -11,10 +11,10 @@ class Maera_MD_Scripts {
 
 		if ( Maera_Development::dev_mode() ) {
 			// Enqueue dev-mode scripts scripts
-			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'dev_scripts' ) );
 		} else {
 			// Enqueue normal scripts
-			add_action( 'wp_enqueue_scripts', array( $this, 'dev_scripts' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
 		}
 		// Enqueue the styles
 		add_action( 'wp_enqueue_scripts', array( $this, 'styles' ) );
@@ -70,7 +70,7 @@ class Maera_MD_Scripts {
 
 		foreach ( $scripts as $script ) {
 			$id = 'md_' . str_replace( array( '.', '/' ), '_', $script );
-			wp_register_script( $id, MAERA_MATERIAL_SHELL_URL . '/assets/js/dev/script', false, null, true  );
+			wp_register_script( $id, MAERA_MATERIAL_SHELL_URL . '/assets/js/dev/' . $script, false, null, true  );
 			wp_enqueue_script( $id );
 		}
 
