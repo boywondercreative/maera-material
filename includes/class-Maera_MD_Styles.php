@@ -3,21 +3,31 @@
 class Maera_MD_Styles {
 
 	function __construct() {
-		$this->colors = Maera_MD_Data::simple_colors();
 		add_filter( 'maera/styles', array( $this, 'custom_header_css' ) );
 		add_filter( 'maera/styles', array( $this, 'featured_image_height' ) );
 		add_filter( 'body_class', array( $this, 'body_classes' ) );
 		add_filter( 'maera_md/header_classes', array( $this, 'hero_classes' ) );
 
-		$this->color = get_theme_mod( 'accent_color', '' );
 		add_filter( 'maera/nav/class', array( $this, 'color' ) );
 
 		// Add the custom CSS
 		add_action( 'wp_enqueue_scripts', array( $this, 'custom_css' ), 105 );
 	}
 
-	function color( $class ) {
-		return $class . ' ' . get_theme_mod( 'accent_color', 'red' );
+	function color() {
+
+		$colors = Maera_MD_Data::main_colors();
+		if ( function_exists( 'get_field' ) ) {
+
+			if ( is_singular() ) {
+				global $post;
+				$color = get_field( 'custom_color', $post->ID );
+			}
+
+		}
+
+		$custom_color = ( isset( $color ) && ! empty( $color ) && 'default' != $color ) ? true : false;
+		return $custom_color ? $color : get_theme_mod( 'accent_color', 'red' );
 	}
 
 	/**
@@ -35,7 +45,7 @@ class Maera_MD_Styles {
 			$classes[] = 'light-mode';
 		}
 
-		$classes[] = 'accent-' . get_theme_mod( 'accent_color', 'red' );
+		$classes[] = 'accent-' . $this->color();
 
 		return $classes;
 
@@ -48,7 +58,7 @@ class Maera_MD_Styles {
 		if ( $custom_header ) {
 			$styles .= '.header.hero .parallax-layer-back{background-image:url("' . $custom_header . '");}';
 		}
-		$styles .= '.header.hero{color:#' . get_theme_mod( 'header_textcolor', '333333' ) . '}';
+		// $styles .= '.header.hero{color:#' . get_theme_mod( 'header_textcolor', '333333' ) . '}';
 
 		return $styles;
 

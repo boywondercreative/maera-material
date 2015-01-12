@@ -89,6 +89,7 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			require_once( __DIR__ . '/includes/class-Maera_MD_Typo.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Scripts.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Styles.php');
+			require_once( __DIR__ . '/includes/metaboxes.php' );
 
 		}
 
