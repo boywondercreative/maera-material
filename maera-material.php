@@ -55,9 +55,8 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			$maera_md_layout     = new Maera_MD_Layout();
 			$maera_md_layout     = new Maera_MD_Typo();
 			$maera_md_styles     = new Maera_MD_Styles();
+			$maera_md_scripts    = new Maera_MD_Scripts();
 
-			// Enqueue the scripts
-			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
 			// Add theme supports
 			add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 
@@ -88,6 +87,7 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			require_once( __DIR__ . '/includes/class-Maera_MD_Customizer.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Layout.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Typo.php');
+			require_once( __DIR__ . '/includes/class-Maera_MD_Scripts.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Styles.php');
 
 		}
@@ -109,20 +109,6 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			);
 
 			$plugins = new Maera_Required_Plugins( $plugins );
-
-		}
-
-		/**
-		* Register all scripts and additional stylesheets (if necessary)
-		*/
-		function scripts() {
-
-			wp_register_script( 'materialize-js', MAERA_MATERIAL_SHELL_URL . '/assets/js/materialize.js', false, null, true  );
-			wp_enqueue_script( 'materialize-js' );
-
-			wp_enqueue_style( 'maera-materialize', MAERA_MATERIAL_SHELL_URL . '/assets/css/maera-materialize.css', false, null, 'all' );
-
-			wp_enqueue_style( 'dashicons' );
 
 		}
 
