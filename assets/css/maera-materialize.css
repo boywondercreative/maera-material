@@ -7604,6 +7604,8 @@ img, figure {
 
 .accent-red a {
   color: #F44336; }
+  .accent-red a:hover {
+    color: #E53935; }
 .accent-red .btn, .accent-red .btn-large, .accent-red .btn-large, .accent-red button, .accent-red input[type="button"], .accent-red input[type="reset"], .accent-red input[type="submit"] {
   background: #F44336; }
 .accent-red blockquote {
@@ -7611,6 +7613,8 @@ img, figure {
 
 .accent-pink a {
   color: #e91e63; }
+  .accent-pink a:hover {
+    color: #d81b60; }
 .accent-pink .btn, .accent-pink .btn-large, .accent-pink .btn-large, .accent-pink button, .accent-pink input[type="button"], .accent-pink input[type="reset"], .accent-pink input[type="submit"] {
   background: #e91e63; }
 .accent-pink blockquote {
@@ -7618,6 +7622,8 @@ img, figure {
 
 .accent-purple a {
   color: #9c27b0; }
+  .accent-purple a:hover {
+    color: #8e24aa; }
 .accent-purple .btn, .accent-purple .btn-large, .accent-purple .btn-large, .accent-purple button, .accent-purple input[type="button"], .accent-purple input[type="reset"], .accent-purple input[type="submit"] {
   background: #9c27b0; }
 .accent-purple blockquote {
@@ -7625,6 +7631,8 @@ img, figure {
 
 .accent-deep-purple a {
   color: #673ab7; }
+  .accent-deep-purple a:hover {
+    color: #5e35b1; }
 .accent-deep-purple .btn, .accent-deep-purple .btn-large, .accent-deep-purple .btn-large, .accent-deep-purple button, .accent-deep-purple input[type="button"], .accent-deep-purple input[type="reset"], .accent-deep-purple input[type="submit"] {
   background: #673ab7; }
 .accent-deep-purple blockquote {
@@ -7632,6 +7640,8 @@ img, figure {
 
 .accent-indigo a {
   color: #3f51b5; }
+  .accent-indigo a:hover {
+    color: #3949ab; }
 .accent-indigo .btn, .accent-indigo .btn-large, .accent-indigo .btn-large, .accent-indigo button, .accent-indigo input[type="button"], .accent-indigo input[type="reset"], .accent-indigo input[type="submit"] {
   background: #3f51b5; }
 .accent-indigo blockquote {
@@ -7639,6 +7649,8 @@ img, figure {
 
 .accent-blue a {
   color: #2196F3; }
+  .accent-blue a:hover {
+    color: #1E88E5; }
 .accent-blue .btn, .accent-blue .btn-large, .accent-blue .btn-large, .accent-blue button, .accent-blue input[type="button"], .accent-blue input[type="reset"], .accent-blue input[type="submit"] {
   background: #2196F3; }
 .accent-blue blockquote {
@@ -7646,6 +7658,8 @@ img, figure {
 
 .accent-light-blue a {
   color: #03a9f4; }
+  .accent-light-blue a:hover {
+    color: #039be5; }
 .accent-light-blue .btn, .accent-light-blue .btn-large, .accent-light-blue .btn-large, .accent-light-blue button, .accent-light-blue input[type="button"], .accent-light-blue input[type="reset"], .accent-light-blue input[type="submit"] {
   background: #03a9f4; }
 .accent-light-blue blockquote {
@@ -7653,6 +7667,8 @@ img, figure {
 
 .accent-cyan a {
   color: #00bcd4; }
+  .accent-cyan a:hover {
+    color: #00acc1; }
 .accent-cyan .btn, .accent-cyan .btn-large, .accent-cyan .btn-large, .accent-cyan button, .accent-cyan input[type="button"], .accent-cyan input[type="reset"], .accent-cyan input[type="submit"] {
   background: #00bcd4; }
 .accent-cyan blockquote {
@@ -7660,6 +7676,8 @@ img, figure {
 
 .accent-teal a {
   color: #009688; }
+  .accent-teal a:hover {
+    color: #00897b; }
 .accent-teal .btn, .accent-teal .btn-large, .accent-teal .btn-large, .accent-teal button, .accent-teal input[type="button"], .accent-teal input[type="reset"], .accent-teal input[type="submit"] {
   background: #009688; }
 .accent-teal blockquote {
@@ -7667,6 +7685,8 @@ img, figure {
 
 .accent-green a {
   color: #4CAF50; }
+  .accent-green a:hover {
+    color: #43A047; }
 .accent-green .btn, .accent-green .btn-large, .accent-green .btn-large, .accent-green button, .accent-green input[type="button"], .accent-green input[type="reset"], .accent-green input[type="submit"] {
   background: #4CAF50; }
 .accent-green blockquote {
@@ -7674,6 +7694,8 @@ img, figure {
 
 .accent-light-green a {
   color: #8bc34a; }
+  .accent-light-green a:hover {
+    color: #7cb342; }
 .accent-light-green .btn, .accent-light-green .btn-large, .accent-light-green .btn-large, .accent-light-green button, .accent-light-green input[type="button"], .accent-light-green input[type="reset"], .accent-light-green input[type="submit"] {
   background: #8bc34a; }
 .accent-light-green blockquote {
@@ -7683,6 +7705,8 @@ img, figure {
 
 .accent-lime a {
   color: #cddc39; }
+  .accent-lime a:hover {
+    color: #c0ca33; }
 .accent-lime .btn, .accent-lime .btn-large, .accent-lime .btn-large, .accent-lime button, .accent-lime input[type="button"], .accent-lime input[type="reset"], .accent-lime input[type="submit"] {
   background: #cddc39; }
 .accent-lime blockquote {
@@ -7691,7 +7715,9 @@ img, figure {
   color: #333; }
 
 .accent-yellow a {
-  color: #ffeb3b; }
+  color: #fbc02d; }
+  .accent-yellow a:hover {
+    color: #f9a825; }
 .accent-yellow .btn, .accent-yellow .btn-large, .accent-yellow .btn-large, .accent-yellow button, .accent-yellow input[type="button"], .accent-yellow input[type="reset"], .accent-yellow input[type="submit"] {
   background: #ffeb3b; }
 .accent-yellow blockquote {
@@ -7701,6 +7727,8 @@ img, figure {
 
 .accent-amber a {
   color: #ffc107; }
+  .accent-amber a:hover {
+    color: #ffb300; }
 .accent-amber .btn, .accent-amber .btn-large, .accent-amber .btn-large, .accent-amber button, .accent-amber input[type="button"], .accent-amber input[type="reset"], .accent-amber input[type="submit"] {
   background: #ffc107; }
 .accent-amber blockquote {
@@ -7710,6 +7738,8 @@ img, figure {
 
 .accent-orange a {
   color: #ff9800; }
+  .accent-orange a:hover {
+    color: #fb8c00; }
 .accent-orange .btn, .accent-orange .btn-large, .accent-orange .btn-large, .accent-orange button, .accent-orange input[type="button"], .accent-orange input[type="reset"], .accent-orange input[type="submit"] {
   background: #ff9800; }
 .accent-orange blockquote {
@@ -7717,6 +7747,8 @@ img, figure {
 
 .accent-deep-orange a {
   color: #ff5722; }
+  .accent-deep-orange a:hover {
+    color: #f4511e; }
 .accent-deep-orange .btn, .accent-deep-orange .btn-large, .accent-deep-orange .btn-large, .accent-deep-orange button, .accent-deep-orange input[type="button"], .accent-deep-orange input[type="reset"], .accent-deep-orange input[type="submit"] {
   background: #ff5722; }
 .accent-deep-orange blockquote {
@@ -7724,6 +7756,8 @@ img, figure {
 
 .accent-brown a {
   color: #795548; }
+  .accent-brown a:hover {
+    color: #6d4c41; }
 .accent-brown .btn, .accent-brown .btn-large, .accent-brown .btn-large, .accent-brown button, .accent-brown input[type="button"], .accent-brown input[type="reset"], .accent-brown input[type="submit"] {
   background: #795548; }
 .accent-brown blockquote {
@@ -7731,6 +7765,8 @@ img, figure {
 
 .accent-grey a {
   color: #9e9e9e; }
+  .accent-grey a:hover {
+    color: #757575; }
 .accent-grey .btn, .accent-grey .btn-large, .accent-grey .btn-large, .accent-grey button, .accent-grey input[type="button"], .accent-grey input[type="reset"], .accent-grey input[type="submit"] {
   background: #9e9e9e; }
 .accent-grey blockquote {
@@ -7740,6 +7776,8 @@ img, figure {
 
 .accent-blue-grey a {
   color: #607d8b; }
+  .accent-blue-grey a:hover {
+    color: #546e7a; }
 .accent-blue-grey .btn, .accent-blue-grey .btn-large, .accent-blue-grey .btn-large, .accent-blue-grey button, .accent-blue-grey input[type="button"], .accent-blue-grey input[type="reset"], .accent-blue-grey input[type="submit"] {
   background: #607d8b; }
 .accent-blue-grey blockquote {
@@ -7912,6 +7950,173 @@ img, figure {
 .accent-blue-grey input[type="reset"],
 .accent-blue-grey input[type="submit"] {
   color: #fff; }
+  .accent-red nav a:hover,
+  .accent-red footer:hover,
+  .accent-red .btn:hover,
+  .accent-red .btn-large:hover, .accent-red .btn-large:hover, .accent-red button:hover, .accent-red input[type="button"]:hover, .accent-red input[type="reset"]:hover, .accent-red input[type="submit"]:hover,
+  .accent-pink nav a:hover,
+  .accent-pink footer:hover,
+  .accent-pink .btn:hover,
+  .accent-pink .btn-large:hover,
+  .accent-pink .btn-large:hover,
+  .accent-pink button:hover,
+  .accent-pink input[type="button"]:hover,
+  .accent-pink input[type="reset"]:hover,
+  .accent-pink input[type="submit"]:hover,
+  .accent-purple nav a:hover,
+  .accent-purple footer:hover,
+  .accent-purple .btn:hover,
+  .accent-purple .btn-large:hover,
+  .accent-purple .btn-large:hover,
+  .accent-purple button:hover,
+  .accent-purple input[type="button"]:hover,
+  .accent-purple input[type="reset"]:hover,
+  .accent-purple input[type="submit"]:hover,
+  .accent-deep-purple nav a:hover,
+  .accent-deep-purple footer:hover,
+  .accent-deep-purple .btn:hover,
+  .accent-deep-purple .btn-large:hover,
+  .accent-deep-purple .btn-large:hover,
+  .accent-deep-purple button:hover,
+  .accent-deep-purple input[type="button"]:hover,
+  .accent-deep-purple input[type="reset"]:hover,
+  .accent-deep-purple input[type="submit"]:hover,
+  .accent-indigo nav a:hover,
+  .accent-indigo footer:hover,
+  .accent-indigo .btn:hover,
+  .accent-indigo .btn-large:hover,
+  .accent-indigo .btn-large:hover,
+  .accent-indigo button:hover,
+  .accent-indigo input[type="button"]:hover,
+  .accent-indigo input[type="reset"]:hover,
+  .accent-indigo input[type="submit"]:hover,
+  .accent-blue nav a:hover,
+  .accent-blue footer:hover,
+  .accent-blue .btn:hover,
+  .accent-blue .btn-large:hover,
+  .accent-blue .btn-large:hover,
+  .accent-blue button:hover,
+  .accent-blue input[type="button"]:hover,
+  .accent-blue input[type="reset"]:hover,
+  .accent-blue input[type="submit"]:hover,
+  .accent-light-blue nav a:hover,
+  .accent-light-blue footer:hover,
+  .accent-light-blue .btn:hover,
+  .accent-light-blue .btn-large:hover,
+  .accent-light-blue .btn-large:hover,
+  .accent-light-blue button:hover,
+  .accent-light-blue input[type="button"]:hover,
+  .accent-light-blue input[type="reset"]:hover,
+  .accent-light-blue input[type="submit"]:hover,
+  .accent-cyan nav a:hover,
+  .accent-cyan footer:hover,
+  .accent-cyan .btn:hover,
+  .accent-cyan .btn-large:hover,
+  .accent-cyan .btn-large:hover,
+  .accent-cyan button:hover,
+  .accent-cyan input[type="button"]:hover,
+  .accent-cyan input[type="reset"]:hover,
+  .accent-cyan input[type="submit"]:hover,
+  .accent-teal nav a:hover,
+  .accent-teal footer:hover,
+  .accent-teal .btn:hover,
+  .accent-teal .btn-large:hover,
+  .accent-teal .btn-large:hover,
+  .accent-teal button:hover,
+  .accent-teal input[type="button"]:hover,
+  .accent-teal input[type="reset"]:hover,
+  .accent-teal input[type="submit"]:hover,
+  .accent-green nav a:hover,
+  .accent-green footer:hover,
+  .accent-green .btn:hover,
+  .accent-green .btn-large:hover,
+  .accent-green .btn-large:hover,
+  .accent-green button:hover,
+  .accent-green input[type="button"]:hover,
+  .accent-green input[type="reset"]:hover,
+  .accent-green input[type="submit"]:hover,
+  .accent-light-green nav a:hover,
+  .accent-light-green footer:hover,
+  .accent-light-green .btn:hover,
+  .accent-light-green .btn-large:hover,
+  .accent-light-green .btn-large:hover,
+  .accent-light-green button:hover,
+  .accent-light-green input[type="button"]:hover,
+  .accent-light-green input[type="reset"]:hover,
+  .accent-light-green input[type="submit"]:hover,
+  .accent-lime nav a:hover,
+  .accent-lime footer:hover,
+  .accent-lime .btn:hover,
+  .accent-lime .btn-large:hover,
+  .accent-lime .btn-large:hover,
+  .accent-lime button:hover,
+  .accent-lime input[type="button"]:hover,
+  .accent-lime input[type="reset"]:hover,
+  .accent-lime input[type="submit"]:hover,
+  .accent-yellow nav a:hover,
+  .accent-yellow footer:hover,
+  .accent-yellow .btn:hover,
+  .accent-yellow .btn-large:hover,
+  .accent-yellow .btn-large:hover,
+  .accent-yellow button:hover,
+  .accent-yellow input[type="button"]:hover,
+  .accent-yellow input[type="reset"]:hover,
+  .accent-yellow input[type="submit"]:hover,
+  .accent-amber nav a:hover,
+  .accent-amber footer:hover,
+  .accent-amber .btn:hover,
+  .accent-amber .btn-large:hover,
+  .accent-amber .btn-large:hover,
+  .accent-amber button:hover,
+  .accent-amber input[type="button"]:hover,
+  .accent-amber input[type="reset"]:hover,
+  .accent-amber input[type="submit"]:hover,
+  .accent-orange nav a:hover,
+  .accent-orange footer:hover,
+  .accent-orange .btn:hover,
+  .accent-orange .btn-large:hover,
+  .accent-orange .btn-large:hover,
+  .accent-orange button:hover,
+  .accent-orange input[type="button"]:hover,
+  .accent-orange input[type="reset"]:hover,
+  .accent-orange input[type="submit"]:hover,
+  .accent-deep-orange nav a:hover,
+  .accent-deep-orange footer:hover,
+  .accent-deep-orange .btn:hover,
+  .accent-deep-orange .btn-large:hover,
+  .accent-deep-orange .btn-large:hover,
+  .accent-deep-orange button:hover,
+  .accent-deep-orange input[type="button"]:hover,
+  .accent-deep-orange input[type="reset"]:hover,
+  .accent-deep-orange input[type="submit"]:hover,
+  .accent-brown nav a:hover,
+  .accent-brown footer:hover,
+  .accent-brown .btn:hover,
+  .accent-brown .btn-large:hover,
+  .accent-brown .btn-large:hover,
+  .accent-brown button:hover,
+  .accent-brown input[type="button"]:hover,
+  .accent-brown input[type="reset"]:hover,
+  .accent-brown input[type="submit"]:hover,
+  .accent-grey nav a:hover,
+  .accent-grey footer:hover,
+  .accent-grey .btn:hover,
+  .accent-grey .btn-large:hover,
+  .accent-grey .btn-large:hover,
+  .accent-grey button:hover,
+  .accent-grey input[type="button"]:hover,
+  .accent-grey input[type="reset"]:hover,
+  .accent-grey input[type="submit"]:hover,
+  .accent-blue-grey nav a:hover,
+  .accent-blue-grey footer:hover,
+  .accent-blue-grey .btn:hover,
+  .accent-blue-grey .btn-large:hover,
+  .accent-blue-grey .btn-large:hover,
+  .accent-blue-grey button:hover,
+  .accent-blue-grey input[type="button"]:hover,
+  .accent-blue-grey input[type="reset"]:hover,
+  .accent-blue-grey input[type="submit"]:hover {
+    color: #fff; }
 
 @media only screen and (max-width: 992px) {
   body .hero .parallax {
@@ -7954,3 +8159,6 @@ nav .brand-logo img {
 .page-footer,
 .page-footer a {
   color: #fff; }
+
+.btn.small, .small.btn-large {
+  padding: 0 .5rem; }
