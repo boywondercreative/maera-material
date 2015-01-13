@@ -56,6 +56,7 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			$maera_md_layout     = new Maera_MD_Typo();
 			$maera_md_styles     = new Maera_MD_Styles();
 			$maera_md_scripts    = new Maera_MD_Scripts();
+			$maera_md_metabox    = new Maera_MD_Color_Metabox();
 
 			// Add theme supports
 			add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
@@ -89,7 +90,7 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			require_once( __DIR__ . '/includes/class-Maera_MD_Typo.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Scripts.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Styles.php');
-			require_once( __DIR__ . '/includes/metaboxes.php' );
+			require_once( __DIR__ . '/includes/class-Maera_MD_Color_Metabox.php' );
 
 		}
 
@@ -108,19 +109,6 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 				'file' => 'jquery-updater.php',
 				'slug' => 'jquery-updater',
 			);
-
-			if ( ! function_exists( 'is_plugin_active' ) ) {
-				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-			}
-
-			// If ACF-Pro is not installed, require the free version of ACF.
-			if ( ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
-				$plugins[] = array(
-					'name' => 'Advanced Custom Fields',
-					'file' => 'acf.php',
-					'slug' => 'advanced-custom-fields',
-				);
-			}
 
 			$plugins = new Maera_Required_Plugins( $plugins );
 

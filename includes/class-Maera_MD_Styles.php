@@ -16,18 +16,14 @@ class Maera_MD_Styles {
 
 	function color() {
 
-		$colors = Maera_MD_Data::main_colors();
-		if ( function_exists( 'get_field' ) ) {
-
-			if ( is_singular() ) {
-				global $post;
-				$color = get_field( 'custom_color', $post->ID );
-			}
-
+		if ( is_singular() ) {
+			global $post;
+			$color = get_field( 'maera_md_color', $post->ID );
 		}
 
 		$custom_color = ( isset( $color ) && ! empty( $color ) && 'default' != $color ) ? true : false;
 		return $custom_color ? $color : get_theme_mod( 'accent_color', 'red' );
+
 	}
 
 	/**
