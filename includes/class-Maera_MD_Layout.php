@@ -2,54 +2,22 @@
 
 class Maera_MD_Layout {
 
-	private $container;
-	private $layout;
-	private $sidebar_width;
-
 	function __construct() {
 
-		$this->container     = get_theme_mod( 'container', 1 );
-		$this->layout        = get_theme_mod( 'layout', 1 );
-		$this->sidebar_width = get_theme_mod( 'sidebar_width', 4 );
-
-		if ( $this->layout ) {
-			// add_filter( 'maera/container_class', array( $this, 'container_class' ) );
-			// add_filter( 'maera/section_class/wrapper', array( $this, 'wrapper_class' ) );
+		if ( 0 != self::get_layout() ) {
 			add_filter( 'maera/section_class/content', array( $this, 'content_class' ) );
 			add_filter( 'maera/section_class/primary', array( $this, 'sidebar_class' ) );
 		}
 
 	}
 
-	// /**
-	//  * alter the class of the container element.
-	//  */
-	// function container_class( $classes ) {
-	//
-	// 	if ( 'off' == $this->container ) {
-	// 		$classes = '';
-	// 	}
-	//
-	// 	return $classes;
-	//
-	// }
-	//
-	// /**
-	//  * Filter the classes of the wrapper
-	//  */
-	// function wrapper_class( $class ) {
-	//
-	// 	return $class . ' row';
-	//
-	// }
-	//
 	/**
 	 * Filter the classes of the main content area
 	 */
 	function content_class( $class ) {
 
-		$width = 12 - $this->sidebar_width;
-		$alignment = ( 2 == $this->layout ) ? ' right-align' : '';
+		$width = 12 - get_theme_mod( 'sidebar_width', 4 );
+		$alignment = ( 2 == self::get_layout() ) ? ' right-align' : '';
 		return $class . ' col s12 m' . $width . $alignment;
 
 	}
@@ -59,7 +27,24 @@ class Maera_MD_Layout {
 	 */
 	function sidebar_class( $class ) {
 
-		return $class . ' col s12 m' . $this->sidebar_width;
+		return $class . ' col s12 m' . get_theme_mod( 'sidebar_width', 4 );
+
+	}
+
+	/**
+	 * Get the layout
+	 */
+	public static function get_layout() {
+
+		global $post;
+
+		if ( is_singular() ) {
+			$layout = get_post_meta( $post->ID, 'maera_md_layout', true );
+		}
+		$custom_layout = ( isset( $layout ) && ! empty( $layout ) && 'default' != $layout ) ? true : false;
+		$layout = $custom_layout ? $layout : get_theme_mod( 'layout', 1 );
+
+		return $layout;
 
 	}
 
