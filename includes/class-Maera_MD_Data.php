@@ -5,7 +5,7 @@ class Maera_MD_Data {
 	public static function colors() {
 
 		$colors = array(
-			0        => array( 'label' => 'none', 'classes' => '' ),
+			0        => array( 'label' => 'none', 'classes' => 'transparent' ),
 			'ffebee' => array( 'label' => 'red 50', 'classes' => 'red lighten-5' ),
 			'ffcdd2' => array( 'label' => 'red 100', 'classes' => 'red lighten-4' ),
 			'ef9a9a' => array( 'label' => 'red 200', 'classes' => 'red lighten-2' ),

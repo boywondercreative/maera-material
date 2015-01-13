@@ -296,3 +296,15 @@ nav .brand-logo {
 .card.no-depth {
     box-shadow: none;
 }
+
+.transparent {
+    background: none;
+    background-color: none;
+    background: transparent;
+    background-color: transparent;
+}
+
+.page-footer,
+.page-footer a {
+    color: #fff;
+}
