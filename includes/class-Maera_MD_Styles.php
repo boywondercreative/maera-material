@@ -70,7 +70,7 @@ class Maera_MD_Styles {
 		$color   = get_theme_mod( 'header_color', '' );
 		$classes = $colors[$color]['classes'];
 
-		return $main_color . ' ' . $classes;
+		return $color . ' ' . $classes;
 
 	}
 
