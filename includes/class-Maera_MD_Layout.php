@@ -37,11 +37,13 @@ class Maera_MD_Layout {
 	public static function get_layout() {
 
 		global $post;
+		$custom_layout = false;
 
 		if ( is_singular() ) {
 			$layout = get_post_meta( $post->ID, 'maera_md_layout', true );
+			$custom_layout = ( 'default' != $layout ) ? true : false;
 		}
-		$custom_layout = ( isset( $layout ) && ! empty( $layout ) && 'default' != $layout ) ? true : false;
+
 		$layout = $custom_layout ? $layout : get_theme_mod( 'layout', 1 );
 
 		return $layout;
