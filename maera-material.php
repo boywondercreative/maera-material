@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name:         Maera Material Shell
-Plugin URI:          http://press.codes
+Plugin URI:          https://press.codes
 Description:         Material Design shell
 Version:             0.3-dev
 Author:              Aristeides Stathopoulos
-Author URI:          http://press.codes
+Author URI:          https://press.codes
 */
 
 define( 'MAERA_MATERIAL_SHELL_URL', plugins_url( '', __FILE__ ) );
