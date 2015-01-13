@@ -18,7 +18,7 @@ class Maera_MD_Styles {
 
 		if ( is_singular() ) {
 			global $post;
-			$color = get_field( 'maera_md_color', $post->ID );
+			$color = get_post_meta( $post->ID, 'maera_md_color', true );
 		}
 
 		$custom_color = ( isset( $color ) && ! empty( $color ) && 'default' != $color ) ? true : false;
