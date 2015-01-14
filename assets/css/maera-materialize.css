@@ -2121,11 +2121,11 @@ img.responsive-img {
   .center-on-small-only {
     text-align: center; } }
 
-footer {
+footer.page-footer {
   margin-top: 20px;
   padding-top: 20px;
   background-color: #ee6e73; }
-  footer .footer-copyright {
+  footer.page-footer .footer-copyright {
     line-height: 50px;
     color: rgba(255, 255, 255, 0.8);
     background-color: rgba(51, 51, 51, 0.08); }
@@ -2318,6 +2318,7 @@ span.badge {
       top: 0;
       left: 0;
       bottom: 0;
+      will-change: left, right;
       -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
       -ms-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
       animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite; }
@@ -2328,6 +2329,7 @@ span.badge {
       top: 0;
       left: 0;
       bottom: 0;
+      will-change: left, right;
       -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
       -ms-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
       animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
@@ -5050,7 +5052,7 @@ strong {
 small {
   font-size: 75%; }
 
-.light, footer .footer-copyright {
+.light, footer.page-footer .footer-copyright {
   font-weight: 300; }
 
 .flow-text {
@@ -5897,6 +5899,7 @@ textarea.materialize-textarea {
   border-bottom: 1px solid #9e9e9e;
   outline: none;
   height: 3rem;
+  width: 100%;
   font-size: 1rem;
   margin: 0 0 15px 0;
   padding: 0;
@@ -6204,6 +6207,9 @@ input[type=checkbox][disabled]:first-child ~ .lever:active:after {
     position: absolute;
     right: 0;
     font-size: 23px; }
+
+select {
+  display: none; }
 
 select.browser-default {
   display: block; }
@@ -6838,11 +6844,25 @@ ul.side-nav.fixed {
     opacity: 0; } }
 .slider {
   position: relative;
-  height: 400px;
+  height: 440px;
   width: 100%; }
+  .slider.fullscreen {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+    .slider.fullscreen ul.slides {
+      height: 100%; }
+    .slider.fullscreen ul.indicators {
+      z-index: 2;
+      bottom: 30px; }
   .slider ul.slides {
     background-color: #9e9e9e;
-    margin: 0; }
+    margin: 0;
+    height: 400px; }
     .slider ul.slides li {
       -ms-filter: "progid:DXImageTransform@mixin Microsoft@mixin Alpha(Opacity=${iefactor})";
       filter: "alpha(opacity=(${iefactor}))";

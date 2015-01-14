@@ -118,6 +118,7 @@ textarea.materialize-textarea {
   border-bottom: 1px solid $border-color;
   outline: none;
   height: 3rem;
+  width: 100%;
 
   font-size: 1rem;
   margin: 0 0 15px 0;
@@ -428,7 +429,7 @@ input[type=checkbox][disabled]:first-child ~ .lever:active:after {
   }
 }
 
-// select { display: none; }
+select { display: none; }
 select.browser-default { display: block; }
 
 
