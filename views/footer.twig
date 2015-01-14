@@ -14,13 +14,14 @@
 		{% do action( 'maera/footer/end', post.ID ) %}
 	</div>
 	{% do action( 'maera/footer/after', post.ID ) %}
-	{{ function( 'wp_footer' ) }}
 </footer>
 <script>
 $(document).ready(function(){
 	$('.parallax').parallax();
 	$(".button-collapse").sideNav();
+	$("select").material_select();
 });
 </script>
+{{ function( 'wp_footer' ) }}
 </body>
 </html>
