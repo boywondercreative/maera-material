@@ -19,6 +19,9 @@ class Maera_MD_Scripts {
 		// Enqueue the styles
 		add_action( 'wp_enqueue_scripts', array( $this, 'styles' ) );
 
+		// Add our custom JS in the footer
+		add_action( 'wp_footer', array( $this, 'custom_js' ) );
+
 	}
 
 	/**
@@ -72,6 +75,20 @@ class Maera_MD_Scripts {
 			$id = 'md_' . str_replace( array( '.', '/' ), '_', $script );
 			wp_register_script( $id, MAERA_MATERIAL_SHELL_URL . '/assets/js/dev/' . $script, false, null, true  );
 			wp_enqueue_script( $id );
+		}
+
+	}
+
+	/**
+	 * Get the value of the 'js' theme mod.
+	 * If not empty, echo it in the theme footer.
+	 */
+	function custom_js() {
+
+		$js = get_theme_mod( 'js', '' );
+
+		if ( ! empty( $js ) ) {
+			echo '<script>' . $js . '</script>';
 		}
 
 	}
