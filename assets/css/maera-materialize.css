@@ -8182,3 +8182,29 @@ nav .brand-logo img {
 
 .btn.small, .small.btn-large {
   padding: 0 .5rem; }
+
+.waves-input-wrapper input[type="button"],
+.waves-input-wrapper input[type="reset"],
+.waves-input-wrapper input[type="submit"] {
+  box-shadow: none;
+  background: none; }
+  .waves-input-wrapper input[type="button"].waves-button-input, .waves-input-wrapper input[type="button"].waves-button-input:hover, .waves-input-wrapper input[type="button"].waves-button-input:active, .waves-input-wrapper input[type="button"].waves-button-input:focus,
+  .waves-input-wrapper input[type="reset"].waves-button-input,
+  .waves-input-wrapper input[type="reset"].waves-button-input:hover,
+  .waves-input-wrapper input[type="reset"].waves-button-input:active,
+  .waves-input-wrapper input[type="reset"].waves-button-input:focus,
+  .waves-input-wrapper input[type="submit"].waves-button-input,
+  .waves-input-wrapper input[type="submit"].waves-button-input:hover,
+  .waves-input-wrapper input[type="submit"].waves-button-input:active,
+  .waves-input-wrapper input[type="submit"].waves-button-input:focus {
+    box-shadow: none;
+    background: none; }
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+  position: relative;
+  left: 0; }
+
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+  position: relative;
+  left: 0; }

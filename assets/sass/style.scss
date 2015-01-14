@@ -354,3 +354,33 @@ nav .brand-logo {
 .btn.small {
     padding: 0 .5rem;
 }
+
+// Hack to fix an issue with double buttons due to a JS miscalculation in materialize.
+.waves-input-wrapper {
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        &.waves-button-input,
+        &.waves-button-input:hover,
+        &.waves-button-input:active,
+        &.waves-button-input:focus {
+            box-shadow: none;
+            background: none;
+        }
+
+        box-shadow: none;
+        background: none;
+    }
+}
+
+// Hack to fix missing input checkboxes and radios.
+// See https://github.com/Dogfalo/materialize/issues/459 for details.
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: relative;
+    left: 0;
+}
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+    position: relative;
+    left: 0;
+}
