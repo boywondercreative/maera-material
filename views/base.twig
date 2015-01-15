@@ -14,7 +14,7 @@
 				{% do action( 'maera/content/after' ) %}
 				{% if sidebar.primary and 0 != layout %}
 			</div>
-			<div class="{{ sidebar|apply_filters( 'maera/section_class/primary' ) }}">
+			<div class="{{ 'sidebar'|apply_filters( 'maera/section_class/primary' ) }}">
 				{{ sidebar.primary }}
 			</div>
 		</div>
