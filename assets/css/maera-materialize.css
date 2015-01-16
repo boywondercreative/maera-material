@@ -8204,6 +8204,12 @@ nav .brand-logo img {
   position: relative;
   left: 0; }
 
+#bbp_topic_subscription[type="checkbox"]:not(:checked), #bbp_topic_subscription[type="checkbox"]:checked,
+#bbp_private_reply[type="checkbox"]:not(:checked),
+#bbp_private_reply[type="checkbox"]:checked {
+  position: absolute;
+  left: -999px; }
+
 [type="radio"]:not(:checked),
 [type="radio"]:checked {
   position: relative;

@@ -379,6 +379,16 @@ nav .brand-logo {
     position: relative;
     left: 0;
 }
+
+#bbp_topic_subscription,
+#bbp_private_reply {
+    &[type="checkbox"]:not(:checked),
+    &[type="checkbox"]:checked {
+        position: absolute;
+        left: -999px;
+    }
+}
+
 [type="radio"]:not(:checked),
 [type="radio"]:checked {
     position: relative;
