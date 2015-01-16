@@ -1,0 +1,21 @@
+{% import 'grid_classes.html.twig' as grid %}
+{% extends "main.twig" %}
+
+{% block content %}
+
+<div class="content-wrapper">
+
+	<article {{ function( 'post_class' ) }} id="content-{{ post.ID }}" itemscope itemtype="http://schema.org/WebPage">
+
+		<div class="{{ grid.container() }} entry-content" itemprop="text">
+			{% do action( 'maera/single/pre_content', post.ID ) %}
+			{{ content }}
+			{% do action( 'maera/single/after_content', post.ID ) %}
+		</div>
+		{% do action( 'maera/page/after_content' ) %}
+
+	</article>
+
+</div> <!-- /content-wrapper -->
+
+{% endblock %}
