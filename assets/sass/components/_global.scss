@@ -32,9 +32,9 @@ a {
 
 // Positioning
 .valign-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexbox();
+  @include align(center);
+  @include justify-content(center);
 
   .valign {
     display: block;
@@ -44,10 +44,11 @@ a {
 
 ul {
   padding: 0;
+  li {
+    list-style-type: none;
+  }
 }
-li {
-  list-style-type: none;
-}
+
 
 // Z-levels
 

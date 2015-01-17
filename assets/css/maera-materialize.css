@@ -1990,23 +1990,23 @@ a {
   text-decoration: none; }
 
 .valign-wrapper {
-  display: -webkit-flex;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-align: center;
+  -ms-flex-align: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  -ms-flex-pack: center;
+      justify-content: center; }
   .valign-wrapper .valign {
     display: block; }
 
 ul {
   padding: 0; }
-
-li {
-  list-style-type: none; }
+  ul li {
+    list-style-type: none; }
 
 .z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large,
 button,
@@ -5185,7 +5185,7 @@ small {
       line-height: 2.88rem; } }
 
 .card-panel {
-  padding: 1rem;
+  padding: 20px;
   margin: 0.5rem 0 1rem 0;
   border-radius: 2px;
   background-clip: padding-box;
@@ -5208,7 +5208,7 @@ small {
       cursor: pointer; }
   .card a {
     color: #ffab40;
-    margin-right: 16px;
+    margin-right: 20px;
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
     text-transform: uppercase; }
@@ -5244,9 +5244,9 @@ small {
       position: absolute;
       bottom: 0;
       left: 0;
-      padding: 16px; }
+      padding: 20px; }
   .card .card-content {
-    padding: 16px;
+    padding: 20px;
     border-radius: 0 0 2px 2px;
     background-clip: padding-box;
     -moz-box-sizing: border-box;
@@ -5258,13 +5258,14 @@ small {
       line-height: 48px; }
   .card .card-action {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
-    padding: 16px; }
+    padding: 20px; }
   .card .card-reveal {
-    padding: 16px;
+    padding: 20px;
     position: absolute;
     background-color: #FFF;
     top: 100%;
     height: 100%;
+    z-index: 1;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
     .card .card-reveal .card-title {
@@ -5308,15 +5309,16 @@ small {
   font-size: 1.1rem;
   font-weight: 300;
   color: #fff;
-  display: -webkit-flex;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-align: center;
+  -ms-flex-align: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
   .toast .btn, .toast .btn-large, .toast .btn-flat {
     margin: 0;
     margin-left: 3rem; }
@@ -5419,6 +5421,7 @@ input[type="submit"] {
   line-height: 36px;
   text-transform: uppercase;
   border: none;
+  outline: 0;
   -webkit-tap-highlight-color: transparent; }
 
 .btn.disabled, .disabled.btn-large,
@@ -5470,7 +5473,7 @@ input[type="submit"] {
   color: #FFF;
   background-color: #2196F3;
   text-align: center;
-  letter-spacing: .8px;
+  letter-spacing: .5px;
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   cursor: pointer; }
@@ -5545,94 +5548,72 @@ input[type="submit"] {
       padding: 1rem 1rem; }
 
 /*!
- * Waves v0.5.3
- * http://fian.my.id/Waves 
- * 
- * Copyright 2014 Alfiana E. Sibuea and other contributors 
- * Released under the MIT license 
- * https://github.com/fians/Waves/blob/master/LICENSE 
+ * Waves v0.6.0
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
+ * https://github.com/fians/Waves/blob/master/LICENSE
  */
 .waves-effect {
   position: relative;
   cursor: pointer;
   display: inline-block;
   overflow: hidden;
-  vertical-align: bottom;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  -webkit-transition: all 650ms ease;
-  transition: all 650ms ease; }
+  z-index: 1;
+  will-change: opacity, transform;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
   .waves-effect .waves-ripple {
     position: absolute;
-    pointer-events: none;
     border-radius: 50%;
-    background-clip: padding-box;
-    width: 10px;
-    height: 10px;
-    margin-top: -5px;
-    margin-left: -5px;
-    opacity: .25;
-    background-color: rgba(0, 0, 0, 0.2);
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.7s ease-out;
+    transition: all 0.7s ease-out;
     -webkit-transition-property: -webkit-transform, opacity;
     transition-property: transform, opacity;
-    -webkit-transition-duration: 700ms;
-    transition-duration: 700ms;
     -webkit-transform: scale(0);
     -ms-transform: scale(0);
     transform: scale(0);
-    will-change: transform, opacity; }
+    pointer-events: none; }
   .waves-effect.waves-light .waves-ripple {
-    background-color: rgba(255, 255, 255, 0.35); }
+    background-color: rgba(255, 255, 255, 0.45); }
   .waves-effect.waves-red .waves-ripple {
-    background-color: rgba(244, 67, 54, 0.65); }
+    background-color: rgba(244, 67, 54, 0.7); }
   .waves-effect.waves-yellow .waves-ripple {
-    background-color: rgba(255, 235, 59, 0.65); }
+    background-color: rgba(255, 235, 59, 0.7); }
   .waves-effect.waves-orange .waves-ripple {
-    background-color: rgba(255, 152, 0, 0.65); }
+    background-color: rgba(255, 152, 0, 0.7); }
   .waves-effect.waves-purple .waves-ripple {
-    background-color: rgba(156, 39, 176, 0.65); }
+    background-color: rgba(156, 39, 176, 0.7); }
   .waves-effect.waves-green .waves-ripple {
-    background-color: rgba(76, 175, 80, 0.65); }
+    background-color: rgba(76, 175, 80, 0.7); }
   .waves-effect.waves-teal .waves-ripple {
-    background-color: rgba(0, 150, 136, 0.65); }
+    background-color: rgba(0, 150, 136, 0.7); }
 
 .waves-notransition {
   -webkit-transition: none !important;
   transition: none !important; }
 
-.waves-button,
-.waves-icon {
+.waves-circle {
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
-  -webkit-mask-image: -webkit-radial-gradient(circle, #ffffff 100%, #000000 100%); }
-
-.waves-button,
-.waves-button:hover,
-.waves-button:visited,
-.waves-button:link,
-.waves-button-input {
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  border: none;
-  font-size: 14px;
-  text-align: center;
-  text-decoration: none;
-  z-index: 1; }
-
-.waves-button-input {
-  margin: 0;
-  padding: 10px 15px; }
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%); }
 
 .waves-input-wrapper {
-  border-radius: 2px;
+  border-radius: 0.2em;
   vertical-align: bottom; }
-  .waves-input-wrapper.waves-button {
-    padding: 0; }
   .waves-input-wrapper .waves-button-input {
     position: relative;
     top: 0;
@@ -5646,14 +5627,12 @@ input[type="submit"] {
   line-height: 2.5em;
   border-radius: 50%; }
 
-.waves-float {
-  -webkit-mask-image: none;
-  box-shadow: 0px 1px 1.5px 1px rgba(0, 0, 0, 0.12); }
-  .waves-float:active {
-    box-shadow: 0px 8px 20px 1px rgba(0, 0, 0, 0.3); }
-
 .waves-block {
   display: block; }
+
+/* Firefox Bug: link not triggered */
+a.waves-effect .waves-ripple {
+  z-index: -1; }
 
 .modal {
   display: none;
@@ -6399,7 +6378,9 @@ ul.table-of-contents a {
     width: 240px;
     left: -250px;
     top: 0;
-    bottom: 0;
+    height: 100%;
+    height: calc(100% + 60px);
+    padding-bottom: 60px;
     background-color: #FFF;
     z-index: 999;
     will-change: left; }
@@ -6417,14 +6398,23 @@ ul.table-of-contents a {
         background-color: #ddd; }
     ul.side-nav a {
       color: #444; } }
+.drag-target {
+  height: 100%;
+  width: 10%;
+  position: fixed;
+  top: 0;
+  z-index: 998; }
+
 ul.side-nav.full,
 ul.side-nav.fixed {
   position: fixed;
   width: 240px;
   left: -250px;
   top: 0;
-  bottom: 0;
   margin: 0;
+  padding-bottom: 60px;
+  height: 100%;
+  height: calc(100% + 60px);
   background-color: #FFF;
   z-index: 999;
   will-change: left; }
@@ -6475,7 +6465,7 @@ ul.side-nav.fixed {
   right: 0px;
   height: 120vh;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 998;
+  z-index: 997;
   will-change: opacity; }
 
 /*
