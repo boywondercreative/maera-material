@@ -6,6 +6,7 @@ Description:         Material Design shell
 Version:             0.5
 Author:              Aristeides Stathopoulos
 Author URI:          https://press.codes
+Text Domain:         maera_md
 */
 
 define( 'MAERA_MD_VERSION', '0.5' );

@@ -1,0 +1,303 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maera Material Design Shell\n"
+"POT-Creation-Date: 2015-01-18 01:10+0200\n"
+"PO-Revision-Date: 2015-01-18 01:10+0200\n"
+"Last-Translator: Stathopoulos Aristeides <info@aristeides.com>\n"
+"Language-Team: Stathopoulos Aristeides <info@aristeides.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/class-Maera_MD_Customizer.php:18
+#: includes/class-Maera_MD_Customizer.php:78
+msgid "Layout"
+msgstr "Layout"
+
+#: includes/class-Maera_MD_Customizer.php:19
+msgid "Typography"
+msgstr "Typography"
+
+#: includes/class-Maera_MD_Customizer.php:20
+msgid "Colors"
+msgstr "Colors"
+
+#: includes/class-Maera_MD_Customizer.php:21
+msgid "Blog"
+msgstr "Blog"
+
+#: includes/class-Maera_MD_Customizer.php:22
+#: includes/class-Maera_MD_Widgets.php:56
+msgid "Header"
+msgstr "Header"
+
+#: includes/class-Maera_MD_Customizer.php:23
+msgid "Advanced"
+msgstr "Advanced"
+
+#: includes/class-Maera_MD_Customizer.php:49
+msgid "Header Content"
+msgstr "Header Content"
+
+#: includes/class-Maera_MD_Customizer.php:58
+msgid "Header background shade"
+msgstr "Header background shade"
+
+#: includes/class-Maera_MD_Customizer.php:68
+msgid "Show only on homepage"
+msgstr "Show only on homepage"
+
+#: includes/class-Maera_MD_Customizer.php:79
+msgid ""
+"Select your main layout. Please note that if no widgets are present in a "
+"sidebar then that sidebar will not be displayed. "
+msgstr ""
+"Select your main layout. Please note that if no widgets are present in a "
+"sidebar then that sidebar will not be displayed. "
+
+#: includes/class-Maera_MD_Customizer.php:93
+msgid "Sidebar Width"
+msgstr "Sidebar Width"
+
+#: includes/class-Maera_MD_Customizer.php:108
+msgid "Enable flow-text"
+msgstr "Enable flow-text"
+
+#: includes/class-Maera_MD_Customizer.php:118
+msgid "Background Mode"
+msgstr "Background Mode"
+
+#: includes/class-Maera_MD_Customizer.php:123
+msgid "Light"
+msgstr "Light"
+
+#: includes/class-Maera_MD_Customizer.php:124
+msgid "Dark"
+msgstr "Dark"
+
+#: includes/class-Maera_MD_Customizer.php:132
+msgid ""
+"Please select a color. This will change the color of the navbar, links and "
+"the footer."
+msgstr ""
+"Please select a color. This will change the color of the navbar, links and "
+"the footer."
+
+#: includes/class-Maera_MD_Customizer.php:133
+msgid "Accent Color"
+msgstr "Accent Color"
+
+#: includes/class-Maera_MD_Customizer.php:163
+msgid "Disable the Navbar"
+msgstr "Disable the Navbar"
+
+#: includes/class-Maera_MD_Customizer.php:172
+msgid "Featured Image Height on Archives"
+msgstr "Featured Image Height on Archives"
+
+#: includes/class-Maera_MD_Customizer.php:173
+msgid "Set to 0 if you want to completely disable featured images on archives"
+msgstr "Set to 0 if you want to completely disable featured images on archives"
+
+#: includes/class-Maera_MD_Customizer.php:187
+msgid "Custom CSS"
+msgstr "Custom CSS"
+
+#: includes/class-Maera_MD_Customizer.php:188
+msgid ""
+"You can write your custom CSS here. This code will appear in a style tag "
+"appended in the header section of the page."
+msgstr ""
+"You can write your custom CSS here. This code will appear in a style tag "
+"appended in the header section of the page."
+
+#: includes/class-Maera_MD_Customizer.php:197
+msgid "Custom JS"
+msgstr "Custom JS"
+
+#: includes/class-Maera_MD_Customizer.php:198
+msgid ""
+"You can write your custom JavaScript/jQuery here. The code will be included "
+"in a script tag appended to the bottom of the page."
+msgstr ""
+"You can write your custom JavaScript/jQuery here. The code will be included "
+"in a script tag appended to the bottom of the page."
+
+#: includes/class-Maera_MD_Post_Metabox.php:15
+msgid "default"
+msgstr "default"
+
+#: includes/class-Maera_MD_Post_Metabox.php:16
+msgid "red"
+msgstr "red"
+
+#: includes/class-Maera_MD_Post_Metabox.php:17
+msgid "pink"
+msgstr "pink"
+
+#: includes/class-Maera_MD_Post_Metabox.php:18
+msgid "purple"
+msgstr "purple"
+
+#: includes/class-Maera_MD_Post_Metabox.php:19
+msgid "deep-purple"
+msgstr "deep-purple"
+
+#: includes/class-Maera_MD_Post_Metabox.php:20
+msgid "indigo"
+msgstr "indigo"
+
+#: includes/class-Maera_MD_Post_Metabox.php:21
+msgid "blue"
+msgstr "blue"
+
+#: includes/class-Maera_MD_Post_Metabox.php:22
+msgid "light-blue"
+msgstr "light-blue"
+
+#: includes/class-Maera_MD_Post_Metabox.php:23
+msgid "cyan"
+msgstr "cyan"
+
+#: includes/class-Maera_MD_Post_Metabox.php:24
+msgid "teal"
+msgstr "teal"
+
+#: includes/class-Maera_MD_Post_Metabox.php:25
+msgid "green"
+msgstr "green"
+
+#: includes/class-Maera_MD_Post_Metabox.php:26
+msgid "light-green"
+msgstr "light-green"
+
+#: includes/class-Maera_MD_Post_Metabox.php:27
+msgid "lime"
+msgstr "lime"
+
+#: includes/class-Maera_MD_Post_Metabox.php:28
+msgid "yellow"
+msgstr "yellow"
+
+#: includes/class-Maera_MD_Post_Metabox.php:29
+msgid "amber"
+msgstr "amber"
+
+#: includes/class-Maera_MD_Post_Metabox.php:30
+msgid "orange"
+msgstr "orange"
+
+#: includes/class-Maera_MD_Post_Metabox.php:31
+msgid "deep-orange"
+msgstr "deep-orange"
+
+#: includes/class-Maera_MD_Post_Metabox.php:32
+msgid "brown"
+msgstr "brown"
+
+#: includes/class-Maera_MD_Post_Metabox.php:33
+msgid "grey"
+msgstr "grey"
+
+#: includes/class-Maera_MD_Post_Metabox.php:34
+msgid "blue-grey"
+msgstr "blue-grey"
+
+#: includes/class-Maera_MD_Post_Metabox.php:42
+msgid "Default"
+msgstr "Default"
+
+#: includes/class-Maera_MD_Post_Metabox.php:43
+msgid "Full-Screen"
+msgstr "Full-Screen"
+
+#: includes/class-Maera_MD_Post_Metabox.php:44
+msgid "Main & Sidebar"
+msgstr "Main & Sidebar"
+
+#: includes/class-Maera_MD_Post_Metabox.php:45
+msgid "Sidebar & Main"
+msgstr "Sidebar & Main"
+
+#: includes/class-Maera_MD_Post_Metabox.php:80
+msgid ""
+"You can select a different color to be used on this post. You can see the "
+"full palette we're using <a href=\"http://www.google.com/design/spec/style/"
+"color.html#color-color-palette\" target=\"_blank\">here</a>"
+msgstr ""
+"You can select a different color to be used on this post. You can see the "
+"full palette we're using <a href=\"http://www.google.com/design/spec/style/"
+"color.html#color-color-palette\" target=\"_blank\">here</a>"
+
+#: includes/class-Maera_MD_Post_Metabox.php:91
+msgid "You can select a different layout to be used on this post."
+msgstr "You can select a different layout to be used on this post."
+
+#: includes/class-Maera_MD_Widgets.php:13
+msgid "Color"
+msgstr "Color"
+
+#: includes/class-Maera_MD_Widgets.php:22
+msgid "Depth"
+msgstr "Depth"
+
+#: includes/class-Maera_MD_Widgets.php:31
+msgid "Width"
+msgstr "Width"
+
+#: includes/class-Maera_MD_Widgets.php:65
+msgid "Footer"
+msgstr "Footer"
+
+#: views/base.twig:11 views/main.twig:8
+msgid "Sorry, no content"
+msgstr "Sorry, no content"
+
+#: views/comments.twig:6
+msgid "Comments"
+msgstr "Comments"
+
+#: views/content-single-entry-meta.twig:12
+msgid "under"
+msgstr "under"
+
+#: views/content-single-entry-meta.twig:16
+msgid "by"
+msgstr "by"
+
+#: views/content-single-entry-meta.twig:17
+msgid "with"
+msgstr "with"
+
+#: views/content-single-entry-meta.twig:17
+msgid "comments"
+msgstr "comments"
+
+#: views/header.twig:6
+msgid "Skip to main content"
+msgstr "Skip to main content"
+
+#: views/pagination.twig:7
+msgid "Previous Posts"
+msgstr "Previous Posts"
+
+#: views/pagination.twig:14
+msgid "Next Posts"
+msgstr "Next Posts"
+
+#: views/searchform.twig:7
+msgid "Search"
+msgstr "Search"
+
+#: views/single.twig:7
+msgid "Pages:"
+msgstr "Pages:"
