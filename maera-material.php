@@ -1,13 +1,14 @@
 <?php
 /*
-Plugin Name:         Maera Material Shell
+Plugin Name:         Maera Material Design Shell
 Plugin URI:          https://press.codes
 Description:         Material Design shell
-Version:             0.3-dev
+Version:             0.5
 Author:              Aristeides Stathopoulos
 Author URI:          https://press.codes
 */
 
+define( 'MAERA_MD_VERSION', '0.5' );
 define( 'MAERA_MATERIAL_SHELL_URL', plugins_url( '', __FILE__ ) );
 define( 'MAERA_MATERIAL_SHELL_PATH', dirname( __FILE__ ) );
 
@@ -167,3 +168,15 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 	}
 
 }
+
+/**
+ * Licensing handler
+ */
+function maera_md_licensing() {
+
+	if ( is_admin() && class_exists( 'Maera_Updater' ) ) {
+		$maera_md_license = new Maera_Updater( 'plugin', __FILE__, 'Maera Material Design Shell', MAERA_MD_VERSION, '@aristath, @fovoc' );
+	}
+
+}
+add_action( 'init', 'maera_md_licensing' );
