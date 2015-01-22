@@ -7,7 +7,7 @@
 	<header>
 		{% do action( 'get_header' ) %}
 		{% do action( 'maera/header/before', post.ID ) %}
-		{% if not theme_mods.navbar_disable %}
+		{% if not theme.theme_mod('navbar_disable', 0) %}
 			{% set navwrapper = 'nav-wrapper' %}
 			<nav class="{{ red|apply_filters('maera/nav/class') }} lighten-1">
 				{% block header %}
@@ -28,11 +28,11 @@
 			</nav>
 		{% endif %}
 
-		{% if not theme_mods.header_front or ( theme_mods.header_front and function('is_front_page') ) %}
+		{% if not theme.theme_mod('header_front', 1) or ( theme.theme_mod('header_front', 1) and function('is_front_page') ) %}
 			<div class="header hero parallax-container">
 				<div class="parallax {{ ''|apply_filters('maera_md/header_classes') }}"><img src="{{ header_img }}"></div>
 				<div class="{{ grid.container() }}">
-					{{ theme_mods.header_content }}
+					{{ theme.theme_mod('header_content', '') }}
 					<div class="{{ grid.row() }}">
 						{% if sidebar.header %}
 							{{ sidebar.header }}
