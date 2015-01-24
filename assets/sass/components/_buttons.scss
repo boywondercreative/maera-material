@@ -32,17 +32,22 @@ button:disabled,
 input[type="button"]:disabled,
 input[type="reset"]:disabled,
 input[type="submit"]:disabled {
-  background-color: $button-background-disabled;
+  background-color: $button-bg-color-disabled;
   box-shadow: none;
   color: $button-color-disabled;
 
   &:hover {
-    background-color: $button-background-disabled;
+    background-color: $button-bg-color-disabled;
     color: $button-color-disabled;
   }
 }
 // Shared icon styles
-.btn, .btn-floating, .btn-large, .btn-flat {
+.btn,
+.btn-flat,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   i {
     font-size: $button-font-size-shared;
     line-height: inherit;

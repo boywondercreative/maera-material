@@ -41,7 +41,8 @@
 
     // }
 
-    $.fn.sideNav = function (options) {
+  var methods = {
+    init : function(options) {
       var defaults = {
         activationWidth: 70,
         edge: 'left'
@@ -81,7 +82,7 @@
         function removeMenu() {
           panning = false;
           menuOut = false;
-          $('#sidenav-overlay').animate({opacity: 0}, {duration: 200, queue: false, easing: 'easeOutQuad',
+          $('#sidenav-overlay').velocity({opacity: 0}, {duration: 200, queue: false, easing: 'easeOutQuad',
             complete: function() {
               $(this).remove();
             } });
@@ -246,7 +247,27 @@
 
             return false;
           });
-});
+      });
 
-};
+
+    },
+    show : function() {
+      this.trigger('click');
+    },
+    hide : function() {
+      $('#sidenav-overlay').trigger('click');
+    }
+  };
+
+
+    $.fn.sideNav = function(methodOrOptions) {
+      if ( methods[methodOrOptions] ) {
+        return methods[ methodOrOptions ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+      } else if ( typeof methodOrOptions === 'object' || ! methodOrOptions ) {
+        // Default to "init"
+        return methods.init.apply( this, arguments );
+      } else {
+        $.error( 'Method ' +  methodOrOptions + ' does not exist on jQuery.tooltip' );
+      }
+    }; // PLugin end
 }( jQuery ));
