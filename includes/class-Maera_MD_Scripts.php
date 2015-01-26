@@ -9,13 +9,14 @@ class Maera_MD_Scripts {
 			return;
 		}
 
-		if ( Maera()->dev->dev_mode() ) {
-			// Enqueue dev-mode scripts scripts
+		// TODO: CONDITIONAL FAILS.
+		// if ( Maera()->dev->dev_mode() ) {
+		// 	// Enqueue dev-mode scripts scripts
 			add_action( 'wp_enqueue_scripts', array( $this, 'dev_scripts' ) );
-		} else {
-			// Enqueue normal scripts
-			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
-		}
+		// } else {
+		// 	// Enqueue normal scripts
+		// 	add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
+		// }
 		// Enqueue the styles
 		add_action( 'wp_enqueue_scripts', array( $this, 'styles' ) );
 
