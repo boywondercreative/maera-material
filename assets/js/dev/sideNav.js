@@ -76,6 +76,9 @@
                 menu_id.removeAttr('style');
               }
             }
+            if ($('#sidenav-overlay').css('opacity') != 0 && menuOut) {
+              $('#sidenav-overlay').trigger('click');
+            }
           });
         }
 
@@ -100,6 +103,8 @@
           // enable_scroll();
         }
 
+
+
         // Touch Event
         var panning = false;
         var menuOut = false;
@@ -108,9 +113,9 @@
           prevent_default: false
         }).bind('tap', function(e) {
           // capture overlay click on drag target
-          if (menuOut && !panning) {
+          // if (menuOut && !panning) {
             $('#sidenav-overlay').trigger('click');
-          }
+          // }
         }).bind('pan', function(e) {
 
           if (e.gesture.pointerType === "touch") {
