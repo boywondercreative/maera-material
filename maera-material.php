@@ -3,13 +3,13 @@
 Plugin Name:         Maera Material Design Shell
 Plugin URI:          https://press.codes
 Description:         Material Design shell
-Version:             0.95.0
+Version:             0.95.1
 Author:              Aristeides Stathopoulos
 Author URI:          https://press.codes
 Text Domain:         maera_md
 */
 
-define( 'MAERA_MD_VER', '0.95.0' );
+define( 'MAERA_MD_VER', '0.95.1' );
 define( 'MAERA_MATERIAL_SHELL_URL', plugins_url( '', __FILE__ ) );
 define( 'MAERA_MATERIAL_SHELL_PATH', dirname( __FILE__ ) );
 
