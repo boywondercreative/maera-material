@@ -1,6 +1,6 @@
 <?php
 
-class Maera_MD_Timber {
+class Maera_MD_Timber extends Maera_Material {
 
 	function __construct() {
 		add_filter( 'maera/timber/context', array( $this, 'timber_global_context' ) );

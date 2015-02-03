@@ -62,10 +62,12 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			$this->widgets    = new Maera_MD_Widgets();
 			$this->customizer = new Maera_MD_Customizer();
 			$this->layouts    = Maera_MD_Layout::get_instance();
-			$this->layouts->layout = $this->get_layout();
 			$this->styles     = new Maera_MD_Styles();
 			$this->scripts    = new Maera_MD_Scripts();
 			$this->metabox    = new Maera_MD_Post_Metabox();
+
+			// Layout modifier
+			$this->get_layout();
 
 			// Add theme supports
 			add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
@@ -189,7 +191,7 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 				}
 			}
 
-			return $layout;
+			$this->layouts->layout = $layout;
 
 		}
 
