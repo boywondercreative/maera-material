@@ -1,4 +1,25 @@
 <?php
+
+/**
+ * Example:
+ *
+ * $widget_widths = new Maera_Widget_Dropdown(
+ * 	array(
+ * 		'id'      => 'maera_widget_width',
+ * 		'label'   => __( 'Width', 'maera' ),
+ * 		'default' => 12,
+ * 		'choices' => array(
+ * 			12 => array( 'label' => 'Full',       'classes' => 'col s12' ),
+ * 			3  => array( 'label' => '1 Quarter',  'classes' => 'col s12 m12 l3' ),
+ * 			4  => array( 'label' => '1 Third',    'classes' => 'col s12 m12 l4' ),
+ * 			6  => array( 'label' => 'Half',       'classes' => 'col s12 m12 l6' ),
+ * 			8  => array( 'label' => '3 quarters', 'classes' => 'col s12 m12 l8' ),
+ * 			9  => array( 'label' => '2 Thirds',   'classes' => 'col s12 m12 l9' ),
+ * 		),
+ * 	)
+ * );
+ */
+
 /**
  * Creates a dropdown in each widget and then adds the selected options as a CSS class
  */
@@ -22,6 +43,9 @@ class Maera_Widget_Dropdown {
 
 	}
 
+	/**
+	 * Add the classes to the widget
+	 */
 	function dynamic_sidebar_params( $params ) {
 
 		global $wp_registered_widgets;
@@ -48,6 +72,9 @@ class Maera_Widget_Dropdown {
 
 	}
 
+	/**
+	 * Update the widget
+	 */
 	function widget_update_callback( $instance, $new_instance ) {
 
 		$instance[$this->id] = $new_instance[$this->id];
@@ -55,11 +82,14 @@ class Maera_Widget_Dropdown {
 
 	}
 
+	/**
+	 * Add the dropdown form in the widget options
+	 */
 	function in_widget_form( $widget, $return, $instance ) {
 
 		$choices = $this->choices;
-
 		$instance[$this->id] = ( ! isset( $instance[$this->id] ) ) ? $this->default : $instance[$this->id];
+
 		?>
 
 		<div style="margin-top: 1em;">

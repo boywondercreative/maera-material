@@ -38,6 +38,13 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 	class Maera_Material {
 
 		private static $instance;
+		public $timber;
+		public $widgets;
+		public $customizer;
+		public $layouts;
+		public $styles;
+		public $scripts;
+		public $metabox;
 
 		/**
 		* Class constructor
@@ -51,14 +58,14 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			$this->requires();
 			$this->required_plugins();
 
-			$maera_md_timber     = new Maera_MD_Timber();
-			$maera_md_widgets    = new Maera_MD_Widgets();
-			$maera_md_customizer = new Maera_MD_Customizer();
-			$maera_md_layout     = new Maera_MD_Layout();
-			$maera_md_layout     = new Maera_MD_Typo();
-			$maera_md_styles     = new Maera_MD_Styles();
-			$maera_md_scripts    = new Maera_MD_Scripts();
-			$maera_md_metabox    = new Maera_MD_Post_Metabox();
+			$this->timber     = new Maera_MD_Timber();
+			$this->widgets    = new Maera_MD_Widgets();
+			$this->customizer = new Maera_MD_Customizer();
+			$this->layouts    = Maera_MD_Layout::get_instance();
+			$this->layouts->layout = $this->get_layout();
+			$this->styles     = new Maera_MD_Styles();
+			$this->scripts    = new Maera_MD_Scripts();
+			$this->metabox    = new Maera_MD_Post_Metabox();
 
 			// Add theme supports
 			add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
@@ -66,8 +73,8 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 		}
 
 		/**
-		* Singleton
-		*/
+		 * Singleton
+		 */
 		public static function get_instance() {
 
 			if ( null == self::$instance ) {
@@ -163,6 +170,26 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			} else {
 				return $image_url;
 			}
+
+		}
+
+		/**
+		 * Get the layout
+		 */
+		public function get_layout() {
+
+			global $post;
+
+			$layout = get_theme_mod( 'layout', 1 );
+
+			if ( is_singular() ) {
+				$custom_layout = get_post_meta( $post->ID, 'maera_md_layout', true );
+				if ( 'default' != $custom_layout ) {
+					$layout = $custom_layout;
+				}
+			}
+
+			return $layout;
 
 		}
 

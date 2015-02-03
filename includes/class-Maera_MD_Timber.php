@@ -14,7 +14,7 @@ class Maera_MD_Timber {
 		$data['header_img'] = Maera_Material::custom_header_url();
 		$data['sidebar']['header'] = Timber::get_widgets( 'sidebar_header' );
 		$data['sidebar']['footer'] = Timber::get_widgets( 'sidebar_footer' );
-		$data['layout'] = Maera_MD_Layout::get_layout();
+		$data['layout'] = Maera()->shell->instance->layouts->layout;
 
 		return $data;
 
