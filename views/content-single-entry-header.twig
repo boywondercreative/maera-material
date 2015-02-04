@@ -1,5 +1,7 @@
 <div class="entry-header">
+
 	{% if layout == '0' %}
+
 		{% if post.thumbnail and theme.theme_mod('feat_img_height', 60) %}
 			<div class="parallax-container featured-image">
 				<a class="parallax featured-image" href="{{ post.link }}" title="{{ post.title }}">
@@ -12,7 +14,9 @@
 			<title itemprop="name">{{ post.title }}</title>
 			<h2 class="entry-title"><a href="{{ post.link }}">{{ post.title|apply_filters( 'maera/title' ) }}</a></h2>
 		</div>
+
 	{% else %}
+
 		{% if post.thumbnail and theme.theme_mod('feat_img_height', 60) %}
 			<div class="featured-image">
 				<a class="featured-image" href="{{ post.link }}" title="{{ post.title }}">
@@ -20,10 +24,12 @@
 				</a>
 			</div>
 		{% endif %}
-		<div class="container entry-content" itemprop="description">
+		<div class="entry-content" itemprop="description">
 			{% do action( 'maera/teaser/start', post.ID ) %}
 			<title itemprop="name">{{ post.title }}</title>
 			<h2 class="entry-title"><a href="{{ post.link }}">{{ post.title|apply_filters( 'maera/title' ) }}</a></h2>
 		</div>
+
 	{% endif %}
+
 </div>

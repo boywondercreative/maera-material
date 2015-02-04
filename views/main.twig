@@ -3,11 +3,11 @@
 <div class="main" role="main">
 	{% if title %}
 		{% if function( 'is_home' ) %}
-			<div class="main-title {{ red|apply_filters('maera/nav/class') }} lighten-2 z-depth-3" style="padding: 20px 0;">
-				<div class="title-container {{ grid.container() }}"><h2 style="margin: 0; color: #fff; font-weight: 100;">{{ title }}</h2></div>
+			<div class="main-title{% if layout == '0' %} {{ red|apply_filters('maera/nav/class') }} lighten-2 z-depth-3{% endif %}" style="padding: 20px 0;">
+				<div class="title-container{% if layout == '0' %} container{% endif %}"><h2{% if layout == '0' %} style="margin: 0; color: #fff; font-weight: 100;"{% endif %}>{{ title }}</h2></div>
 			</div>
 		{% else %}
-			<div class="title-container {{ grid.container() }}"><h1>{{ title }}</h1></div>
+			<div class="title-container container"><h1>{{ title }}</h1></div>
 		{% endif %}
 	{% endif %}
 	{% block content %}
