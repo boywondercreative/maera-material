@@ -1,6 +1,5 @@
 {#<?php#}
-{% import 'grid_classes.html.twig' as grid %}
-<section id="comments" class="{{ grid.container() }} comments">
+<section id="comments" class="{% if layout == '0' %}{{ grid.container() }} {% endif %}comments">
 
 	<div class="respond">
 		<h3 class="h2">{{ __( 'Comments', 'maera' ) }}</h3>
