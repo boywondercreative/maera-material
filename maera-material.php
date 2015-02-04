@@ -96,7 +96,6 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			require_once( __DIR__ . '/includes/class-Maera_MD_Timber.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Widgets.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Customizer.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Typo.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Scripts.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Styles.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Post_Metabox.php' );

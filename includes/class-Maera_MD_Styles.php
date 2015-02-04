@@ -44,6 +44,10 @@ class Maera_MD_Styles {
 		$classes[] = 'accent-' . $this->color();
 		$classes[] = 'layout-' . Maera()->shell->instance->layout;
 
+		if ( 1 == get_theme_mod( 'flow_text', 1 ) ) {
+			$classes[] = ' flow-text';
+		}
+
 		return $classes;
 
 	}
