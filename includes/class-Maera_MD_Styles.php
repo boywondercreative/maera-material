@@ -42,6 +42,7 @@ class Maera_MD_Styles {
 		}
 
 		$classes[] = 'accent-' . $this->color();
+		$classes[] = 'layout-' . Maera()->shell->instance->layout;
 
 		return $classes;
 

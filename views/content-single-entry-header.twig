@@ -1,16 +1,29 @@
-{% import 'grid_classes.html.twig' as grid %}
-
 <div class="entry-header">
-	{% if post.thumbnail and theme.theme_mod('feat_img_height', 60) %}
-	<div class="parallax-container featured-image">
-		<a class="parallax featured-image" href="{{ post.link }}" title="{{ post.title }}">
-			<img class="featured-image" src="{{ post.thumbnail.src }}">
-		</a>
-	</div>
+	{% if layout == '0' %}
+		{% if post.thumbnail and theme.theme_mod('feat_img_height', 60) %}
+			<div class="parallax-container featured-image">
+				<a class="parallax featured-image" href="{{ post.link }}" title="{{ post.title }}">
+					<img class="featured-image" src="{{ post.thumbnail.src }}">
+				</a>
+			</div>
+		{% endif %}
+		<div class="container entry-content" itemprop="description">
+			{% do action( 'maera/teaser/start', post.ID ) %}
+			<title itemprop="name">{{ post.title }}</title>
+			<h2 class="entry-title"><a href="{{ post.link }}">{{ post.title|apply_filters( 'maera/title' ) }}</a></h2>
+		</div>
+	{% else %}
+		{% if post.thumbnail and theme.theme_mod('feat_img_height', 60) %}
+			<div class="featured-image">
+				<a class="featured-image" href="{{ post.link }}" title="{{ post.title }}">
+					<img class="featured-image" src="{{ post.thumbnail.src }}">
+				</a>
+			</div>
+		{% endif %}
+		<div class="container entry-content" itemprop="description">
+			{% do action( 'maera/teaser/start', post.ID ) %}
+			<title itemprop="name">{{ post.title }}</title>
+			<h2 class="entry-title"><a href="{{ post.link }}">{{ post.title|apply_filters( 'maera/title' ) }}</a></h2>
+		</div>
 	{% endif %}
-	<div class="{% if layout == '0' %}container {% endif %}entry-content" itemprop="description">
-		{% do action( 'maera/teaser/start', post.ID ) %}
-		<title itemprop="name">{{ post.title }}</title>
-		<h2 class="entry-title"><a href="{{ post.link }}">{{ post.title|apply_filters( 'maera/title' ) }}</a></h2>
-	</div>
 </div>

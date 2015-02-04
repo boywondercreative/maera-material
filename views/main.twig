@@ -3,7 +3,7 @@
 <div class="main" role="main">
 	{% if title %}
 		{% if function( 'is_home' ) %}
-			<div class="{{ red|apply_filters('maera/nav/class') }} lighten-2 z-depth-3" style="padding: 20px 0;">
+			<div class="main-title {{ red|apply_filters('maera/nav/class') }} lighten-2 z-depth-3" style="padding: 20px 0;">
 				<div class="title-container {{ grid.container() }}"><h2 style="margin: 0; color: #fff; font-weight: 100;">{{ title }}</h2></div>
 			</div>
 		{% else %}

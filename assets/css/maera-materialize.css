@@ -8257,5 +8257,9 @@ nav .brand-logo img {
   position: relative;
   left: 0; }
 
-header {
+body.layout-0 header {
   margin: 0; }
+body.layout-1 .main-title, body.layout-2 .main-title {
+  margin-top: -5px; }
+body.layout-1 .entry-content, body.layout-2 .entry-content {
+  padding: 0 1em 1em 1em; }
