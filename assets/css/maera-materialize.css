@@ -8256,3 +8256,6 @@ nav .brand-logo img {
 [type="radio"]:checked {
   position: relative;
   left: 0; }
+
+header {
+  margin: 0; }
