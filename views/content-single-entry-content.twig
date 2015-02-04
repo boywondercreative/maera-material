@@ -1,6 +1,6 @@
 {% import 'grid_classes.html.twig' as grid %}
 
-<div class="{{ grid.container() }} entry-content" itemprop="text">
+<div class="{% if layout == '0' %}container {% endif %}entry-content" itemprop="text">
 	{% do action( 'maera/single/pre_content', post.ID ) %}
 	{{ post.content }}
 	{% do action( 'maera/single/after_content', post.ID ) %}

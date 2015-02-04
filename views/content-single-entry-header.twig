@@ -8,7 +8,7 @@
 		</a>
 	</div>
 	{% endif %}
-	<div class="{{ grid.container() }} entry-content" itemprop="description">
+	<div class="{% if layout == '0' %}container {% endif %}entry-content" itemprop="description">
 		{% do action( 'maera/teaser/start', post.ID ) %}
 		<title itemprop="name">{{ post.title }}</title>
 		<h2 class="entry-title"><a href="{{ post.link }}">{{ post.title|apply_filters( 'maera/title' ) }}</a></h2>

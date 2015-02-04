@@ -1,5 +1,5 @@
 {% import 'grid_classes.html.twig' as grid %}
-<div class="{{ grid.container() }} entry-meta">
+<div class="{% if layout == '0' %}container {% endif %}entry-meta">
 	{% if function('get_the_time', 'U', post) is same as(post.get_modified_time('U')) %}
 		<time class="entry-date published" datetime="{{ post.date('c') }}">
 			<span itemprop="datePublished">{{ post.date }}</span>

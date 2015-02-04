@@ -12,7 +12,7 @@
 			<nav class="{{ red|apply_filters('maera/nav/class') }} lighten-1">
 				{% block header %}
 					<div class="navwrapper">
-						<div class="{{ grid.container() }}">
+						<div class="container">
 							{% include 'site-logo.twig' %}
 							<ul id="nav-mobile" class="right side-nav">
 								{% for item in menu.primary.items %}
@@ -31,7 +31,7 @@
 		{% if not theme.theme_mod('header_front', 1) or ( theme.theme_mod('header_front', 1) and function('is_front_page') ) %}
 			<div class="header hero parallax-container">
 				<div class="parallax {{ ''|apply_filters('maera_md/header_classes') }}"><img src="{{ header_img }}"></div>
-				<div class="{{ grid.container() }}">
+				<div class="container">
 					{{ theme.theme_mod('header_content', '') }}
 					<div class="{{ grid.row() }}">
 						{% if sidebar.header %}

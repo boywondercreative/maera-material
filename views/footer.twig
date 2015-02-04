@@ -5,7 +5,7 @@
 	{% do action( 'maera/footer/before', post.ID ) %}
 	<div class="page-footer">
 		{% do action( 'maera/footer/start', post.ID ) %}
-		<div class="{{ grid.container() }} wrap footer-section" id="wrap-footer-section">
+		<div class="container wrap footer-section" id="wrap-footer-section">
 			{% do action( 'maera/footer/content' ) %}
 			{% if sidebar.header %}
 				<div class="{{ grid.row() }}">{{ sidebar.footer }}</div>

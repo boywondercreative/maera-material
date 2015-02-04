@@ -1,9 +1,10 @@
 {% import 'grid_classes.html.twig' as grid %}
-<main>
+
+<main{% if layout != '0' %} class="container"{% endif %}>
 	{% do action( 'maera/wrap/before', post.ID ) %}
-	{% if 0 != layout %}
+	{% if layout != '0' %}
 		<div class="{{ grid.row() }}">
-			<div class="{{ 'main-content-area'|apply_filters( 'maera/section_class/content' ) }} main-content-wrapper">
+			<div class="col s12 m{{ 12 - theme.theme_mod('sidebar_width', '4') }}{% if layout == '2' %} right{% endif %} {{ 'main-content-area'|apply_filters( 'maera/section_class/content' ) }} main-content-wrapper">
 				{% endif %}
 				{% do action( 'maera/content/before', post.ID ) %}
 				<div class="content" id="content" itemprop="mainContentOfPage">
@@ -14,9 +15,11 @@
 				{% do action( 'maera/content/after' ) %}
 				{% if 0 != layout %}
 			</div>
-			<div class="{{ 'sidebar'|apply_filters( 'maera/section_class/primary' ) }}">
-				{{ sidebar.primary }}
-			</div>
+			{% if layout != '0' %}
+				<div class="col s12 m{{ theme.theme_mod('sidebar_width', '4') }}">
+					{{ sidebar.primary }}
+				</div>
+			{% endif %}
 		</div>
 		{% endif %}
 	{% do action( 'maera/wrap/after' ) %}

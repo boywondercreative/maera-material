@@ -61,13 +61,19 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			$this->timber     = new Maera_MD_Timber();
 			$this->widgets    = new Maera_MD_Widgets();
 			$this->customizer = new Maera_MD_Customizer();
-			$this->layouts    = Maera_MD_Layout::get_instance();
 			$this->styles     = new Maera_MD_Styles();
 			$this->scripts    = new Maera_MD_Scripts();
 			$this->metabox    = new Maera_MD_Post_Metabox();
+			$this->layout     = get_theme_mod( 'layout', 1 );
 
 			// Layout modifier
-			$this->get_layout();
+			global $post;
+			if ( is_singular() ) {
+				$custom_layout = get_post_meta( $post->ID, 'maera_md_layout', true );
+				if ( 'default' != $custom_layout ) {
+					$this->layout = $custom_layout;
+				}
+			}
 
 			// Add theme supports
 			add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
@@ -96,7 +102,6 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			require_once( __DIR__ . '/includes/class-Maera_MD_Timber.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Widgets.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Customizer.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Layout.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Typo.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Scripts.php');
 			require_once( __DIR__ . '/includes/class-Maera_MD_Styles.php');
@@ -171,26 +176,6 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			} else {
 				return $image_url;
 			}
-
-		}
-
-		/**
-		 * Get the layout
-		 */
-		public function get_layout() {
-
-			global $post;
-
-			$layout = get_theme_mod( 'layout', 1 );
-
-			if ( is_singular() ) {
-				$custom_layout = get_post_meta( $post->ID, 'maera_md_layout', true );
-				if ( 'default' != $custom_layout ) {
-					$layout = $custom_layout;
-				}
-			}
-
-			$this->layouts->layout = $layout;
 
 		}
 
