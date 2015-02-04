@@ -1,5 +1,6 @@
 {#<?php#}
-<article {{ function( 'post_class', 'z-depth-4' ) }} id="post-{{ post.ID }}" itemscope itemtype="http://schema.org/Article">
+{% if layout == '0' %}{% set depth = 'z-depth-4' %}{% else %}{% set depth = 'z-depth-0' %}{% endif %}
+<article {{ function( 'post_class', depth ) }} id="post-{{ post.ID }}" itemscope itemtype="http://schema.org/Article">
 	{% block content %}
 		{% do action('maera/in_article/top', post.ID) %}
 		{% include ['content-entry-'~post.ID~'-header.twig', 'content-entry-'~post.post_type~'-header.twig', 'content-entry-header.twig'] %}
