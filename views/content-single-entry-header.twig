@@ -4,7 +4,7 @@
 	{% if post.thumbnail and theme.theme_mod('feat_img_height', 60) %}
 	<div class="parallax-container featured-image">
 		<a class="parallax featured-image" href="{{ post.link }}" title="{{ post.title }}">
-			<img class="featured-image" src="{{ post.thumbnail.src|resize(thumbnail.width, thumbnail.height) }}" srcset="{{ post.thumbnail.src|resize(thumbnail.width, thumbnail.height)|retina(1) }} 1x, {{ post.thumbnail.src|resize(thumbnail.width, thumbnail.height)|retina(2) }}  2x">
+			<img class="featured-image" src="{{ post.thumbnail.src }}">
 		</a>
 	</div>
 	{% endif %}
