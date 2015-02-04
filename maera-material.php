@@ -67,13 +67,7 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 			$this->layout     = get_theme_mod( 'layout', 1 );
 
 			// Layout modifier
-			global $post;
-			if ( is_singular() ) {
-				$custom_layout = get_post_meta( $post->ID, 'maera_md_layout', true );
-				if ( 'default' != $custom_layout ) {
-					$this->layout = $custom_layout;
-				}
-			}
+			add_action( 'wp', array( $this, 'layout' ) );
 
 			// Add theme supports
 			add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
@@ -175,6 +169,21 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 				return false;
 			} else {
 				return $image_url;
+			}
+
+		}
+
+		/**
+		 * Modify the layout
+		 */
+		public function layout() {
+			// Layout modifier
+			global $post;
+			if ( is_singular('post') ) {
+				$custom_layout = get_post_meta( $post->ID, 'maera_md_layout', true );
+				if ( 'default' != $custom_layout ) {
+					$this->layout = $custom_layout;
+				}
 			}
 
 		}
