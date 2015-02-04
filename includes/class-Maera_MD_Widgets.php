@@ -7,30 +7,30 @@ class Maera_MD_Widgets {
 
 	function __construct() {
 
-		$widget_colors = new Maera_Widget_Dropdown(
+		$widget_colors = new Maera_Widget_Dropdown_Class(
 			array(
 				'id'      => 'maera_md_color',
 				'label'   => __( 'Color', 'maera_md' ),
 				'choices' => Maera_MD_Data::colors(),
-				'default' => 0,
+				'default' => '0',
 			)
 		);
 
-		$widget_depths = new Maera_Widget_Dropdown(
+		$widget_depths = new Maera_Widget_Dropdown_Class(
 			array(
 				'id'      => 'maera_md_depth',
 				'label'   => __( 'Depth', 'maera_md' ),
 				'choices' => Maera_MD_Data::depths(),
-				'default' => 1,
+				'default' => '1',
 			)
 		);
 
-		$widget_widths = new Maera_Widget_Dropdown(
+		$widget_widths = new Maera_Widget_Dropdown_Class(
 			array(
 				'id'      => 'maera_md_width',
 				'label'   => __( 'Width', 'maera_md' ),
 				'choices' => Maera_MD_Data::widths(),
-				'default' => 12,
+				'default' => '12',
 			)
 		);
 

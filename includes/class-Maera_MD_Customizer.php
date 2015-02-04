@@ -81,9 +81,9 @@ class Maera_MD_Customizer {
 			'priority' => 3,
 			'default'  => 1,
 			'choices'  => array(
-				0 => get_template_directory_uri() . '/assets/images/1c.png',
-				1 => get_template_directory_uri() . '/assets/images/2cr.png',
-				2 => get_template_directory_uri() . '/assets/images/2cl.png',
+				'0' => get_template_directory_uri() . '/assets/images/1c.png',
+				'1' => get_template_directory_uri() . '/assets/images/2cr.png',
+				'2' => get_template_directory_uri() . '/assets/images/2cl.png',
 			),
 		);
 
