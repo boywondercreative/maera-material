@@ -92,13 +92,13 @@ if ( ! class_exists( 'Maera_Material' ) ) {
 		 */
 		function requires() {
 
-			require_once( __DIR__ . '/includes/class-Maera_MD_Data.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Timber.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Widgets.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Customizer.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Scripts.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Styles.php');
-			require_once( __DIR__ . '/includes/class-Maera_MD_Post_Metabox.php' );
+			require_once( __DIR__ . '/includes/class-maera-md-data.php');
+			require_once( __DIR__ . '/includes/class-maera-md-timber.php');
+			require_once( __DIR__ . '/includes/class-maera-md-widgets.php');
+			require_once( __DIR__ . '/includes/class-maera-md-customizer.php');
+			require_once( __DIR__ . '/includes/class-maera-md-scripts.php');
+			require_once( __DIR__ . '/includes/class-maera-md-styles.php');
+			require_once( __DIR__ . '/includes/class-maera-md-post-metabox.php' );
 
 		}
 
