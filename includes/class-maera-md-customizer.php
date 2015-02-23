@@ -103,34 +103,6 @@ class Maera_MD_Customizer {
 		);
 
 		$controls[] = array(
-			'type'     => 'checkbox',
-			'setting'  => 'flow_text',
-			'label'    => __( 'Enable flow-text', 'maera_md' ),
-			'section'  => 'typography',
-			'default'  => 1,
-			'priority' => 1,
-		);
-
-		$controls[] = array(
-			'type'     => 'slider',
-			'setting'  => 'base_font_size',
-			'label'    => __( 'Base font-size', 'maera_md' ),
-			'section'  => 'typography',
-			'priority' => 4,
-			'default'  => 14,
-			'choices'  => array(
-				'min'  => 4,
-				'max'  => 32,
-				'step' => 1,
-			),
-			'output'   => array(
-				'property' => 'font-size',
-				'units'    => 'px',
-				'element'  => 'html',
-			)
-		);
-
-		$controls[] = array(
 			'type'     => 'radio',
 			'mode'     => 'buttonset',
 			'setting'  => 'background_mode',
@@ -231,7 +203,7 @@ class Maera_MD_Customizer {
 		$controls[] = array(
 			'type'     => 'text',
 			'setting'  => 'read_more',
-			'label'    => __( 'Read More label', 'maera_bs' ),
+			'label'    => __( 'Read More label', 'maera_md' ),
 			'section'  => 'blog',
 			'priority' => 10,
 			'default'  => __( 'Read More', 'maera_md' ),
@@ -240,7 +212,7 @@ class Maera_MD_Customizer {
 		$controls[] = array(
 			'type'     => 'textarea',
 			'setting'  => 'css',
-			'label'    => __( 'Custom CSS', 'maera_bs' ),
+			'label'    => __( 'Custom CSS', 'maera_md' ),
 			'subtitle' => __( 'You can write your custom CSS here. This code will appear in a style tag appended in the header section of the page.', 'maera_md' ),
 			'section'  => 'advanced',
 			'priority' => 4,
@@ -250,12 +222,267 @@ class Maera_MD_Customizer {
 		$controls[] = array(
 			'type'     => 'textarea',
 			'setting'  => 'js',
-			'label'    => __( 'Custom JS', 'maera_bs' ),
+			'label'    => __( 'Custom JS', 'maera_md' ),
 			'subtitle' => __( 'You can write your custom JavaScript/jQuery here. The code will be included in a script tag appended to the bottom of the page.', 'maera_md' ),
 			'section'  => 'advanced',
 			'priority' => 6,
 			'default'  => '',
 		);
+
+		$controls[] = array(
+			'type'     => 'checkbox',
+			'setting'  => 'flow_text',
+			'label'    => __( 'Enable flow-text', 'maera_md' ),
+			'section'  => 'typography',
+			'default'  => 1,
+			'priority' => 1,
+		);
+
+		$controls[] = array(
+            'type'     => 'select',
+            'setting'  => 'font_base_family',
+            'label'    => __( 'Base font', 'maera_md' ),
+            'section'  => 'typography',
+            'default'  => '"Roboto"',
+            'priority' => 5,
+            'choices'  => Kirki_Fonts::get_font_choices(),
+            'output' => array(
+                'element'  => 'html',
+                'property' => 'font-family',
+            ),
+        );
+
+		$controls[] = array(
+            'type'     => 'select',
+            'setting'  => 'font_headers_family',
+            'label'    => __( 'Headers font', 'maera_md' ),
+            'section'  => 'typography',
+            'default'  => "Roboto Slab",
+            'priority' => 10,
+            'choices'  => Kirki_Fonts::get_font_choices(),
+            'output' => array(
+                'element'  => 'h1, h2, h3, h4, h5, h6',
+                'property' => 'font-family',
+            ),
+        );
+
+		$controls[] = array(
+            'type'     => 'multicheck',
+            'setting'  => 'font_subsets',
+            'label'    => __( 'Google-Font subsets', 'maera_md' ),
+            'description' => __( 'The subsets used from Google\'s API.', 'maera_md' ),
+            'section'  => 'typography',
+            'default'  => 'all',
+            'priority' => 15,
+            'choices'  => Kirki_Fonts::get_google_font_subsets(),
+            'output' => array(
+                'element'  => 'body',
+                'property' => 'font-subset',
+            ),
+        );
+
+		$controls[] = array(
+			'type'     => 'slider',
+			'setting'  => 'base_font_size',
+			'label'    => __( 'Base font-size', 'maera_md' ),
+			'section'  => 'typography',
+			'priority' => 20,
+			'default'  => 14,
+			'choices'  => array(
+				'min'  => 4,
+				'max'  => 32,
+				'step' => 1,
+			),
+			'output'   => array(
+				'property' => 'font-size',
+				'units'    => 'px',
+				'element'  => 'html',
+			)
+		);
+
+        $controls[] = array(
+            'type'     => 'slider',
+            'setting'  => 'font_base_weight',
+            'label'    => __( 'Base Font Weight', 'maera_md' ),
+            'section'  => 'typography',
+            'default'  => 300,
+            'priority' => 25,
+            'choices'  => array(
+                'min'  => 100,
+                'max'  => 900,
+                'step' => 100,
+            ),
+            'output' => array(
+                'element'  => 'html, body, .flow-text',
+                'property' => 'font-weight',
+            ),
+        );
+
+        $controls[] = array(
+            'type'     => 'slider',
+            'setting'  => 'font_base_height',
+            'label'    => __( 'Base Line Height', 'maera_md' ),
+            'section'  => 'typography',
+            'default'  => 1.43,
+            'priority' => 30,
+            'choices'  => array(
+                'min'  => 0,
+                'max'  => 3,
+                'step' => 0.01,
+            ),
+            'output' => array(
+                'element'  => 'body',
+                'property' => 'line-height',
+            ),
+        );
+
+        $controls[] = array(
+            'type'     => 'slider',
+            'setting'  => 'font_headers_weight_h1',
+            'label'    => __( 'H1 Font Weight', 'maera_md' ),
+            'section'  => 'typography',
+            'default'  => 900,
+            'priority' => 35,
+            'choices'  => array(
+                'min'  => 100,
+                'max'  => 900,
+                'step' => 100,
+            ),
+            'output' => array(
+                'element'  => 'h1',
+                'property' => 'font-weight',
+            ),
+        );
+
+        $controls[] = array(
+            'type'     => 'slider',
+            'setting'  => 'font_headers_weight_h2',
+            'label'    => __( 'H2 Font Weight', 'maera_md' ),
+            'section'  => 'typography',
+            'default'  => 800,
+            'priority' => 40,
+            'choices'  => array(
+                'min'  => 100,
+                'max'  => 900,
+                'step' => 100,
+            ),
+            'output' => array(
+                'element'  => 'h2',
+                'property' => 'font-weight',
+            ),
+        );
+
+        $controls[] = array(
+            'type'     => 'slider',
+            'setting'  => 'font_headers_weight_h3',
+            'label'    => __( 'H2 Font Weight', 'maera_md' ),
+            'section'  => 'typography',
+            'default'  => 600,
+            'priority' => 45,
+            'choices'  => array(
+                'min'  => 100,
+                'max'  => 900,
+                'step' => 100,
+            ),
+            'output' => array(
+                'element'  => 'h3',
+                'property' => 'font-weight',
+            ),
+        );
+
+        $controls[] = array(
+            'type'     => 'slider',
+            'setting'  => 'font_headers_weight_h4',
+            'label'    => __( 'H4 Font Weight', 'maera_md' ),
+            'section'  => 'typography',
+            'default'  => 400,
+            'priority' => 50,
+            'choices'  => array(
+                'min'  => 100,
+                'max'  => 900,
+                'step' => 100,
+            ),
+            'output' => array(
+                'element'  => 'h4',
+                'property' => 'font-weight',
+            ),
+        );
+
+        $controls[] = array(
+            'type'     => 'slider',
+            'setting'  => 'font_h1_size',
+            'label'    => __( 'H1 Font Size', 'maera_md' ),
+            'section'  => 'typography',
+            'default'  => 52,
+            'priority' => 55,
+            'choices'  => array(
+                'min'  => 7,
+                'max'  => 72,
+                'step' => 1,
+            ),
+            'output' => array(
+                'element'  => 'h1',
+                'property' => 'font-size',
+                'units'    => 'px',
+            ),
+        );
+
+        $controls[] = array(
+            'type'     => 'slider',
+            'setting'  => 'font_h2_size',
+            'label'    => __( 'H2 Font Size', 'maera_md' ),
+            'section'  => 'typography',
+            'default'  => 36,
+            'priority' => 60,
+            'choices'  => array(
+                'min'  => 7,
+                'max'  => 72,
+                'step' => 1,
+            ),
+            'output' => array(
+                'element'  => 'h2',
+                'property' => 'font-size',
+                'units'    => 'px',
+            ),
+        );
+
+        $controls[] = array(
+            'type'     => 'slider',
+            'setting'  => 'font_h3_size',
+            'label'    => __( 'H3 Font Size', 'maera_md' ),
+            'section'  => 'typography',
+            'default'  => 24,
+            'priority' => 65,
+            'choices'  => array(
+                'min'  => 7,
+                'max'  => 72,
+                'step' => 1,
+            ),
+            'output' => array(
+                'element'  => 'h3',
+                'property' => 'font-size',
+                'units'    => 'px',
+            ),
+        );
+
+        $controls[] = array(
+            'type'     => 'slider',
+            'setting'  => 'font_h4_size',
+            'label'    => __( 'H4 Font Size', 'maera_md' ),
+            'section'  => 'typography',
+            'default'  => 18,
+            'priority' => 70,
+            'choices'  => array(
+                'min'  => 7,
+                'max'  => 72,
+                'step' => 1,
+            ),
+            'output' => array(
+                'element'  => 'h4',
+                'property' => 'font-size',
+                'units'    => 'px',
+            ),
+        );
 
 		return $controls;
 
