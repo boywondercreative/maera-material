@@ -4,7 +4,7 @@
 	{% do action( 'maera/wrap/before', post.ID ) %}
 {% if layout != '0' %}
 		<div class="{{ grid.row() }}">
-			<div class="col s12 m{{ 12 - theme.theme_mod('sidebar_width', '4') }}{% if layout == '2' %} right{% endif %} {{ 'main-content-area'|apply_filters( 'maera/section_class/content' ) }} main-content-wrapper">
+			<div class="col s12{% if theme.theme_mod('layout', '1') != '0' %} m{{ 12 - theme.theme_mod('sidebar_width', '4') }}{% if layout == '2' %} right{% endif %}{% endif %} {{ 'main-content-area'|apply_filters( 'maera/section_class/content' ) }} main-content-wrapper">
 {% endif %}
 				{% do action( 'maera/content/before', post.ID ) %}
 				<div class="content" id="content" itemprop="mainContentOfPage">
