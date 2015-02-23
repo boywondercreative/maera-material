@@ -2,5 +2,9 @@
 {% import 'grid_classes.html.twig' as grid %}
 
 <div class="{% if layout == '0' %}container {% endif %}entry-content" itemprop="description">
-	{{ post.get_preview }}
+	{% if theme.theme_mod('blog_mode', 'excerpt') == 'excerpt' %}
+		{{ post.get_preview(theme.theme_mod('excerpt_length', 40), false, theme.theme_mod('read_more')) }}
+	{% else %}
+		{{ post.content }}
+	{% endif %}
 </div>

@@ -182,6 +182,43 @@ class Maera_MD_Customizer {
 		);
 
 		$controls[] = array(
+			'type'     => 'select',
+			'setting'  => 'blog_mode',
+			'label'    => __( 'Archive display mode', 'maera_md' ),
+			'section'  => 'blog',
+			'default'  => 'excerpt',
+			'priority' => 6,
+			'choices'  => array(
+				'excerpt' => __( 'Excerpt', 'maera_md' ),
+				'full'    => __( 'Full Content', 'maera_md' ),
+			),
+		);
+
+		$controls[] = array(
+			'type'     => 'slider',
+			'setting'  => 'excerpt_length',
+			'label'    => __( 'Excerpt Length', 'maera_md' ),
+			'subtitle' => __( 'Set to 0 if you want to completely disable featured images on archives', 'maera_md' ),
+			'section'  => 'blog',
+			'priority' => 8,
+			'default'  => 40,
+			'choices'  => array(
+				'min'  => 0,
+				'max'  => 200,
+				'step' => 1,
+			),
+		);
+
+		$controls[] = array(
+			'type'     => 'text',
+			'setting'  => 'read_more',
+			'label'    => __( 'Read More label', 'maera_bs' ),
+			'section'  => 'blog',
+			'priority' => 10,
+			'default'  => __( 'Read More', 'maera_md' ),
+		);
+
+		$controls[] = array(
 			'type'     => 'textarea',
 			'setting'  => 'css',
 			'label'    => __( 'Custom CSS', 'maera_bs' ),
