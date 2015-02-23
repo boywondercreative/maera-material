@@ -12,7 +12,7 @@
 		<div class="container entry-content" itemprop="description">
 			{% do action( 'maera/teaser/start', post.ID ) %}
 			<title itemprop="name">{{ post.title }}</title>
-			<h2 class="entry-title"><a href="{{ post.link }}">{{ post.title|apply_filters( 'maera/title' ) }}</a></h2>
+			<h1 class="entry-title"><a href="{{ post.link }}">{{ post.title|apply_filters( 'maera/title' ) }}</a></h1>
 		</div>
 
 	{% else %}
@@ -27,7 +27,7 @@
 		<div class="entry-content" itemprop="description">
 			{% do action( 'maera/teaser/start', post.ID ) %}
 			<title itemprop="name">{{ post.title }}</title>
-			<h2 class="entry-title"><a href="{{ post.link }}">{{ post.title|apply_filters( 'maera/title' ) }}</a></h2>
+			<h1 class="entry-title"><a href="{{ post.link }}">{{ post.title|apply_filters( 'maera/title' ) }}</a></h1>
 		</div>
 
 	{% endif %}
