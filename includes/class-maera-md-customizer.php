@@ -112,6 +112,25 @@ class Maera_MD_Customizer {
 		);
 
 		$controls[] = array(
+			'type'     => 'slider',
+			'setting'  => 'base_font_size',
+			'label'    => __( 'Base font-size', 'maera_md' ),
+			'section'  => 'typography',
+			'priority' => 4,
+			'default'  => 14,
+			'choices'  => array(
+				'min'  => 4,
+				'max'  => 32,
+				'step' => 1,
+			),
+			'output'   => array(
+				'property' => 'font-size',
+				'units'    => 'px',
+				'element'  => 'html',
+			)
+		);
+
+		$controls[] = array(
 			'type'     => 'radio',
 			'mode'     => 'buttonset',
 			'setting'  => 'background_mode',
