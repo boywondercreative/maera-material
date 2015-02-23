@@ -8375,3 +8375,7 @@ nav .brand-logo img {
 
 body.layout-0 header {
   margin: 0; }
+
+input #subscribe_comments,
+input #subscribe_blog {
+  display: none; }
