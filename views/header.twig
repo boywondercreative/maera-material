@@ -9,23 +9,7 @@
 		{% do action( 'maera/header/before', post.ID ) %}
 		{% if not theme.theme_mod('navbar_disable', 0) %}
 			{% set navwrapper = 'nav-wrapper' %}
-			<nav class="{{ red|apply_filters('maera/nav/class') }} lighten-1">
-				{% block header %}
-					<div class="navwrapper">
-						<div class="container">
-							{% include 'site-logo.twig' %}
-							<ul id="nav-mobile" class="right side-nav">
-								{% for item in menu.primary.items %}
-									<li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}{% if 'current-menu-item' in item.classes %} active{% endif %}">
-										<a href="{{item.link}}">{{ item.title }}</a>
-									</li>
-								{% endfor %}
-							</ul>
-							<a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
-						</div>
-					</div>
-				{% endblock %}
-			</nav>
+			{% include 'main-menu.twig' %}
 		{% endif %}
 
 		{% if not theme.theme_mod('header_front', 1) or ( theme.theme_mod('header_front', 1) and function('is_front_page') ) %}

@@ -1,0 +1,41 @@
+<nav class="{{ red|apply_filters('maera/nav/class') }} lighten-1">
+	{% block header %}
+		<div class="nav-wrapper">
+			<div class="container">
+				<div class="col s12">
+					{% include 'site-logo.twig' %}
+					<a href="#" data-activates="mobile-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+
+					{% for item in menu.primary.items %}
+						{% if item.get_children %}
+							<ul class="dropdown-content" id="dropdown-{{ item.ID }}">
+								{% for child in item.get_children %}
+									<li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{child.type}} menu-item-object-{{child.object}} menu-item-{{child.ID}}{% if 'current-menu-item' in child.classes %} active{% endif %}">
+										<a href="{{child.link}}">{{ child.title }}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					{% endfor %}
+
+					<ul class="right hide-on-med-and-down">
+						{% for item in menu.primary.items %}
+							<li id="menu-item-{{ item.ID }}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}{% if 'current-menu-item' in item.classes %} active{% endif %}">
+								<a href="{{item.link}}"{% if item.get_children %} class="dropdown-button" data-activates="dropdown-{{ item.ID }}"{% endif %}>
+									{{ item.title }}{% if item.get_children %}<i class="mdi-navigation-arrow-drop-down right"></i>{% endif %}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+					<ul class="side-nav" id="mobile-menu">
+						{% for item in menu.primary.items %}
+							<li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}{% if 'current-menu-item' in item.classes %} active{% endif %}">
+								<a href="{{item.link}}">{{ item.title }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	{% endblock %}
+</nav>
