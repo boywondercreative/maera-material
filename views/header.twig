@@ -13,17 +13,19 @@
 		{% endif %}
 
 		{% if not theme.theme_mod('header_front', 1) or ( theme.theme_mod('header_front', 1) and function('is_front_page') ) %}
-			<div class="header hero parallax-container">
-				<div class="parallax {{ ''|apply_filters('maera_md/header_classes') }}"><img src="{{ header_img }}"></div>
-				<div class="container">
-					{{ theme.theme_mod('header_content', '') }}
-					<div class="{{ grid.row() }}">
-						{% if sidebar.header %}
-							{{ sidebar.header }}
-						{% endif %}
+			{% if header_img %}
+				<div class="header hero parallax-container">
+					<div class="parallax {{ ''|apply_filters('maera_md/header_classes') }}"><img src="{{ header_img }}"></div>
+					<div class="container">
+						{{ theme.theme_mod('header_content', '') }}
+						<div class="{{ grid.row() }}">
+							{% if sidebar.header %}
+								{{ sidebar.header }}
+							{% endif %}
+						</div>
 					</div>
 				</div>
-			</div>
+			{% endif %}
 		{% endif %}
 		{% do action( 'maera/header/after', post.ID ) %}
 	</header>

@@ -231,28 +231,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/dev\/bin\/materialize.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/dev\/bin\/materialize.js",
-		"outputAbbreviatedPath": "\/assets\/js\/dev\/bin\/min\/materialize-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/assets\/js\/dev\/bin\/materialize.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/dev\/bin\/materialize.min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/dev\/bin\/min\/materialize.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/assets\/js\/dev\/buttons.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -512,6 +490,28 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/dev\/waves.js",
 		"outputAbbreviatedPath": "\/assets\/js\/dev\/min\/waves-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/assets\/js\/materialize.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/js\/materialize.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/materialize-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/assets\/js\/materialize.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/js\/materialize.min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/materialize.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -1050,65 +1050,56 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/includes\/class-Maera_MD_Customizer.php": {
+	"\/includes\/class-maera-md-data.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/includes\/class-Maera_MD_Customizer.php",
+		"inputAbbreviatedPath": "\/includes\/class-maera-md-data.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/includes\/class-Maera_MD_Data.php": {
+	"\/includes\/class-maera-md-post-metabox.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/includes\/class-Maera_MD_Data.php",
+		"inputAbbreviatedPath": "\/includes\/class-maera-md-post-metabox.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/includes\/class-Maera_MD_Post_Metabox.php": {
+	"\/includes\/class-maera-md-scripts.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/includes\/class-Maera_MD_Post_Metabox.php",
+		"inputAbbreviatedPath": "\/includes\/class-maera-md-scripts.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/includes\/class-Maera_MD_Scripts.php": {
+	"\/includes\/class-maera-md-styles.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/includes\/class-Maera_MD_Scripts.php",
+		"inputAbbreviatedPath": "\/includes\/class-maera-md-styles.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/includes\/class-Maera_MD_Styles.php": {
+	"\/includes\/class-maera-md-timber.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/includes\/class-Maera_MD_Styles.php",
+		"inputAbbreviatedPath": "\/includes\/class-maera-md-timber.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/includes\/class-Maera_MD_Timber.php": {
+	"\/includes\/class-maera-md-widgets.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/includes\/class-Maera_MD_Timber.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/includes\/class-Maera_MD_Widgets.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/includes\/class-Maera_MD_Widgets.php",
+		"inputAbbreviatedPath": "\/includes\/class-maera-md-widgets.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
