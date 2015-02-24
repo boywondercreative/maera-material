@@ -1,4 +1,14 @@
-## 0.95.2 - 2015-02-23
+## 0.95.3 - 2015-02-23 (5 hours)
+
+* Fix: Single post header
+* Fix: Add script for collapsing navbar
+* Fix: Remove the dev scripts, we no longer need them
+* New: Per-Post-Type Layouts
+* Fix: Set min-height for the comments textarea
+* New: Add height control for the header
+* Fix: Only add header parallax container if header exists
+
+## 0.95.2 - 2015-02-23 (13 hours)
 
 * Fix: conditional classes for full-screen layouts
 * New: Added many typography options
