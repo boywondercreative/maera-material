@@ -4,9 +4,9 @@
 
 		{% if post.thumbnail and theme.theme_mod('feat_img_height', 60) %}
 			<div class="parallax-container featured-image">
-				<a class="parallax featured-image" href="{{ post.link }}" title="{{ post.title }}">
-					<img class="featured-image" src="{{ post.thumbnail.src }}">
-				</a>
+				<div class="parallax">
+					<img class="featured-image" src="{{ post.get_thumbnail.get_src }}">
+				</div>
 			</div>
 		{% endif %}
 		<div class="container entry-content" itemprop="description">
