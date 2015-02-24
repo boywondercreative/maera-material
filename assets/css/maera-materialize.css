@@ -8379,3 +8379,6 @@ body.layout-0 header {
 input #subscribe_comments,
 input #subscribe_blog {
   display: none; }
+
+textarea#comment {
+  min-height: 8em; }

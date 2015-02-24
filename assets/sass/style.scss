@@ -418,3 +418,7 @@ input {
         display: none;
     }
 }
+
+textarea#comment {
+    min-height: 8em;
+}
