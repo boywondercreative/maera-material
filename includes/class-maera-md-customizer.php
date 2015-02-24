@@ -122,6 +122,42 @@ class Maera_MD_Customizer {
 		);
 
 		$controls[] = array(
+			'type'     => 'checkbox',
+			'mode'     => 'toggle',
+			'setting'  => 'cpt_layout_toggle',
+			'label'    => __( 'Per Post-Type layouts', 'maera_bs' ),
+			'subtitle' => __( 'After you change this setting you will have to save your settings and refresh your page in order to see the new options.', 'maera_bs' ),
+			'section'  => 'layout',
+			'priority' => 90,
+			'default'  => 0,
+		);
+
+		if ( 1 == get_theme_mod( 'cpt_layout_toggle', 0 ) ) {
+
+			$post_types = get_post_types( array( 'public' => true ), 'names' );
+			$layout = get_theme_mod( 'layout', 1 );
+
+			foreach ( $post_types as $post_type ) {
+				$controls[] = array(
+					'type'     => 'radio',
+					'mode'     => 'image',
+					'setting'  => $post_type . '_layout',
+					'label'    => $post_type . ' ' . __( 'layout', 'maera_bs' ),
+					'description' => null,
+					'section'  => 'layout',
+					'priority' => 92,
+					'required' => array( 'parent_setting' => 'cpt_layout_toggle' ),
+					'default'  => $layout,
+					'choices'  => array(
+						'0' => get_template_directory_uri() . '/assets/images/1c.png',
+						'1' => get_template_directory_uri() . '/assets/images/2cr.png',
+						'2' => get_template_directory_uri() . '/assets/images/2cl.png',
+					),
+				);
+			}
+		}
+
+		$controls[] = array(
 			'type'     => 'radio',
 			'mode'     => 'buttonset',
 			'setting'  => 'background_mode',
