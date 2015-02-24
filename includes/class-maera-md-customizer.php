@@ -129,7 +129,7 @@ class Maera_MD_Customizer {
 				'type'     => 'radio',
 				'mode'     => 'image',
 				'setting'  => $post_type . '_layout',
-				'label'    => __( 'Layout for post-type: ', 'maera_bs' ) . $post_type,
+				'label'    => __( 'Layout for post-type: ', 'maera_md' ) . $post_type,
 				'description' => null,
 				'section'  => 'layout',
 				'priority' => 92,
