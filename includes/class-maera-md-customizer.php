@@ -123,7 +123,7 @@ class Maera_MD_Customizer {
 
 		$controls[] = array(
 			'type'     => 'checkbox',
-			'mode'     => 'toggle',
+			'mode'     => 'switch',
 			'setting'  => 'cpt_layout_toggle',
 			'label'    => __( 'Per Post-Type layouts', 'maera_bs' ),
 			'subtitle' => __( 'After you change this setting you will have to save your settings and refresh your page in order to see the new options.', 'maera_bs' ),
