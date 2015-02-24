@@ -63,6 +63,25 @@ class Maera_MD_Customizer {
 		);
 
 		$controls[] = array(
+			'type'     => 'slider',
+			'setting'  => 'header_height',
+			'label'    => __( 'Header height (percentage of screen height)', 'maera_md' ),
+			'section'  => 'header_image',
+			'priority' => 30,
+			'default'  => 60,
+			'choices'  => array(
+				'min'  => 0,
+				'max'  => 100,
+				'step' => 1,
+			),
+			'output'   => array(
+				'element'  => '.header.hero',
+				'property' => 'height',
+				'units'    => 'vh',
+			)
+		);
+
+		$controls[] = array(
 			'type'     => 'checkbox',
 			'setting'  => 'header_front',
 			'label'    => __( 'Show only on homepage', 'maera_md' ),
