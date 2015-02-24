@@ -94,11 +94,11 @@ class Maera_MD_Customizer {
 			'type'     => 'radio',
 			'mode'     => 'image',
 			'setting'  => 'layout',
-			'label'    => __( 'Layout', 'maera_md' ),
+			'label'    => __( 'Default Layout', 'maera_md' ),
 			'subtitle' => __( 'Select your main layout. Please note that if no widgets are present in a sidebar then that sidebar will not be displayed. ', 'maera_md' ),
 			'section'  => 'layout',
 			'priority' => 3,
-			'default'  => 1,
+			'default'  => 0,
 			'choices'  => array(
 				'0' => get_template_directory_uri() . '/assets/images/1c.png',
 				'1' => get_template_directory_uri() . '/assets/images/2cr.png',
@@ -112,7 +112,7 @@ class Maera_MD_Customizer {
 			'label'    => __( 'Sidebar Width', 'maera_md' ),
 			'description' => '',
 			'section'  => 'layout',
-			'priority' => 4,
+			'priority' => 2,
 			'default'  => 4,
 			'choices'  => array(
 				'min'  => 1,
@@ -121,40 +121,26 @@ class Maera_MD_Customizer {
 			),
 		);
 
-		$controls[] = array(
-			'type'     => 'checkbox',
-			'mode'     => 'switch',
-			'setting'  => 'cpt_layout_toggle',
-			'label'    => __( 'Per Post-Type layouts', 'maera_bs' ),
-			'subtitle' => __( 'After you change this setting you will have to save your settings and refresh your page in order to see the new options.', 'maera_bs' ),
-			'section'  => 'layout',
-			'priority' => 90,
-			'default'  => 0,
-		);
+		$post_types = get_post_types( array( 'public' => true ), 'names' );
+		$layout = get_theme_mod( 'layout', 1 );
 
-		if ( 1 == get_theme_mod( 'cpt_layout_toggle', 0 ) ) {
-
-			$post_types = get_post_types( array( 'public' => true ), 'names' );
-			$layout = get_theme_mod( 'layout', 1 );
-
-			foreach ( $post_types as $post_type ) {
-				$controls[] = array(
-					'type'     => 'radio',
-					'mode'     => 'image',
-					'setting'  => $post_type . '_layout',
-					'label'    => $post_type . ' ' . __( 'layout', 'maera_bs' ),
-					'description' => null,
-					'section'  => 'layout',
-					'priority' => 92,
-					'required' => array( 'parent_setting' => 'cpt_layout_toggle' ),
-					'default'  => $layout,
-					'choices'  => array(
-						'0' => get_template_directory_uri() . '/assets/images/1c.png',
-						'1' => get_template_directory_uri() . '/assets/images/2cr.png',
-						'2' => get_template_directory_uri() . '/assets/images/2cl.png',
-					),
-				);
-			}
+		foreach ( $post_types as $post_type ) {
+			$controls[] = array(
+				'type'     => 'radio',
+				'mode'     => 'image',
+				'setting'  => $post_type . '_layout',
+				'label'    => __( 'Layout for post-type: ', 'maera_bs' ) . $post_type,
+				'description' => null,
+				'section'  => 'layout',
+				'priority' => 92,
+				'required' => array( 'parent_setting' => 'cpt_layout_toggle' ),
+				'default'  => $layout,
+				'choices'  => array(
+					'0' => get_template_directory_uri() . '/assets/images/1c.png',
+					'1' => get_template_directory_uri() . '/assets/images/2cr.png',
+					'2' => get_template_directory_uri() . '/assets/images/2cl.png',
+				),
+			);
 		}
 
 		$controls[] = array(
